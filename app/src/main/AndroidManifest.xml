@@ -36,6 +36,42 @@
             android:name=".categoriaprodserv.CategoriaProdServMenuActivity"
             android:label="@string/title_activity_categoria_prod_serv_menu" >
         </activity>
+        <activity
+            android:name=".categoriaempresa.CategoriaEmpresaMenuActivity"
+            android:label="@string/title_activity_categoria_empresa_menu" >
+        </activity>
+        <activity
+            android:name=".categoriaempresa.CategoriaEmpresaInsertarActvity"
+            android:label="@string/title_activity_categoria_empresa_insertar_actvity" >
+        </activity>
+        <activity
+            android:name=".categoriaempresa.CategoriaEmpresaEliminarActivity"
+            android:label="@string/title_activity_categoria_empresa_eliminar" >
+        </activity>
+        <activity
+            android:name=".categoriaempresa.CategoriaEmpresaConsulatarActivity"
+            android:label="@string/title_activity_categoria_empresa_consulatar" >
+        </activity>
+        <activity
+            android:name=".categoriaempresa.CategoriaEmpresaActulizarActivity"
+            android:label="@string/title_activity_categoria_empresa_actulizar" >
+        </activity>
+        <activity
+            android:name=".empresa.EmpresaMenuActivity"
+            android:label="@string/title_activity_empresa_menu" >
+        </activity>
+        <activity
+            android:name=".reclamo.ReclamoMenuActivity"
+            android:label="@string/title_activity_reclamo_menu" >
+        </activity>
+        <activity
+            android:name=".sucursal.SucursalMenuActivity"
+            android:label="@string/title_activity_sucursal_menu" >
+        </activity>
+        <activity
+            android:name=".zona.ZonaMenuActivity"
+            android:label="@string/title_activity_zona_menu" >
+        </activity>
     </application>
 
 </manifest>

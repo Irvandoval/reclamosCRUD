@@ -9,4 +9,18 @@
     <string name="title_activity_detalle_reclamo_menu">DetalleReclamoMenuActivity</string>
     <string name="title_activity_prod_serv_menu">ProdServMenuActivity</string>
     <string name="title_activity_categoria_prod_serv_menu">CategoriaProdServMenuActivity</string>
+    <string name="title_activity_categoria_empresa_menu">CategoriaEmpresaMenuActivity</string>
+    <string name="title_activity_categoria_empresa_insertar_actvity">
+        CategoriaEmpresaInsertarActvity
+    </string>
+    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity
+    </string>
+    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity
+    </string>
+    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity
+    </string>
+    <string name="title_activity_empresa_menu">EmpresaMenuActivity</string>
+    <string name="title_activity_reclamo_menu">ReclamoMenuActivity</string>
+    <string name="title_activity_sucursal_menu">SucursalMenuActivity</string>
+    <string name="title_activity_zona_menu">ZonaMenuActivity</string>
 </resources>
