@@ -1,38 +1,47 @@
 package com.example.irvandoval.reclamosgrupo17;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
-public class MenuPrincipal extends ActionBarActivity {
+public class MenuPrincipal extends ListActivity {
+    //Elementos de la lista a mostrar
+    String[] menu = {"Tabla Usuario", "Tabla Reclamo", "Tabla Detalle Reclamo"
+            , "Tabla Estado Reclamo", "Tabla Producto/Servicio", "Tabla Categoria Producto/Servicio"
+            , "Tabla Empresa", "Tabla Categoria Empresa", "Tabla Sucursal", "Tabla Zona", "Llenar DB"};
+    // Elementos de las actividades a invocar
+    String[] activities = {"UsuarioMenuActivity", "ReclamoMenuActivity", "DetalleReclamoMenuActivity"
+            , "EstadoReclamoMenuActivity", "ProdServMenuActivity", "CategoriaProdServMenuActivity"
+            , "EmpresaMenuActivity", "CategoriaEmpresaMenuActivity", "SucursalMenuActivity", "ZonaMenuActivity"};
+    // Elementos de los paquetes a que pertenecen las actividades
+    String[] packages = {"usuario","reclamo","detallereclamo","estadoreclamo","prodserv","categoriaprodserv","empresa"
+                        ,"categoriaempresa","sucursal","zona"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_principal);
+        setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menu));
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu_principal, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        if (position != 10) { //si se ha elegido un elemento de tabla
+            String nombreValue = activities[position];
+            String paquete = packages[position];
+            try {
+                Class<?> clase = Class.forName("com.example.irvandoval.reclamosgrupo17." + paquete + "." + nombreValue);
+                Intent inte = new Intent(this, clase);
+                this.startActivity(inte);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {// si se ha elegido Llenar DB
+            //aqui hay que implementar el llenado de datos.
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

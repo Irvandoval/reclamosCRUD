@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".usuario.UsuarioMenuActivity"
+            android:label="@string/title_activity_usuario_menu" >
+        </activity>
+        <activity
+            android:name=".estadoreclamo.EstadoReclamoMenuActivity"
+            android:label="@string/title_activity_estado_reclamo_menu" >
+        </activity>
+        <activity
+            android:name=".detallereclamo.DetalleReclamoMenuActivity"
+            android:label="@string/title_activity_detalle_reclamo_menu" >
+        </activity>
+        <activity
+            android:name=".prodserv.ProdServMenuActivity"
+            android:label="@string/title_activity_prod_serv_menu" >
+        </activity>
+        <activity
+            android:name=".categoriaprodserv.CategoriaProdServMenuActivity"
+            android:label="@string/title_activity_categoria_prod_serv_menu" >
+        </activity>
     </application>
 
 </manifest>
