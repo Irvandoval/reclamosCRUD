@@ -24,4 +24,8 @@
     <string name="title_activity_sucursal_menu">Subsidiary  Table</string>
     <string name="title_activity_zona_menu">Zone Table</string>
     <string name="fill_db">Fill DB</string>
+    <string name="insertar">Create Registry</string>
+    <string name="consultar">Read Registry</string>
+    <string name="eliminar">Delete Registry</string>
+    <string name="actualizar">Update Registry</string>
 </resources>

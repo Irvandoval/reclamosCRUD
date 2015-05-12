@@ -17,11 +17,24 @@
     </string>
     <string name="title_activity_categoria_empresa_consultar">CategoriaEmpresaConsulatarActivity
     </string>
-    <string name="title_activity_categoria_empresa_actualizar">CategoriaEmpresaActulizarActivity
+    <string name="title_activity_categoria_empresa_actualizar">CategoriaEmpresaActualizarActivity
     </string>
     <string name="title_activity_empresa_menu">Tabla Empresa</string>
     <string name="title_activity_reclamo_menu">Tabla Reclamo</string>
     <string name="title_activity_sucursal_menu">Tabla Sucursal</string>
     <string name="title_activity_zona_menu">Tabla Zona</string>
     <string name="fill_db">Llenar BD</string>
+    <string name="title_activity_usuario_consultar">UsuarioConsultarActivity</string>
+    <string name="title_activity_usuario_eliminar">UsuarioEliminarActivity</string>
+    <string name="title_activity_usuario_insertar">UsuarioInsertarActivity</string>
+    <string name="insertar">Insertar Registro</string>
+    <string name="eliminar">Eliminar Registro</string>
+    <string name="consultar">Consultar Registro</string>
+    <string name="actualizar">Actualizar Registro</string>
+    <string name="title_activity_sucursal_actualizar">SucursalActualizarActivity</string>
+    <string name="title_activity_sucursal_eliminar">SucursalEliminarActivity</string>
+    <string name="title_activity_sucursal_consultar">SucursalConsultarActivity</string>
+    <string name="title_activity_sucursal_insertar">SucursalInsertarActivity</string>
+
+
 </resources>
