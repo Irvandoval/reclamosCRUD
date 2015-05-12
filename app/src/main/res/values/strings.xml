@@ -1,26 +1,27 @@
 <resources>
     <string name="app_name">ReclamosGrupo17</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_usuario_actualizar">UsuarioActualizarActivity</string>
-    <string name="title_activity_usuario_menu">UsuarioMenuActivity</string>
-    <string name="title_activity_estado_reclamo_menu">EstadoReclamoMenuActivity</string>
-    <string name="title_activity_detalle_reclamo_menu">DetalleReclamoMenuActivity</string>
-    <string name="title_activity_prod_serv_menu">ProdServMenuActivity</string>
-    <string name="title_activity_categoria_prod_serv_menu">CategoriaProdServMenuActivity</string>
-    <string name="title_activity_categoria_empresa_menu">CategoriaEmpresaMenuActivity</string>
-    <string name="title_activity_categoria_empresa_insertar_actvity">
-        CategoriaEmpresaInsertarActvity
+    <string name="hello_world">Hola Mundo!</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="title_activity_usuario_actualizar">Actualizar Usuario</string>
+    <string name="title_activity_usuario_menu">Tabla Usuario</string>
+    <string name="title_activity_estado_reclamo_menu">Tabla Estado Reclamo</string>
+    <string name="title_activity_detalle_reclamo_menu">Tabla Detalle Reclamo</string>
+    <string name="title_activity_prod_serv_menu">Tabla Producto Servicio</string>
+    <string name="title_activity_categoria_prod_serv_menu">Tabla Categoria Producto Servicio</string>
+    <string name="title_activity_categoria_empresa_menu">Tabla Categoria Empresa</string>
+    <string name="title_activity_categoria_empresa_insertar_activity">
+        Insertar Categoria Empresa
     </string>
-    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity
+    <string name="title_activity_categoria_empresa_eliminar">Eliminar Categoria Empresa
     </string>
-    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity
+    <string name="title_activity_categoria_empresa_consultar">CategoriaEmpresaConsulatarActivity
     </string>
-    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity
+    <string name="title_activity_categoria_empresa_actualizar">CategoriaEmpresaActulizarActivity
     </string>
-    <string name="title_activity_empresa_menu">EmpresaMenuActivity</string>
-    <string name="title_activity_reclamo_menu">ReclamoMenuActivity</string>
-    <string name="title_activity_sucursal_menu">SucursalMenuActivity</string>
-    <string name="title_activity_zona_menu">ZonaMenuActivity</string>
+    <string name="title_activity_empresa_menu">Tabla Empresa</string>
+    <string name="title_activity_reclamo_menu">Tabla Reclamo</string>
+    <string name="title_activity_sucursal_menu">Tabla Sucursal</string>
+    <string name="title_activity_zona_menu">Tabla Zona</string>
+    <string name="fill_db">Llenar BD</string>
 </resources>
