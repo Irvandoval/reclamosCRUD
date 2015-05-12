@@ -41,7 +41,7 @@
             android:label="@string/title_activity_categoria_empresa_menu" >
         </activity>
         <activity
-            android:name=".categoriaempresa.CategoriaEmpresaInsertarActvity"
+            android:name=".categoriaempresa.CategoriaEmpresaInsertarActivity"
             android:label="@string/title_activity_categoria_empresa_insertar_actvity" >
         </activity>
         <activity
@@ -49,11 +49,11 @@
             android:label="@string/title_activity_categoria_empresa_eliminar" >
         </activity>
         <activity
-            android:name=".categoriaempresa.CategoriaEmpresaConsulatarActivity"
+            android:name=".categoriaempresa.CategoriaEmpresaConsultarActivity"
             android:label="@string/title_activity_categoria_empresa_consulatar" >
         </activity>
         <activity
-            android:name=".categoriaempresa.CategoriaEmpresaActulizarActivity"
+            android:name=".categoriaempresa.CategoriaEmpresaActualizarActivity"
             android:label="@string/title_activity_categoria_empresa_actulizar" >
         </activity>
         <activity

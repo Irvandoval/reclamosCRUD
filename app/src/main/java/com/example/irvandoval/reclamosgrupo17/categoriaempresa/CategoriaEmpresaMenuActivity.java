@@ -17,7 +17,7 @@ import com.example.irvandoval.reclamosgrupo17.R;
 public class CategoriaEmpresaMenuActivity extends ListActivity {
     String[] menu={"Insertar Registro","Eliminar Registro","Consultar Registro", "ActualizarRegistro"};
             String[] activities={"CategoriaEmpresaInsertarActivity","CategoriaEmpresaEliminarActivity","CategoriaEmpresaConsultarActivity",
-            "CategoriaActualizarActivity"};
+            "CategoriaEmpresaActualizarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class CategoriaEmpresaMenuActivity extends ListActivity {
         l.getChildAt(position).setBackgroundColor(Color.rgb(128, 128, 255));
         try{
             Class<?>
-                    clase=Class.forName("com.example.irvandoval.reclamosgrupo17"+nombreValue);
+                    clase=Class.forName("com.example.irvandoval.reclamosgrupo17.categoriaempresa."+nombreValue);
             Intent inte = new Intent(this,clase);
             this.startActivity(inte);
         }catch(ClassNotFoundException e){
