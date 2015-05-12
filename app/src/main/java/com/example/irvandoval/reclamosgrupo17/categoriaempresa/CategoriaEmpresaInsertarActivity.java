@@ -7,19 +7,19 @@ import android.view.MenuItem;
 
 import com.example.irvandoval.reclamosgrupo17.R;
 
-public class CategoriaEmpresaInsertarActvity extends ActionBarActivity {
+public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria_empresa_insertar_actvity);
+        setContentView(R.layout.activity_categoria_empresa_insertar_activity);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_categoria_empresa_insertar_actvity, menu);
+        getMenuInflater().inflate(R.menu.menu_categoria_empresa_insertar_activity, menu);
         return true;
     }
 
