@@ -59,6 +59,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/EditUsuarioDui"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/editUsuarioApellido"
@@ -120,7 +121,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/editUsuarioEdad"
         android:layout_alignBottom="@+id/textView5"

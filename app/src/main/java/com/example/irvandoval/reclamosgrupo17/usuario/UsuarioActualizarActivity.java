@@ -27,6 +27,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         dui.addTextChangedListener(new MaskTextWatcher("########-#"));
         email = (EditText) findViewById(R.id.editUsuarioEmail);
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
+        telefono.addTextChangedListener( new MaskTextWatcher("####-####"));
         edad = (EditText) findViewById(R.id.editUsuarioEdad);
     }
 

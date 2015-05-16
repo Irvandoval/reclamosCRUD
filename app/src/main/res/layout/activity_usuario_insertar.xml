@@ -61,6 +61,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/EditUsuarioDui"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/editUsuarioApellido"
@@ -122,12 +123,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/editUsuarioEdad"
         android:layout_alignBottom="@+id/textView5"
         android:layout_alignLeft="@+id/editUsuarioTelefono"
-        android:layout_alignStart="@+id/editUsuarioTelefono" />
+        android:layout_alignStart="@+id/editUsuarioTelefono"
+        android:maxLength="2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -138,7 +140,7 @@
         android:layout_below="@+id/textView5"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:onClick="insertarlumno" />
+        android:onClick="insertarAlumno" />
 
     <Button
         android:layout_width="wrap_content"

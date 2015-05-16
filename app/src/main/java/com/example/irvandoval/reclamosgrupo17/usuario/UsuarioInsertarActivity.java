@@ -20,12 +20,13 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_insertar);
-       nombreUsuario = (EditText)findViewById(R.id.editUsuarioNombre);
+        nombreUsuario = (EditText)findViewById(R.id.editUsuarioNombre);
         apellidoUsuario = (EditText)findViewById(R.id.editUsuarioApellido);
         dui =  (EditText)findViewById(R.id.EditUsuarioDui);
         dui.addTextChangedListener(new MaskTextWatcher("########-#"));
         email = (EditText) findViewById(R.id.editUsuarioEmail);
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
+        telefono.addTextChangedListener( new MaskTextWatcher("####-####"));
         edad = (EditText) findViewById(R.id.editUsuarioEdad);
     }
 
@@ -51,7 +52,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void insertarlumno(View v){
+    public void insertarAlumno(View v){
         Usuario nuevoUsuario = new Usuario();
         nuevoUsuario.setNombreUsuario(nombreUsuario.getText().toString());
         nuevoUsuario.setApellidoUsuario(apellidoUsuario.getText().toString());
