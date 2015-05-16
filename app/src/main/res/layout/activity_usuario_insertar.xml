@@ -4,9 +4,153 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.irvandoval.reclamosgrupo17.usuario.UsuarioInsertarActivity">
+    tools:context="com.example.irvandoval.reclamosgrupo17.usuario.UsuarioInsertarActivity"
+    android:nestedScrollingEnabled="false">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/usuario_nombre"
+        android:id="@+id/textView"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editUsuarioNombre"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_apellido"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editUsuarioApellido"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/editUsuarioNombre"
+        android:layout_alignStart="@+id/editUsuarioNombre" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_dui"
+        android:id="@+id/textView3"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditUsuarioDui"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/editUsuarioApellido"
+        android:layout_alignStart="@+id/editUsuarioApellido"
+        android:layout_alignRight="@+id/editUsuarioApellido"
+        android:layout_alignEnd="@+id/editUsuarioApellido" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_email"
+        android:id="@+id/textviewxx"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/EditUsuarioDui"
+        android:layout_toStartOf="@+id/EditUsuarioDui" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editUsuarioEmail"
+        android:layout_alignBottom="@+id/textviewxx"
+        android:layout_alignLeft="@+id/EditUsuarioDui"
+        android:layout_alignStart="@+id/EditUsuarioDui" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_telefono"
+        android:id="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editUsuarioTelefono"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/editUsuarioEmail"
+        android:layout_alignStart="@+id/editUsuarioEmail" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_edad"
+        android:id="@+id/textView5"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/editUsuarioEdad"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignLeft="@+id/editUsuarioTelefono"
+        android:layout_alignStart="@+id/editUsuarioTelefono" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insertar_boton"
+        android:id="@+id/button"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/textView5"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        android:onClick="insertarlumno" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar_boton"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignRight="@+id/editUsuarioEdad"
+        android:layout_alignEnd="@+id/editUsuarioEdad"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"
+        android:onClick="limpiarTexto"/>
+
 
 </RelativeLayout>

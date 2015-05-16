@@ -4,13 +4,16 @@ package com.example.irvandoval.reclamosgrupo17.usuario;
  * Created by irvandoval on 05-09-15.
  */
 public class Usuario {
-    private int  idUsuario;
+    private int idUsuario;
     private String nombreUsuario;
     private String apellidoUsuario;
     private String dui;
     private String email;
     private String telefono;
     private int edad;
+
+    public Usuario() {
+    }
 
     public Usuario(int idUsuario, String nombreUsuario, String apellidoUsuario, String dui, String email, String telefono, int edad) {
         this.idUsuario = idUsuario;

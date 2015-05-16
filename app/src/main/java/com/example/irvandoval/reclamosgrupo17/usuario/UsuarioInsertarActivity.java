@@ -4,15 +4,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.EditText;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
 public class UsuarioInsertarActivity extends ActionBarActivity {
-
+    EditText nombreUsuario;
+    EditText apellidoUsuario;
+    EditText dui;
+    EditText email;
+    EditText telefono;
+    EditText edad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_insertar);
+       nombreUsuario = (EditText)findViewById(R.id.editUsuarioNombre);
+        apellidoUsuario = (EditText)findViewById(R.id.editUsuarioApellido);
+        dui =  (EditText)findViewById(R.id.EditUsuarioDui);
+        dui.addTextChangedListener(new MaskTextWatcher("########-#"));
+        email = (EditText) findViewById(R.id.editUsuarioEmail);
+        telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
+        edad = (EditText) findViewById(R.id.editUsuarioEdad);
     }
 
     @Override
@@ -35,5 +49,25 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void insertarlumno(View v){
+        Usuario nuevoUsuario = new Usuario();
+        nuevoUsuario.setNombreUsuario(nombreUsuario.getText().toString());
+        nuevoUsuario.setApellidoUsuario(apellidoUsuario.getText().toString());
+        nuevoUsuario.setDui(dui.getText().toString());
+        nuevoUsuario.setEmail(email.getText().toString());
+        nuevoUsuario.setTelefono(telefono.getText().toString());
+        nuevoUsuario.setEdad(Integer.parseInt(edad.getText().toString()));
+        //implementar insercion
+    }
+
+    public void limpiarTexto(View v){
+        nombreUsuario.setText("");
+        apellidoUsuario.setText("");
+        dui.setText("");
+        email.setText("");
+        telefono.setText("");
+        edad.setText("");
     }
 }

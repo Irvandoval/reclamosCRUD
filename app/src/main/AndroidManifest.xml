@@ -104,6 +104,22 @@
             android:name=".sucursal.SucursalInsertarActivity"
             android:label="@string/title_activity_sucursal_insertar" >
         </activity>
+        <activity
+            android:name=".zona.ZonaInsertarActivity"
+            android:label="@string/title_activity_zona_insertar" >
+        </activity>
+        <activity
+            android:name=".zona.ZonaEliminarActivity"
+            android:label="@string/title_activity_zona_eliminar" >
+        </activity>
+        <activity
+            android:name=".zona.ZonaConsultarActivity"
+            android:label="@string/title_activity_zona_consultar" >
+        </activity>
+        <activity
+            android:name=".zona.ZonaActualizarActivity"
+            android:label="@string/title_activity_zona_actualizar" >
+        </activity>
     </application>
 
 </manifest>

@@ -4,15 +4,20 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
 public class UsuarioEliminarActivity extends ActionBarActivity {
-
+    EditText dui;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_eliminar);
+        dui =  (EditText)findViewById(R.id.EditUsuarioDui);
+        dui.addTextChangedListener(new MaskTextWatcher("########-#"));
     }
 
     @Override
@@ -35,5 +40,14 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void eliminarAlumno(View v){
+    // implementar eliminacion
+    }
+
+    public void limpiarTexto(View v){
+        dui.setText("");
     }
 }

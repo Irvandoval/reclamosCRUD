@@ -27,14 +27,43 @@
     <string name="title_activity_usuario_consultar">UsuarioConsultarActivity</string>
     <string name="title_activity_usuario_eliminar">UsuarioEliminarActivity</string>
     <string name="title_activity_usuario_insertar">UsuarioInsertarActivity</string>
+
+    <!-- Resources para Menu principal Tablas-->
     <string name="insertar">Insertar Registro</string>
     <string name="eliminar">Eliminar Registro</string>
     <string name="consultar">Consultar Registro</string>
     <string name="actualizar">Actualizar Registro</string>
+
+
     <string name="title_activity_sucursal_actualizar">SucursalActualizarActivity</string>
     <string name="title_activity_sucursal_eliminar">SucursalEliminarActivity</string>
     <string name="title_activity_sucursal_consultar">SucursalConsultarActivity</string>
     <string name="title_activity_sucursal_insertar">SucursalInsertarActivity</string>
 
+    <!-- Resources para Usuario -->
+    <string name="usuario_idusuario">ID Usuario</string>
+    <string name="usuario_nombre">Nombre</string>
+    <string name="usuario_apellido">Apellido</string>
+    <string name="usuario_dui">DUI</string>
+    <string name="usuario_email">Correo Electronico</string>
+    <string name="usuario_telefono">Teléfono</string>
+    <string name="usuario_edad">Edad</string>
+
+    <!-- Resources para Zona -->
+    <string name="zona_idzona">ID Zona</string>
+    <string name="zona_nombre">Nombre Zona</string>
+    <string name="zona_departamento">Departamento</string>
+    <string name="zona_municipio">Municipio</string>
+
+<!-- opciones de botones-->
+    <string name="insertar_boton">Insertar</string>
+    <string name="limpiar_boton">Limpiar</string>
+    <string name="eliminar_boton">Eliminar</string>
+    <string name="consultar_boton">Consultar</string>
+    <string name="actualizar_boton">Actualizar</string>
+    <string name="title_activity_zona_insertar">ZonaInsertarActivity</string>
+    <string name="title_activity_zona_eliminar">ZonaEliminarActivity</string>
+    <string name="title_activity_zona_consultar">ZonaConsultarActivity</string>
+    <string name="title_activity_zona_actualizar">ZonaActualizarActivity</string>
 
 </resources>
