@@ -22,8 +22,8 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         setContentView(R.layout.activity_usuario_insertar);
         nombreUsuario = (EditText)findViewById(R.id.editUsuarioNombre);
         apellidoUsuario = (EditText)findViewById(R.id.editUsuarioApellido);
-        dui =  (EditText)findViewById(R.id.EditUsuarioDui);
-        dui.addTextChangedListener(new MaskTextWatcher("########-#"));
+        dui =  (EditText)findViewById(R.id.editUsuarioDui);
+        dui.addTextChangedListener( new MaskTextWatcher("########-#"));
         email = (EditText) findViewById(R.id.editUsuarioEmail);
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
         telefono.addTextChangedListener( new MaskTextWatcher("####-####"));

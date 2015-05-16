@@ -16,7 +16,7 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_eliminar);
-        dui =  (EditText)findViewById(R.id.EditUsuarioDui);
+        dui =  (EditText)findViewById(R.id.editUsuarioDui);
         dui.addTextChangedListener(new MaskTextWatcher("########-#"));
     }
 

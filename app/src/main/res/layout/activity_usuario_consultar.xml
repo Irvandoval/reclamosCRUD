@@ -88,7 +88,8 @@
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="@string/usuario_telefono_patron" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -144,11 +145,11 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/EditUsuarioDui"
+        android:id="@+id/editUsuarioDui"
         android:layout_above="@+id/button"
         android:layout_alignRight="@+id/editUsuarioEdad"
         android:layout_alignEnd="@+id/editUsuarioEdad"
         android:layout_alignLeft="@+id/editUsuarioEdad"
-        android:layout_alignStart="@+id/editUsuarioEdad" />
+        android:layout_alignStart="@+id/editUsuarioEdad"
+        android:hint="@string/usuario_dui_patron" />
 </RelativeLayout>

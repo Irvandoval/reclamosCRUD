@@ -23,7 +23,7 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
         setContentView(R.layout.activity_usuario_consultar);
         nombreUsuario = (EditText)findViewById(R.id.editUsuarioNombre);
         apellidoUsuario = (EditText)findViewById(R.id.editUsuarioApellido);
-        dui =  (EditText)findViewById(R.id.EditUsuarioDui);
+        dui =  (EditText)findViewById(R.id.editUsuarioDui);
         dui.addTextChangedListener(new MaskTextWatcher("########-#"));
         email = (EditText) findViewById(R.id.editUsuarioEmail);
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
