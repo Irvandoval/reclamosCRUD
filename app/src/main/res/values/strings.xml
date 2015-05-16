@@ -65,5 +65,8 @@
     <string name="title_activity_zona_eliminar">ZonaEliminarActivity</string>
     <string name="title_activity_zona_consultar">ZonaConsultarActivity</string>
     <string name="title_activity_zona_actualizar">ZonaActualizarActivity</string>
+    <string name="title_activity_reclamo_insertar">ReclamoInsertarActivity</string>
+    <string name="Titulo">Titulo</string>
+    <string name="formatofec">DD/MM/AAAA</string>
 
 </resources>
