@@ -61,11 +61,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editUsuarioDui"
-        android:hint="@string/usuario_dui_patron"
-        android:layout_alignTop="@+id/textView3"
+        android:id="@+id/EditUsuarioDui"
+        android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/editUsuarioApellido"
-        android:layout_alignStart="@+id/editUsuarioApellido" />
+        android:layout_alignStart="@+id/editUsuarioApellido"
+        android:layout_alignRight="@+id/editUsuarioApellido"
+        android:layout_alignEnd="@+id/editUsuarioApellido" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,8 +77,8 @@
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/editUsuarioDui"
-        android:layout_toStartOf="@+id/editUsuarioDui" />
+        android:layout_toLeftOf="@+id/EditUsuarioDui"
+        android:layout_toStartOf="@+id/EditUsuarioDui" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -86,8 +87,8 @@
         android:ems="10"
         android:id="@+id/editUsuarioEmail"
         android:layout_alignBottom="@+id/textviewxx"
-        android:layout_alignLeft="@+id/editUsuarioDui"
-        android:layout_alignStart="@+id/editUsuarioDui" />
+        android:layout_alignLeft="@+id/EditUsuarioDui"
+        android:layout_alignStart="@+id/EditUsuarioDui" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,10 +107,7 @@
         android:id="@+id/editUsuarioTelefono"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignLeft="@+id/editUsuarioEmail"
-        android:layout_alignStart="@+id/editUsuarioEmail"
-        android:hint="@string/usuario_telefono_patron"
-        android:layout_alignRight="@+id/editUsuarioDui"
-        android:layout_alignEnd="@+id/editUsuarioDui" />
+        android:layout_alignStart="@+id/editUsuarioEmail" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,13 +122,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:ems="10"
         android:id="@+id/editUsuarioEdad"
         android:layout_alignBottom="@+id/textView5"
         android:layout_alignLeft="@+id/editUsuarioTelefono"
-        android:layout_alignStart="@+id/editUsuarioTelefono"
-        android:maxLength="2" />
+        android:layout_alignStart="@+id/editUsuarioTelefono" />
 
     <Button
         android:layout_width="wrap_content"
@@ -141,7 +138,7 @@
         android:layout_below="@+id/textView5"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:onClick="insertarAlumno" />
+        android:onClick="insertarlumno" />
 
     <Button
         android:layout_width="wrap_content"

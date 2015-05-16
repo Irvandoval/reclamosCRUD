@@ -120,6 +120,10 @@
             android:name=".zona.ZonaActualizarActivity"
             android:label="@string/title_activity_zona_actualizar" >
         </activity>
+        <activity
+            android:name=".reclamo.ReclamoInsertarActivity"
+            android:label="@string/title_activity_reclamo_insertar" >
+        </activity>
     </application>
 
 </manifest>
