@@ -52,7 +52,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void insertarAlumno(View v){
+    public void insertarUsuario(View v){
         Usuario nuevoUsuario = new Usuario();
         nuevoUsuario.setNombreUsuario(nombreUsuario.getText().toString());
         nuevoUsuario.setApellidoUsuario(apellidoUsuario.getText().toString());
