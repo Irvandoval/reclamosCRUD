@@ -55,8 +55,10 @@
     <string name="usuario_email">Correo Electronico</string>
     <string name="usuario_telefono">Teléfono</string>
     <string name="usuario_edad">Edad</string>
+    <string name="usuario_sexo">Sexo</string>
     <string name="usuario_dui_patron">########-#</string>
     <string name="usuario_telefono_patron">####-####</string>
+    <string name="usuario_sexo_patron">F o M</string>
 
     <!-- Resources para Zona -->
     <string name="zona_idzona">ID Zona</string>

@@ -16,6 +16,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
     EditText email;
     EditText telefono;
     EditText edad;
+    EditText sexo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
         telefono.addTextChangedListener( new MaskTextWatcher("####-####"));
         edad = (EditText) findViewById(R.id.editUsuarioEdad);
+        sexo = (EditText) findViewById(R.id.editUsuarioSexo);
     }
 
     @Override
@@ -60,6 +62,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         nuevoUsuario.setEmail(email.getText().toString());
         nuevoUsuario.setTelefono(telefono.getText().toString());
         nuevoUsuario.setEdad(Integer.parseInt(edad.getText().toString()));
+        nuevoUsuario.setSexo(sexo.getText().toString());
         //implementar insercion
     }
 
@@ -70,5 +73,6 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         email.setText("");
         telefono.setText("");
         edad.setText("");
+        sexo.setText("");
     }
 }
