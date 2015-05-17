@@ -124,6 +124,18 @@
             android:name=".reclamo.ReclamoInsertarActivity"
             android:label="@string/title_activity_reclamo_insertar" >
         </activity>
+        <activity
+            android:name=".reclamo.ReclamoActualizarActivity"
+            android:label="@string/title_activity_reclamo_actualizar" >
+        </activity>
+        <activity
+            android:name=".reclamo.ReclamoConsularActivity"
+            android:label="@string/title_activity_reclamo_consular" >
+        </activity>
+        <activity
+            android:name=".reclamo.ReclamoEliminarActivity"
+            android:label="@string/title_activity_reclamo_eliminar" >
+        </activity>
     </application>
 
 </manifest>
