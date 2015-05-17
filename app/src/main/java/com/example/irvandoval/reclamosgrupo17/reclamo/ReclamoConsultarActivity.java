@@ -10,14 +10,14 @@ import android.widget.EditText;
 import com.example.irvandoval.reclamosgrupo17.R;
 import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
-public class ReclamoConsularActivity extends ActionBarActivity {
+public class ReclamoConsultarActivity extends ActionBarActivity {
     EditText titulo;
     EditText motivo;
     EditText fecha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reclamo_consular);
+        setContentView(R.layout.activity_reclamo_consultar);
         titulo=(EditText)findViewById(R.id.TituloReclamo);
         motivo=(EditText)findViewById(R.id.MotivoReclamo);
         fecha=(EditText)findViewById(R.id.fechaReclamo);
@@ -28,7 +28,7 @@ public class ReclamoConsularActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_reclamo_consular, menu);
+        getMenuInflater().inflate(R.menu.menu_reclamo_consultar, menu);
         return true;
     }
 
