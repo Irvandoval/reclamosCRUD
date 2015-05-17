@@ -4,7 +4,7 @@ package com.example.irvandoval.reclamosgrupo17.usuario;
  * Created by irvandoval on 05-09-15.
  */
 public class Usuario {
-    private int idUsuario;
+   // private int idUsuario;
     private String nombreUsuario;
     private String apellidoUsuario;
     private String dui;
@@ -15,18 +15,14 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String apellidoUsuario, String dui, String email, String telefono, int edad) {
-        this.idUsuario = idUsuario;
+    public Usuario(String nombreUsuario, String apellidoUsuario, String dui, String email, String telefono, int edad) {
+       // this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
         this.dui = dui;
         this.email = email;
         this.telefono = telefono;
         this.edad = edad;
-    }
-
-    public int getIdUsuario() {
-        return idUsuario;
     }
 
     public String getNombreUsuario() {
@@ -51,10 +47,6 @@ public class Usuario {
 
     public int getEdad() {
         return edad;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public void setNombreUsuario(String nombreUsuario) {
