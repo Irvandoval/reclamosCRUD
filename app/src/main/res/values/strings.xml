@@ -68,5 +68,10 @@
     <string name="title_activity_reclamo_insertar">ReclamoInsertarActivity</string>
     <string name="Titulo">Titulo</string>
     <string name="formatofec">DD/MM/AAAA</string>
+    <string name="title_activity_reclamo_actualizar">ReclamoActualizarActivity</string>
+    <string name="motivo">Motivo</string>
+    <string name="Fecha">Fecha</string>
+    <string name="title_activity_reclamo_consular">ReclamoConsularActivity</string>
+    <string name="title_activity_reclamo_eliminar">ReclamoEliminarActivity</string>
 
 </resources>
