@@ -2,17 +2,22 @@ package com.example.irvandoval.reclamosgrupo17.sucursal;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalEliminarActivity extends ActionBarActivity {
+    private EditText idSucursal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sucursal_eliminar);
+        idSucursal = (EditText) findViewById(R.id.editIdSucursal);
     }
 
     @Override
@@ -35,5 +40,8 @@ public class SucursalEliminarActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void eliminarSucursal(View v){
     }
 }

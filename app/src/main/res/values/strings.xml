@@ -33,7 +33,14 @@
     <string name="eliminar">Eliminar Registro</string>
     <string name="consultar">Consultar Registro</string>
     <string name="actualizar">Actualizar Registro</string>
-
+  <!-- Resources para Sucursal-->
+    <string name="sucursal_idsucursal">ID Sucursal</string>
+    <string name="sucursal_idempresa">ID Empresa</string>
+    <string name="sucursal_idzona">ID Zona</string>
+    <string name="sucursal_nombresucursal">Nombre Sucursal</string>
+    <string name="sucursal_jefesucursal">Jefe Sucursal</string>
+    <string name="sucursal_direccionsucursal">Direccion Sucursal</string>
+    <string name="sucursal_telefonosucursal">Telefono Sucursal</string>
 
     <string name="title_activity_sucursal_actualizar">SucursalActualizarActivity</string>
     <string name="title_activity_sucursal_eliminar">SucursalEliminarActivity</string>
@@ -68,12 +75,13 @@
     <string name="title_activity_zona_consultar">ZonaConsultarActivity</string>
     <string name="title_activity_zona_actualizar">ZonaActualizarActivity</string>
     <string name="title_activity_reclamo_insertar">ReclamoInsertarActivity</string>
+
     <string name="Titulo">Titulo</string>
     <string name="formatofec">DD/MM/AAAA</string>
     <string name="title_activity_reclamo_actualizar">ReclamoActualizarActivity</string>
     <string name="motivo">Motivo</string>
     <string name="Fecha">Fecha</string>
-    <string name="title_activity_reclamo_consular">ReclamoConsularActivity</string>
+    <string name="title_activity_reclamo_consular">ReclamoConsultarActivity</string>
     <string name="title_activity_reclamo_eliminar">ReclamoEliminarActivity</string>
 
 </resources>

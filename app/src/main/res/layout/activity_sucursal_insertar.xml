@@ -6,7 +6,162 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.irvandoval.reclamosgrupo17.sucursal.SucursalInsertarActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_idsucursal"
+        android:id="@+id/textView18"
+        android:layout_marginTop="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_idempresa"
+        android:id="@+id/textView19"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_idzona"
+        android:id="@+id/textView20"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/textView19"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_nombresucursal"
+        android:id="@+id/textView21"
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_jefesucursal"
+        android:id="@+id/textView22"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_direccionsucursal"
+        android:id="@+id/textView23"
+        android:layout_below="@+id/textView22"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sucursal_telefonosucursal"
+        android:id="@+id/textView24"
+        android:layout_below="@+id/textView23"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editIdSucursal"
+        android:layout_above="@+id/textView19"
+        android:layout_toRightOf="@+id/textView22"
+        android:layout_toEndOf="@+id/textView22" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editIdEmpresa"
+        android:layout_above="@+id/textView20"
+        android:layout_alignLeft="@+id/editIdSucursal"
+        android:layout_alignStart="@+id/editIdSucursal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editIdZona"
+        android:layout_alignBottom="@+id/textView20"
+        android:layout_toRightOf="@+id/textView22"
+        android:layout_toEndOf="@+id/textView22" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNombreSucursal"
+        android:layout_toRightOf="@+id/textView21"
+        android:layout_above="@+id/textView22"
+        android:layout_alignRight="@+id/editIdZona"
+        android:layout_alignEnd="@+id/editIdZona" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editJefeSucursal"
+        android:layout_above="@+id/textView23"
+        android:layout_toRightOf="@+id/textView22"
+        android:layout_alignRight="@+id/editNombreSucursal"
+        android:layout_alignEnd="@+id/editNombreSucursal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editDireccionSucursal"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_toRightOf="@+id/textView23"
+        android:layout_alignRight="@+id/editJefeSucursal"
+        android:layout_alignEnd="@+id/editJefeSucursal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editTelefonoSucursal"
+        android:layout_alignBottom="@+id/textView24"
+        android:layout_toRightOf="@+id/textView23"
+        android:layout_toEndOf="@+id/textView23"
+        android:hint="@string/usuario_telefono_patron" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insertar_boton"
+        android:id="@+id/button10"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/editTelefonoSucursal"
+        android:layout_toStartOf="@+id/editTelefonoSucursal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar_boton"
+        android:id="@+id/button11"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button10"
+        android:layout_toEndOf="@+id/button10"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:onClick="limpiarTexto" />
 </RelativeLayout>

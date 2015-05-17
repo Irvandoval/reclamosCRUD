@@ -21,7 +21,7 @@ public class SucursalMenuActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listView = getListView();
-        listView.setBackgroundColor(Color.rgb(171, 71, 188));
+        listView.setBackgroundColor(Color.GREEN);
         setMenu(getResources()); // esto nos sirve para llenar el menu con opciones desde resources (string.xml)
         ArrayAdapter<String> adapter= new  ArrayAdapter<>(this,android.R.layout.simple_list_item_1, menu);
         setListAdapter(adapter);
@@ -31,7 +31,7 @@ public class SucursalMenuActivity extends ListActivity {
     protected void onListItemClick(ListView l,View v,int position,long id){
         super.onListItemClick(l, v, position, id);
         String nombreValue = activities[position];
-        l.getChildAt(position).setBackgroundColor(Color.rgb(128, 128, 255));
+        l.getChildAt(position).setBackgroundColor(Color.YELLOW);
         try{
             Class<?> clase=Class.forName("com.example.irvandoval.reclamosgrupo17.sucursal." + nombreValue);
             Intent inte = new Intent(this,clase);

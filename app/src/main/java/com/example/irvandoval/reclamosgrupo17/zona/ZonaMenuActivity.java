@@ -20,7 +20,7 @@ public class ZonaMenuActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listView = getListView();
-        listView.setBackgroundColor(Color.rgb(171, 71, 188));
+        listView.setBackgroundColor(Color.MAGENTA);
         setMenu(getResources()); // esto nos sirve para llenar el menu con opciones desde resources (string.xml)
         ArrayAdapter<String> adapter= new  ArrayAdapter<>(this,android.R.layout.simple_list_item_1, menu);
         setListAdapter(adapter);

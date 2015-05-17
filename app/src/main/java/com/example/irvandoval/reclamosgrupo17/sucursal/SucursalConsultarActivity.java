@@ -4,15 +4,31 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalConsultarActivity extends ActionBarActivity {
+    private EditText idSucursal;
+    private EditText idEmpresa;
+    private EditText idZona;
+    private EditText nombreSucursal;
+    private EditText jefeSucursal;
+    private EditText direccionSucursal;
+    private EditText telefonoSucursal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sucursal_consultar);
+        idSucursal =  (EditText) findViewById(R.id.editIdSucursal);
+        idEmpresa =  (EditText) findViewById(R.id.editIdEmpresa);
+        idZona = (EditText) findViewById(R.id.editIdZona);
+        nombreSucursal = (EditText) findViewById(R.id.editNombreSucursal);
+        jefeSucursal = (EditText) findViewById(R.id.editJefeSucursal);
+        direccionSucursal = (EditText) findViewById(R.id.editDireccionSucursal);
+        telefonoSucursal = (EditText) findViewById(R.id.editTelefonoSucursal);
     }
 
     @Override
@@ -35,5 +51,16 @@ public class SucursalConsultarActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void consultarSucursal(View v){}
+    public void limpiarTexto(View v){
+        idSucursal.setText("");
+        idEmpresa.setText("");
+        idZona.setText("");
+        nombreSucursal.setText("");
+        jefeSucursal.setText("");
+        direccionSucursal.setText("");
+        telefonoSucursal.setText("");
     }
 }
