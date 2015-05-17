@@ -1,40 +1,48 @@
 package com.example.irvandoval.reclamosgrupo17.empresa;
 
+import android.app.ListActivity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.irvandoval.reclamosgrupo17.R;
 
-public class EmpresaMenuActivity extends ActionBarActivity {
-
+public class EmpresaMenuActivity extends ListActivity {
+    String menu[]; // que opciones contendra el menu?
+    String activities[] = {"EmpresaInsertarActivity","EmpresaEliminarActivity"
+            ,"EmpresaConsultarActivity","EmpresaActualizarActivity"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_empresa_menu);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_empresa_menu, menu);
-        return true;
+        ListView listView = getListView();
+        listView.setBackgroundColor(Color.MAGENTA);
+        setMenu(getResources()); // esto nos sirve para llenar el menu con opciones desde resources (string.xml)
+        ArrayAdapter<String> adapter= new  ArrayAdapter<>(this,android.R.layout.simple_list_item_1, menu);
+        setListAdapter(adapter);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    protected void onListItemClick(ListView l,View v,int position,long id){
+        super.onListItemClick(l, v, position, id);
+        String nombreValue = activities[position];
+        l.getChildAt(position).setBackgroundColor(Color.MAGENTA);
+        try{
+            Class<?> clase=Class.forName("com.example.irvandoval.reclamosgrupo17.empresa." + nombreValue); //usuario se cambia por el que esten haciendo
+            Intent inte = new Intent(this,clase);
+            this.startActivity(inte);
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
         }
-
-        return super.onOptionsItemSelected(item);
+    }
+    private void setMenu(Resources res){
+        menu = new String[] {res.getString(R.string.insertar),res.getString(R.string.eliminar)
+                ,res.getString(R.string.consultar),res.getString(R.string.actualizar)};
     }
 }

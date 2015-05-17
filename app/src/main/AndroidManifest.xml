@@ -136,6 +136,22 @@
             android:name=".reclamo.ReclamoEliminarActivity"
             android:label="@string/title_activity_reclamo_eliminar" >
         </activity>
+        <activity
+            android:name=".empresa.EmpresaInsertarActivity"
+            android:label="@string/title_activity_empresa_insertar" >
+        </activity>
+        <activity
+            android:name=".empresa.EmpresaActualizarActivity"
+            android:label="@string/title_activity_empresa_actualizar" >
+        </activity>
+        <activity
+            android:name=".empresa.EmpresaConsultarActivity"
+            android:label="@string/title_activity_empresa_consultar" >
+        </activity>
+        <activity
+            android:name=".empresa.EmpresaEliminarActivity"
+            android:label="@string/title_activity_empresa_eliminar" >
+        </activity>
     </application>
 
 </manifest>

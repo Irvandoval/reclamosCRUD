@@ -83,5 +83,11 @@
     <string name="Fecha">Fecha</string>
     <string name="title_activity_reclamo_consular">ReclamoConsultarActivity</string>
     <string name="title_activity_reclamo_eliminar">ReclamoEliminarActivity</string>
+    <string name="title_activity_empresa_insertar">EmpresaInsertarActivity</string>
+    <string name="idempre">ID_Empresa</string>
+    <string name="nomEmp">Nombre</string>
+    <string name="title_activity_empresa_actualizar">EmpresaActualizarActivity</string>
+    <string name="title_activity_empresa_consultar">EmpresaConsultarActivity</string>
+    <string name="title_activity_empresa_eliminar">EmpresaEliminarActivity</string>
 
 </resources>
