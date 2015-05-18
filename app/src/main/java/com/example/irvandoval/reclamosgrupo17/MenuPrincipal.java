@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MenuPrincipal extends ListActivity {
@@ -19,6 +20,7 @@ public class MenuPrincipal extends ListActivity {
     // Elementos de los paquetes a que pertenecen las actividades
     String[] packages = {"usuario","reclamo","detallereclamo","estadoreclamo","prodserv","categoriaprodserv","empresa"
                         ,"categoriaempresa","sucursal","zona"};
+    ControlDB BDHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,12 @@ public class MenuPrincipal extends ListActivity {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-        } else {// si se ha elegido Llenar DB
-            //aqui hay que implementar el llenado de datos.
+        } else {
+            BDHelper = new ControlDB(getApplicationContext());
+            BDHelper.abrir();
+            String toast = BDHelper.llenarDB();
+            BDHelper.cerrar();
+            Toast.makeText(this,toast,Toast.LENGTH_SHORT).show();
         }
     }
 
