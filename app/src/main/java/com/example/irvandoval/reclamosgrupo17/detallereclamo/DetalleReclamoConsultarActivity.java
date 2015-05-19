@@ -1,25 +1,30 @@
-package com.example.irvandoval.reclamosgrupo17.categoriaempresa;
+package com.example.irvandoval.reclamosgrupo17.detallereclamo;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.irvandoval.reclamosgrupo17.R;
 
-public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
-
+/**
+ * Created by aspire e 14 on 17/05/2015.
+ */
+public class DetalleReclamoConsultarActivity extends ActionBarActivity {
+    EditText descripcion_detalle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria_empresa_insertar);
+        setContentView(R.layout.activity_detalle_reclamo_consultar);
+        descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_categoria_empresa_insertar, menu);
+        getMenuInflater().inflate(R.menu.menu_detalle_reclamo_consultar, menu);
         return true;
     }
 
@@ -37,4 +42,16 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void actualizarEstado(View v) {
+
+
+    }
+
+
+    public void limpiarTexto(View v) {
+        descripcion_detalle.setText("");
+
+    }
 }
+

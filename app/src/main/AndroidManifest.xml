@@ -29,6 +29,24 @@
             android:label="@string/title_activity_detalle_reclamo_menu" >
         </activity>
         <activity
+            android:name=".detallereclamo.DetalleReclamoActualizarActivity"
+            android:label="@string/title_activity_detalle_reclamo_actualizar" >
+        </activity>
+        <activity
+            android:name=".detallereclamo.DetalleReclamoConsultarActivity"
+            android:label="@string/title_activity_detalle_reclamo_consultar" >
+        </activity>
+        <activity
+            android:name=".detallereclamo.DetalleReclamoEliminarActivity"
+            android:label="@string/title_activity_detalle_reclamo_eliminar" >
+        </activity>
+        <activity
+            android:name=".detallereclamo.DetalleReclamoInsertarActivity"
+            android:label="@string/title_activity_detalle_reclamo_insertar" >
+        </activity>
+
+
+        <activity
             android:name=".prodserv.ProdServMenuActivity"
             android:label="@string/title_activity_prod_serv_menu" >
         </activity>

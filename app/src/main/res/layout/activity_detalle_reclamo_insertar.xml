@@ -10,59 +10,41 @@
     <TextView android:text="@string/detalle_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView28"
-        android:layout_below="@+id/editDetalle_id"
+        android:layout_marginTop="58dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editDescripcionDetalle"
         android:layout_alignBottom="@+id/textView28"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/editDetalle_id"
-        android:layout_alignStart="@+id/editDetalle_id" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/detalle_id"
-        android:id="@+id/textView"
-        android:layout_marginTop="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editDetalle_id"
-        android:layout_alignBottom="@+id/textView"
+        android:layout_toRightOf="@+id/textView28"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/actualizar_boton"
-        android:id="@+id/button15"
-        android:layout_alignParentBottom="true"
+        android:text="@string/insertar"
+        android:id="@+id/insertarEstado"
+        android:onClick="insertarEstado"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="147dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
-        android:layout_alignTop="@+id/button15"
+        android:onClick="limpiarTexto"
+        android:layout_alignTop="@+id/insertarEstado"
         android:layout_alignRight="@+id/editDescripcionDetalle"
         android:layout_alignEnd="@+id/editDescripcionDetalle" />
 
