@@ -152,6 +152,38 @@
             android:name=".empresa.EmpresaEliminarActivity"
             android:label="@string/title_activity_empresa_eliminar" >
         </activity>
+        <activity
+            android:name=".categoriaprodserv.CategoriaProdServInsertarActivity"
+            android:label="@string/title_activity_categoria_prod_serv_insertar" >
+        </activity>
+        <activity
+            android:name=".categoriaprodserv.CategoriaProdServActualizarActivity"
+            android:label="@string/title_activity_categoria_prod_serv_actualizar" >
+        </activity>
+        <activity
+            android:name=".categoriaprodserv.CategoriaProdServConsultarActivity"
+            android:label="@string/title_activity_categoria_prod_serv_consultar" >
+        </activity>
+        <activity
+            android:name=".categoriaprodserv.CategoriaProdServEliminarActivity"
+            android:label="@string/title_activity_categoria_prod_serv_eliminar" >
+        </activity>
+        <activity
+            android:name=".prodserv.ProdServInsertarActivity"
+            android:label="@string/title_activity_prod_serv_insertar" >
+        </activity>
+        <activity
+            android:name=".prodserv.ProdServActualizarActivity"
+            android:label="@string/title_activity_prod_serv_actualizar" >
+        </activity>
+        <activity
+            android:name=".prodserv.ProdServConsultarActivity"
+            android:label="@string/title_activity_prod_serv_consultar" >
+        </activity>
+        <activity
+            android:name=".prodserv.ProdServEliminarActivity"
+            android:label="@string/title_activity_prod_serv_eliminar" >
+        </activity>
     </application>
 
 </manifest>

@@ -91,5 +91,22 @@
     <string name="title_activity_empresa_actualizar">EmpresaActualizarActivity</string>
     <string name="title_activity_empresa_consultar">EmpresaConsultarActivity</string>
     <string name="title_activity_empresa_eliminar">EmpresaEliminarActivity</string>
+    <string name="title_activity_categoria_prod_serv_insertar">CategoriaProdServInsertarActivity
+    </string>
+    <string name="idCategoriaPS">ID_Categoria_Prod_Serv</string>
+    <string name="nombreCatPS">Nombre</string>
+    <string name="descripcionCatPS">Descripcion</string>
+    <string name="title_activity_categoria_prod_serv_actualizar">
+        CategoriaProdServActualizarActivity
+    </string>
+    <string name="title_activity_categoria_prod_serv_consultar">CategoriaProdServConsultarActivity
+    </string>
+    <string name="title_activity_categoria_prod_serv_eliminar">CategoriaProdServEliminarActivity
+    </string>
+    <string name="title_activity_prod_serv_insertar">ProdServInsertarActivity</string>
+    <string name="idProdServ">ID_Producto_Servicio</string>
+    <string name="title_activity_prod_serv_actualizar">ProdServActualizarActivity</string>
+    <string name="title_activity_prod_serv_consultar">ProdServConsultarActivity</string>
+    <string name="title_activity_prod_serv_eliminar">ProdServEliminarActivity</string>
 
 </resources>
