@@ -90,7 +90,8 @@
         android:layout_marginBottom="68dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_toEndOf="@+id/textView8"
+        android:onClick="insertarZona" />
 
     <Button
         android:layout_width="wrap_content"
