@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.irvandoval.reclamosgrupo17.categoriaprodserv.CategoriaProdServEliminarActivity">
+
+    <TextView android:text="@string/idCategoriaPS" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="46dp"
+        android:id="@+id/textView43" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_alignBottom="@+id/textView43"
+        android:layout_toRightOf="@+id/textView43"
+        android:layout_toEndOf="@+id/textView43"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/nombreCatPS"
+        android:id="@+id/textView44"
+        android:layout_below="@+id/textView43"
+        android:layout_alignLeft="@+id/textView43"
+        android:layout_alignStart="@+id/textView43"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombreCatPS"
+        android:layout_alignBottom="@+id/textView44"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/descripcionCatPS"
+        android:id="@+id/textView45"
+        android:layout_below="@+id/textView44"
+        android:layout_alignLeft="@+id/textView44"
+        android:layout_alignStart="@+id/textView44"
+        android:layout_marginTop="46dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_alignTop="@+id/textView45"
+        android:layout_alignLeft="@+id/nombreCatPS"
+        android:layout_alignStart="@+id/nombreCatPS" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar_boton"
+        android:id="@+id/button27"
+        android:layout_below="@+id/editText4"
+        android:layout_alignLeft="@+id/textView45"
+        android:layout_alignStart="@+id/textView45"
+        android:layout_marginTop="36dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar_boton"
+        android:id="@+id/button28"
+        android:layout_alignTop="@+id/button27"
+        android:layout_alignRight="@+id/nombreCatPS"
+        android:layout_alignEnd="@+id/nombreCatPS"
+        android:onClick="limpiarTexto3" />
+
+</RelativeLayout>
