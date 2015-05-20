@@ -259,13 +259,13 @@ public class ControlDB {
                         "BEGIN\n" +
                         "UPDATE categoria_prod_serv SET cantidad_productos = cantidad_productos + 1\n" +
                         "WHERE categoria_prod_serv.id_empresa = new.id_empresa;\n" +
-                        "END");
+                        "END;");
                 db.execSQL("CREATE TRIGGER update_cantidad_productos_delete\n" +
                         "AFTER DELETE ON prod_serv\n" +
                         "BEGIN\n" +
                         "UPDATE categoria_prod_serv SET cantidad_productos = cantidad_productos - 1\n" +
                         "WHERE categoria_prod_serv.id_empresa = OLD.id_empresa;\n" +
-                        "END");
+                        "END;");
                 db.execSQL("CREATE TRIGGER update_cantidad_productos_update\n" +
                         "AFTER UPDATE OF categoria_prod_serv ON prod_serv\n" +
                         "BEGIN\n" +
@@ -273,7 +273,53 @@ public class ControlDB {
                         "WHERE categoria_prod_serv.id_categoria_prod = new.id_categoria_prod;\n" +
                         "UPDATE categoria_prod_serv SET cantidad_productos = cantidad_productos - 1\n" +
                         "WHERE categoria_prod_serv.id_categoria_prod = old.id_categoria_prod;\n" +
-                        "END");
+                        "END;");
+                /********************************TRIGGERS DE ELIMINACION EN CASCADA***************************************/
+                db.execSQL("CREATE TRIGGER cascade_usuarios \n" +
+                        "BEFORE DELETE ON usuario\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM reclamo WHERE reclamo.dui = OLD.dui;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_categoria_empresa\n" +
+                        "BEFORE DELETE ON categoria_empresa\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM empresa WHERE empresa.id_categoria_emp = OLD.id_categoria_emp;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_prod_serv\n" +
+                        "BEFORE DELETE ON prod_serv\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM detalle_reclamo WHERE detalle_reclamo.id_prod_serv = OLD.id_prod_serv;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_categoria_prod\n" +
+                        "BEFORE DELETE ON categoria_prod_serv\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM  prod_serv WHERE prod_serv.id_categoria_prod = OLD.id_categoria_prod;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_estado_reclamo\n" +
+                        "BEFORE DELETE ON estado_reclamo\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM  reclamo WHERE reclamo.id_estado_reclamo = OLD.id_estado_reclamo;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_sucursal\n" +
+                        "BEFORE DELETE ON sucursal\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM  reclamo WHERE reclamo.id_sucursal = OLD.id_sucursal;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_detalle_reclamo\n" +
+                        "BEFORE DELETE ON detalle_reclamo\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM  reclamo WHERE reclamo.id_detalle = OLD.id_detalle;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_empresa\n" +
+                        "BEFORE DELETE ON empresa\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM sucursal WHERE sucursal.id_empresa = OLD.id_empresa;\n" +
+                        "END;");
+                db.execSQL("CREATE TRIGGER cascade_zona\n" +
+                        "BEFORE DELETE ON zona\n" +
+                        "FOR EACH ROW BEGIN\n" +
+                        "DELETE FROM sucursal WHERE sucursal.id_zona = OLD.id_zona;\n" +
+                        "END;");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -346,9 +392,6 @@ public class ControlDB {
     public String eliminar(Usuario usuario) {
         String regAfectados = "filas afectadas= ";
         int contador = 0;
-        if (false) {// si existen reclamos del usuario eliminamos los reclamos
-            contador += db.delete("reclamo", "dui = '" + usuario.getDui() + "'", null);
-        }
         contador += db.delete("usuario", "dui = '" + usuario.getDui() + "'", null);
         regAfectados += contador;
         return regAfectados;
@@ -409,9 +452,6 @@ public class ControlDB {
     public String eliminar(Zona zona) {
         String regAfectados = "filas afectadas= ";
         int contador = 0;
-        if (false) {// si existen sucursales con la zona ingresada
-            contador += db.delete("sucursal", "id_zona = '" + zona.getIdZona() + "'", null);
-        }
         contador += db.delete("zona", "id_zona = '" + zona.getIdZona() + "'", null);
         regAfectados += contador;
         return regAfectados;
@@ -467,7 +507,11 @@ public class ControlDB {
     }
 
     public String eliminar(CategoriaProdServ categoriaProdServ) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("categoria_prod_serv", "id_categoria_prod = '" + categoriaProdServ.getIdCategoriaProdServ() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public CategoriaProdServ consultarCategoriaProdServ(int idCategoriaProd) {
@@ -512,7 +556,11 @@ public class ControlDB {
     }
 
     public String eliminar(ProdServ prodServ) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("prod_serv", "id_prod_serv = '" + prodServ.getIdProdServ() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public ProdServ consultarProdServ(int idProdServ) {
@@ -553,7 +601,11 @@ public class ControlDB {
     }
 
     public String eliminar(EstadoReclamo estadoReclamo) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("estado_reclamo", "id_estado_reclamo = '" + estadoReclamo.getIdEstadoReclamo() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public EstadoReclamo consultarEstadoReclamo(int idEstadoReclamo) {
@@ -596,7 +648,11 @@ public class ControlDB {
     }
 
     public String eliminar(DetalleReclamo detalleReclamo) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("detalle_reclamo", "id_detalle = '" + detalleReclamo.getIdDetalle() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public DetalleReclamo consultarDetalleReclamo(int idDetaleReclamo) {
@@ -649,7 +705,11 @@ public class ControlDB {
     }
 
     public String eliminar(Reclamo reclamo) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("reclamo", "id_reclamo = '" + reclamo.getIdReclamo() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public Reclamo consultarReclamo(int idReclamo) {
@@ -694,7 +754,11 @@ public class ControlDB {
     }
 
     public String eliminar(Empresa empresa) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("empresa", "id_empresa = '" + empresa.getIdEmpresa() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public Reclamo consultarEmpresa(int idEmpresa) {
@@ -737,7 +801,11 @@ public class ControlDB {
     }
 
     public String eliminar(CategoriaEmpresa categoriaEmpresa) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("categoria_empresa", "id_categoria_emp = '" + categoriaEmpresa.getIdCategoriaEmp() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public Reclamo consultarCategoriaEmpresa(int idCategoriaEmpresa) {
@@ -788,7 +856,11 @@ public class ControlDB {
     }
 
     public String eliminar(Sucursal sucursal) {
-        return "";
+        String regAfectados = "filas afectadas= ";
+        int contador = 0;
+        contador += db.delete("sucursal", "id_sucursal = '" + sucursal.getIdSucursal() + "'", null);
+        regAfectados += contador;
+        return regAfectados;
     }
 
     public Reclamo consultarSucursal(int idSucursal) {
@@ -960,7 +1032,7 @@ public class ControlDB {
                 return false;
             }
 
-            case 15: // si existe una empresa y zona para la sucursal ingresada
+            case 15: //si existe id para la sucursal ingresada.
             {
                 Sucursal sucursal = (Sucursal) dato;
                 String[] id1 = {Integer.toString(sucursal.getIdSucursal())};
