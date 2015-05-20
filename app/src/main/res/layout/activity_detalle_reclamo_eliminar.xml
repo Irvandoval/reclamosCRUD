@@ -12,5 +12,5 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:id="@+id/editText6" />
+        android:id="@+id/editReclamo" />
 </RelativeLayout>

@@ -25,6 +25,25 @@
             android:label="@string/title_activity_estado_reclamo_menu" >
         </activity>
         <activity
+            android:name=".estadoreclamo.EstadoReclamoActualizarActivity"
+            android:label="@string/title_activity_estado_reclamo_actualizar" >
+        </activity>
+        <activity
+            android:name=".estadoreclamo.EstadoReclamoConsultarActivity"
+            android:label="@string/title_activity_estado_reclamo_consultar" >
+        </activity>
+        <activity
+            android:name=".estadoreclamo.EstadoReclamoEliminarActivity"
+            android:label="@string/title_activity_estado_reclamo_eliminar" >
+
+        </activity>
+        <activity
+            android:name=".estadoreclamo.EstadoReclamoInsertarActivity"
+            android:label="@string/title_activity_estado_reclamo_insertar" >
+        </activity>
+
+
+        <activity
             android:name=".detallereclamo.DetalleReclamoMenuActivity"
             android:label="@string/title_activity_detalle_reclamo_menu" >
         </activity>

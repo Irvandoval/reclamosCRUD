@@ -5,8 +5,16 @@
     <string name="action_settings">Configuracion</string>
     <string name="title_activity_usuario_actualizar">Actualizar Usuario</string>
     <string name="title_activity_usuario_menu">Tabla Usuario</string>
-    <string name="title_activity_estado_reclamo_menu">Tabla Estado Reclamo</string>
 
+
+    <string name="title_activity_estado_reclamo_menu">Tabla Estado Reclamo</string>
+     <string name="title_activity_estado_reclamo_insertar">Insertar Estado Reclamo</string>
+    <string name="title_activity_estado_reclamo_eliminar">Eliminar Estado Reclamo
+    </string>
+    <string name="title_activity_estado_reclamo_consultar">EstadoReclamoConsulatarActivity
+    </string>
+    <string name="title_activity_estado_reclamo_actualizar">EstadoReclamoActualizarActivity
+    </string>
 
     <string name="title_activity_detalle_reclamo_menu">Tabla Detalle Reclamo</string>
     <string name="title_activity_detalle_reclamo_insertar">
@@ -18,8 +26,6 @@
     </string>
     <string name="title_activity_detalle_reclamo_actualizar">DetalleReclamoActualizarActivity
     </string>
-
-
 
     <string name="title_activity_prod_serv_menu">Tabla Producto Servicio</string>
     <string name="title_activity_categoria_prod_serv_menu">Tabla Categoria Producto Servicio</string>
@@ -47,7 +53,8 @@
     <string name="eliminar">Eliminar Registro</string>
     <string name="consultar">Consultar Registro</string>
     <string name="actualizar">Actualizar Registro</string>
-  <!-- Resources para Sucursal-->
+
+    <!-- Resources para Sucursal-->
     <string name="sucursal_idsucursal">ID Sucursal</string>
     <string name="sucursal_idempresa">ID Empresa</string>
     <string name="sucursal_idzona">ID Zona</string>
@@ -83,6 +90,11 @@
     <!-- Resources para Detalle Reclamo -->
     <string name="detalle_id">ID Detalle Reclamo</string>
     <string name="detalle_Descripcion">Descripcion</string>
+
+    <!-- Resources para Estado Reclamo -->
+    <string name="estadoReclamo_id">Id del Estado</string>
+    <string name="estadoReclamo_nombre">Nombre</string>
+    <string name="estadoReclamo_Descripcion">Descripcion</string>
 
 
 <!-- opciones de botones-->
