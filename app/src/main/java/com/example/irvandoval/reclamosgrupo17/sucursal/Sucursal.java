@@ -13,7 +13,7 @@ public class Sucursal {
     private String telefonoSucursal;
 
 
-    private Sucursal(){
+    public Sucursal(){
     }
 
     public Sucursal(int idSucursal, int idEmpresa, int idZona, String nombreSucursal, String jefeSucursal, String direccionSucursal, String telefonoSucursal) {

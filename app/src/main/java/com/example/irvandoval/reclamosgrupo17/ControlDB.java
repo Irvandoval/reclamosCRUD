@@ -457,8 +457,8 @@ public class ControlDB {
         return regAfectados;
     }
 
-    public Zona consultarZona(String idZona) {
-        String[] id = {idZona};
+    public Zona consultarZona(int idZona) {
+        String[] id = {Integer.toString(idZona)};
         Cursor cursor = db.query("zona", camposZona, "id_zona = ?", id, null, null, null);
         if (cursor.moveToFirst()) {
             Zona zona = new Zona();
@@ -515,7 +515,18 @@ public class ControlDB {
     }
 
     public CategoriaProdServ consultarCategoriaProdServ(int idCategoriaProd) {
-        return null;
+        String[] id = {Integer.toString(idCategoriaProd)};
+        Cursor cursor = db.query("categoria_prod_serv", camposCategoriaProdServ, "id_categoria_prod = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            CategoriaProdServ categoriaProdServ = new CategoriaProdServ();
+            categoriaProdServ.setIdCategoriaProdServ(cursor.getInt(0));
+            categoriaProdServ.setNombreCategoriaPs(cursor.getString(1));
+            categoriaProdServ.setDescripcionCategoriaPs(cursor.getString(2));
+            categoriaProdServ.setCantidadProductos(cursor.getInt(3));
+            return categoriaProdServ;
+        } else
+            return null;
+
     }
 
     /**
@@ -564,7 +575,17 @@ public class ControlDB {
     }
 
     public ProdServ consultarProdServ(int idProdServ) {
-        return null;
+        String[] id = {Integer.toString(idProdServ)};
+        Cursor cursor = db.query("prod_serv", camposProdServ, "id_prod_serv = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            ProdServ prodServ = new ProdServ();
+            prodServ.setIdProdServ(cursor.getInt(0));
+            prodServ.setIdCategoriaProd(cursor.getInt(1));
+            prodServ.setNombreProdServ(cursor.getString(2));
+            prodServ.setDescripcionProdServ(cursor.getString(3));
+            return prodServ;
+        } else
+            return null;
     }
 
     /**
@@ -609,7 +630,16 @@ public class ControlDB {
     }
 
     public EstadoReclamo consultarEstadoReclamo(int idEstadoReclamo) {
-        return null;
+        String[] id = {Integer.toString(idEstadoReclamo)};
+        Cursor cursor = db.query("estado_reclamo", camposEstadoReclamo, "id_estado_reclamo = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            EstadoReclamo estadoReclamo = new EstadoReclamo();
+            estadoReclamo.setIdEstadoReclamo(cursor.getInt(0));
+            estadoReclamo.setNombreEstado(cursor.getString(1));
+            estadoReclamo.setDescripcionEstado(cursor.getString(2));
+            return estadoReclamo;
+        } else
+            return null;
     }
 
     /**
@@ -655,8 +685,17 @@ public class ControlDB {
         return regAfectados;
     }
 
-    public DetalleReclamo consultarDetalleReclamo(int idDetaleReclamo) {
-        return null;
+    public DetalleReclamo consultarDetalleReclamo(int idDetalleReclamo) {
+        String[] id = {Integer.toString(idDetalleReclamo)};
+        Cursor cursor = db.query("detalle_reclamo", camposDetalleReclamo, "id_detalle = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            DetalleReclamo detalleReclamo = new DetalleReclamo();
+            detalleReclamo.setIdDetalle(cursor.getInt(0));
+            detalleReclamo.setIdProdServ(cursor.getInt(1));
+            detalleReclamo.setDescripcionDetalle(cursor.getString(2));
+            return detalleReclamo;
+        } else
+            return null;
     }
 
     /**
@@ -713,7 +752,22 @@ public class ControlDB {
     }
 
     public Reclamo consultarReclamo(int idReclamo) {
-        return null;
+        String[] id = {Integer.toString(idReclamo)};
+        Cursor cursor = db.query("reclamo", camposReclamo, "id_reclamo = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            Reclamo reclamo = new Reclamo();
+            reclamo.setIdReclamo(cursor.getInt(0));
+            reclamo.setDui(cursor.getString(1));
+            reclamo.setIdEstadoReclamo(cursor.getInt(2));
+            reclamo.setIdSucursal(cursor.getInt(3));
+            reclamo.setIdDetalle(cursor.getInt(4));
+            reclamo.setTitulo(cursor.getString(5));
+            reclamo.setMotivoReclamo(cursor.getString(6));
+            reclamo.setFechaReclamo(cursor.getString(7));
+            return reclamo;
+        } else
+
+            return null;
     }
 
     /**
@@ -761,8 +815,18 @@ public class ControlDB {
         return regAfectados;
     }
 
-    public Reclamo consultarEmpresa(int idEmpresa) {
-        return null;
+    public Empresa consultarEmpresa(int idEmpresa) {
+        String[] id = {Integer.toString(idEmpresa)};
+        Cursor cursor = db.query("empresa", camposEmpresa, "id_empresa = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            Empresa empresa = new Empresa();
+            empresa.setIdEmpresa(cursor.getInt(0));
+            empresa.setIdCategoriaEmp(cursor.getInt(1));
+            empresa.setNombreEmpresa(cursor.getString(2));
+            empresa.setCantidadSucursales(cursor.getInt(3));
+            return empresa;
+        } else
+            return null;
     }
 
     /**
@@ -808,8 +872,19 @@ public class ControlDB {
         return regAfectados;
     }
 
-    public Reclamo consultarCategoriaEmpresa(int idCategoriaEmpresa) {
-        return null;
+    public CategoriaEmpresa consultarCategoriaEmpresa(int idCategoriaEmpresa) {
+
+        String[] id = {Integer.toString(idCategoriaEmpresa)};
+        Cursor cursor = db.query("categoria_empresa", camposCategoriaEmpresa, "id_categoria_emp = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            CategoriaEmpresa categoriaEmpresa = new CategoriaEmpresa();
+            categoriaEmpresa.setIdCategoriaEmp(cursor.getInt(0));
+            categoriaEmpresa.setNombreCategoriaEmp(cursor.getString(1));
+            categoriaEmpresa.setDescripcionCategoriaEmp(cursor.getString(2));
+            categoriaEmpresa.setCantidadEmpresas(cursor.getInt(3));
+            return categoriaEmpresa;
+        } else
+            return null;
     }
 
     /**
@@ -863,8 +938,21 @@ public class ControlDB {
         return regAfectados;
     }
 
-    public Reclamo consultarSucursal(int idSucursal) {
-        return null;
+    public Sucursal consultarSucursal(int idSucursal) {
+        String[] id = {Integer.toString(idSucursal)};
+        Cursor cursor = db.query("sucursal", camposSucursal, "id_sucursal = ?", id, null, null, null);
+        if (cursor.moveToFirst()) {
+            Sucursal sucursal = new Sucursal();
+            sucursal.setIdSucursal(cursor.getInt(0));
+            sucursal.setIdEmpresa(cursor.getInt(1));
+            sucursal.setIdZona(cursor.getInt(2));
+            sucursal.setNombreSucursal(cursor.getString(3));
+            sucursal.setJefeSucursal(cursor.getString(4));
+            sucursal.setDireccionSucursal(cursor.getString(5));
+            sucursal.setTelefonoSucursal(cursor.getString(6));
+            return sucursal;
+        } else
+            return null;
     }
 
     /**
