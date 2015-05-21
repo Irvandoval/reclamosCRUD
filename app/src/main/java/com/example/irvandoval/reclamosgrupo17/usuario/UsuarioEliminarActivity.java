@@ -1,12 +1,14 @@
 package com.example.irvandoval.reclamosgrupo17.usuario;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
@@ -45,6 +47,13 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
 
     public void eliminarAlumno(View v){
     // implementar eliminacion
+        ControlDB hero=new ControlDB(this);
+       Usuario herouser=new Usuario();
+        herouser.setDui(dui.getText().toString());
+        hero.abrir();
+     String msg= hero.eliminar(herouser);
+        hero.cerrar();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarTexto(View v){

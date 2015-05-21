@@ -1,13 +1,15 @@
 package com.example.irvandoval.reclamosgrupo17.usuario;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
 public class UsuarioActualizarActivity extends ActionBarActivity {
@@ -17,6 +19,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
     EditText email;
     EditText telefono;
     EditText edad;
+    EditText sexo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
         telefono.addTextChangedListener( new MaskTextWatcher("####-####"));
         edad = (EditText) findViewById(R.id.editUsuarioEdad);
+        sexo = (EditText) findViewById(R.id.editUsuarioSexo);
     }
 
     @Override
@@ -53,7 +57,22 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void actualizarUsuario(View v){
+    public void actualizarUsuario(View v) {
+     ControlDB hero=new ControlDB(this);
+        Usuario herouser=new Usuario();
+        herouser.setNombreUsuario(nombreUsuario.getText().toString());
+        herouser.setApellidoUsuario(apellidoUsuario.getText().toString());
+        herouser.setEmail(email.getText().toString());
+        herouser.setTelefono(telefono.getText().toString());
+        String tras=edad.getText().toString();
+        int tras2=Integer.parseInt(tras);
+        herouser.setEdad(tras2);
+        herouser.setSexo(sexo.getText().toString());
+        hero.abrir();
+        String msg=hero.actualizar(herouser);
+        hero.cerrar();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
     }
     public void limpiarTexto(View v){
         nombreUsuario.setText("");
@@ -62,6 +81,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         email.setText("");
         telefono.setText("");
         edad.setText("");
+        sexo.setText("");
     }
 
 }
