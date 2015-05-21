@@ -60,21 +60,26 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
     public void insertarUsuario(View v){
        Usuario nuevoUsuario = new Usuario();
         String res;
-        nuevoUsuario.setNombreUsuario(nombreUsuario.getText().toString());
-        nuevoUsuario.setApellidoUsuario(apellidoUsuario.getText().toString());
-        nuevoUsuario.setDui(dui.getText().toString());
-        nuevoUsuario.setEmail(email.getText().toString());
-        nuevoUsuario.setTelefono(telefono.getText().toString());
-        nuevoUsuario.setEdad(Integer.parseInt(edad.getText().toString()));
-        nuevoUsuario.setSexo(sexo.getText().toString());
-        //implementar insercion
-        ControlDB hero;
-        hero=new ControlDB(this);
-        hero.abrir();
-        res=hero.insertar(nuevoUsuario);
-        hero.cerrar();
-        Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
-
+        if (!camposVacios()) {
+            nuevoUsuario.setNombreUsuario(nombreUsuario.getText().toString());
+            nuevoUsuario.setApellidoUsuario(apellidoUsuario.getText().toString());
+            nuevoUsuario.setDui(dui.getText().toString());
+            nuevoUsuario.setEmail(email.getText().toString());
+            nuevoUsuario.setTelefono(telefono.getText().toString());
+            nuevoUsuario.setEdad(Integer.parseInt(edad.getText().toString()));
+            nuevoUsuario.setSexo(sexo.getText().toString());
+            //implementar insercion
+            ControlDB hero;
+            hero = new ControlDB(this);
+            hero.abrir();
+            res = hero.insertar(nuevoUsuario);
+            hero.cerrar();
+            if (res.equals("error_insertar")) {
+                Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 
@@ -87,4 +92,14 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
         edad.setText("");
         sexo.setText("");
     }
+
+    public boolean camposVacios(){
+        if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("")
+                || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
+                || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))
+            return true;
+        else
+            return false;
+    }
+
 }

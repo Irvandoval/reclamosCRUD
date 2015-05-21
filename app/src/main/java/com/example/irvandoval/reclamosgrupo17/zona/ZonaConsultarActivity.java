@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class ZonaConsultarActivity extends ActionBarActivity {
@@ -48,9 +50,24 @@ public class ZonaConsultarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void consultarZona(View v){}
+    public void consultarZona(View v){
+        ControlDB cdb = new ControlDB(this);
+        Zona nuevaZona = new Zona();
+        cdb.abrir();
+        nuevaZona = cdb.consultarZona(Integer.parseInt(idZona.getText().toString()));
+        if(nuevaZona == null){
 
-    public void limpiarTexto(){
+        }else {
+            idZona.setText(Integer.toString(nuevaZona.getIdZona()));
+            nombreZona.setText(nuevaZona.getNombreZona());
+            municipio.setText(nuevaZona.getMunicipio());
+            departamento.setText(nuevaZona.getDepartamento());
+            Toast.makeText(this, "Zona consultada", Toast.LENGTH_SHORT).show();
+        }
+        cdb.cerrar();
+    }
+
+    public void limpiarTexto(View v){
         idZona.setText("");
         nombreZona.setText("");
         municipio.setText("");

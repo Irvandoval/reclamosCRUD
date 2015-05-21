@@ -4,8 +4,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class ZonaActualizarActivity extends ActionBarActivity {
@@ -45,8 +48,20 @@ public class ZonaActualizarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void actualizarZona(){}
-    public void limpiarTexto(){
+    public void actualizarZona(View v){
+        Zona nuevaZona = new Zona();
+        String respuesta;
+        nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
+        nuevaZona.setNombreZona(nombreZona.getText().toString());
+        nuevaZona.setMunicipio(municipio.getText().toString());
+        nuevaZona.setDepartamento(departamento.getText().toString());
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        respuesta = cdb.actualizar(nuevaZona);
+        cdb.cerrar();
+        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+    }
+    public void limpiarTexto(View v){
         idZona.setText("");
         nombreZona.setText("");
         municipio.setText("");

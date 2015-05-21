@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteOpenHelper;
+import com.example.irvandoval.reclamosgrupo17.R;
 
 import com.example.irvandoval.reclamosgrupo17.categoriaempresa.CategoriaEmpresa;
 import com.example.irvandoval.reclamosgrupo17.categoriaprodserv.CategoriaProdServ;
@@ -427,7 +428,7 @@ public class ControlDB {
         zone.put("departamento", zona.getDepartamento());
         contador = db.insert("zona", null, zone);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insercion";
         } else {
             regInsertados = regInsertados + contador;
         }

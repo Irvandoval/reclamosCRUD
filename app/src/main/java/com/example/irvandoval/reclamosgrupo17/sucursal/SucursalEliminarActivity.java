@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalEliminarActivity extends ActionBarActivity {
@@ -43,5 +45,13 @@ public class SucursalEliminarActivity extends ActionBarActivity {
     }
 
     public void eliminarSucursal(View v){
+        Sucursal nuevaSucursal =  new Sucursal();
+        String respuesta;
+        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        respuesta = cdb.eliminar(nuevaSucursal);
+        cdb.cerrar();
+        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
     }
 }
