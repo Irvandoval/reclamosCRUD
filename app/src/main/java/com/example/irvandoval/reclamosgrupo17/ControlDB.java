@@ -48,7 +48,7 @@ public class ControlDB {
         public DataBaseHelper(Context context) {
             super(context, BASE_DATOS, null, VERSION);
         }
-
+//prueba irvandoval
         @Override
         public void onCreate(SQLiteDatabase db) {
             try {/********************************CREACION DE TABLAS************************/
