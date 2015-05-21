@@ -140,7 +140,7 @@
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
         android:layout_marginBottom="37dp"
-        android:onClick="consultarAlumno" />
+        android:onClick="consultarUsuario" />
 
     <Button
         android:layout_width="wrap_content"

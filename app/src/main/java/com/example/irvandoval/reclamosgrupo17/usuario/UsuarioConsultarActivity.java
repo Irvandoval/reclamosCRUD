@@ -57,12 +57,10 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void consultarAlumno(View v){
+    public void consultarUsuario(View v){
        ControlDB hero=new ControlDB(this);
         Usuario herouser=new Usuario();
         hero.abrir();
-
-
         herouser=hero.consultarUsuario(dui.getText().toString());
         hero.cerrar();
         if(herouser==null){

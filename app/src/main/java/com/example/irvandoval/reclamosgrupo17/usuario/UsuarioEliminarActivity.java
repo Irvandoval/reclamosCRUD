@@ -45,7 +45,7 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
     }
 
 
-    public void eliminarAlumno(View v){
+    public void eliminarUsuario(View v){
     // implementar eliminacion
         ControlDB hero=new ControlDB(this);
        Usuario herouser=new Usuario();
