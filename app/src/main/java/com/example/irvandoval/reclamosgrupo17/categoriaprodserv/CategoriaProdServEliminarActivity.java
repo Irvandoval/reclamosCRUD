@@ -6,18 +6,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.usuario.Usuario;
 
 public class CategoriaProdServEliminarActivity extends ActionBarActivity {
-    EditText nombCatPS;
-    EditText descriCatPS;
+    EditText IdCatPS;
+    //EditText nombCatPS;
+    //EditText descriCatPS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_prod_serv_eliminar);
-        nombCatPS = (EditText)findViewById(R.id.nombreCatPS);
-        descriCatPS = (EditText)findViewById(R.id.descripcionCatPS);
+        IdCatPS = (EditText)findViewById(R.id.editText3);
+        //nombCatPS = (EditText)findViewById(R.id.nombreCatPS);
+        //descriCatPS = (EditText)findViewById(R.id.descripcionCatPS);
     }
 
 
@@ -42,9 +47,22 @@ public class CategoriaProdServEliminarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void limpiarTexto3(View v){
 
-        nombCatPS.setText(" ");
-        descriCatPS.setText(" ");
+
+    public void eliminarCategoriaProdServ(View v){
+        if(IdCatPS.getText().toString().equals("")) {
+            ControlDB hero = new ControlDB(this);
+            CategoriaProdServ herouser = new CategoriaProdServ();
+            herouser.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
+            hero.abrir();
+            String msg = hero.eliminar(herouser);
+            hero.cerrar();
+            Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + msg, Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void limpiarTexto3(View v){
+        IdCatPS.setText(" ");
+        //nombCatPS.setText(" ");
+        //descriCatPS.setText(" ");
     }
 }

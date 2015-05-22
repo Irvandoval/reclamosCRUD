@@ -26,55 +26,16 @@
         android:layout_marginLeft="40dp"
         android:layout_marginStart="40dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/nombreCatPS"
-        android:id="@+id/textView44"
-        android:layout_below="@+id/textView43"
-        android:layout_alignLeft="@+id/textView43"
-        android:layout_alignStart="@+id/textView43"
-        android:layout_marginTop="37dp" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nombreCatPS"
-        android:layout_alignBottom="@+id/textView44"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/descripcionCatPS"
-        android:id="@+id/textView45"
-        android:layout_below="@+id/textView44"
-        android:layout_alignLeft="@+id/textView44"
-        android:layout_alignStart="@+id/textView44"
-        android:layout_marginTop="46dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_alignTop="@+id/textView45"
-        android:layout_alignLeft="@+id/nombreCatPS"
-        android:layout_alignStart="@+id/nombreCatPS" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/eliminar_boton"
         android:id="@+id/button27"
-        android:layout_below="@+id/editText4"
-        android:layout_alignLeft="@+id/textView45"
-        android:layout_alignStart="@+id/textView45"
-        android:layout_marginTop="36dp" />
+        android:onClick="eliminarCategoriaProdServ"
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/textView43"
+        android:layout_alignLeft="@+id/textView43"
+        android:layout_alignStart="@+id/textView43" />
 
     <Button
         android:layout_width="wrap_content"
@@ -82,8 +43,8 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button28"
         android:layout_alignTop="@+id/button27"
-        android:layout_alignRight="@+id/nombreCatPS"
-        android:layout_alignEnd="@+id/nombreCatPS"
-        android:onClick="limpiarTexto3" />
+        android:onClick="limpiarTexto3"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3" />
 
 </RelativeLayout>

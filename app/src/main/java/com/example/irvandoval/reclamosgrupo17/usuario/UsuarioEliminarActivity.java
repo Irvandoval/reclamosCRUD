@@ -57,7 +57,8 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
         }
     }
 
-    public void limpiarTexto(View v){
+    public void limpiarTexto(View v)
+    {
         dui.setText("");
     }
 }
