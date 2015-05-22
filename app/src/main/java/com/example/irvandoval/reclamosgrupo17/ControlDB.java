@@ -352,7 +352,7 @@ public class ControlDB {
      * *************CRUD DE USUARIO*********************************
      */
     public String insertar(Usuario usuario) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues user = new ContentValues();
         user.put("dui", usuario.getDui());
@@ -364,7 +364,7 @@ public class ControlDB {
         user.put("sexo", usuario.getSexo());
         contador = db.insert("usuario", null, user);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -419,7 +419,7 @@ public class ControlDB {
      * *******************METODOS CRUD DE ZONA**********************************
      */
     public String insertar(Zona zona) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues zone = new ContentValues();
         zone.put("id_zona", zona.getIdZona());
@@ -428,7 +428,7 @@ public class ControlDB {
         zone.put("departamento", zona.getDepartamento());
         contador = db.insert("zona", null, zone);
         if (contador == -1 || contador == 0) {
-            regInsertados = "error_insercion";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -476,7 +476,7 @@ public class ControlDB {
      * ********************CRUD CATEGORIA PROD SERV******************************
      */
     public String insertar(CategoriaProdServ categoriaProdServ) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues cps = new ContentValues();
         cps.put("id_categoria_prod", categoriaProdServ.getIdCategoriaProdServ());
@@ -485,7 +485,7 @@ public class ControlDB {
         cps.put("cantidad_productos", categoriaProdServ.getCantidadProductos());
         contador = db.insert("categoria_prod_serv", null, cps);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -534,7 +534,7 @@ public class ControlDB {
      * ********************CRUD PROD SERV**************************************
      */
     public String insertar(ProdServ prodServ) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         if (verificarIntegridad(prodServ, 1)) {
             ContentValues ps = new ContentValues();
@@ -545,7 +545,7 @@ public class ControlDB {
             contador = db.insert("prod_serv", null, ps);
         }
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -593,7 +593,7 @@ public class ControlDB {
      * **************************CRUD ESTADO RECLAMO*****************************
      */
     public String insertar(EstadoReclamo estadoReclamo) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues er = new ContentValues();
         er.put("id_estado_reclamo", estadoReclamo.getIdEstadoReclamo());
@@ -601,7 +601,7 @@ public class ControlDB {
         er.put("descripcion_estado", estadoReclamo.getDescripcionEstado());
         contador = db.insert("estado_reclamo", null, er);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -647,7 +647,7 @@ public class ControlDB {
      * ************************CRUD DETALLE RECLAMO*******************************
      */
     public String insertar(DetalleReclamo detalleReclamo) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         if (verificarIntegridad(detalleReclamo, 2)) {
             ContentValues dr = new ContentValues();
@@ -657,7 +657,7 @@ public class ControlDB {
             contador = db.insert("detalle_reclamo", null, dr);
         }
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -703,7 +703,7 @@ public class ControlDB {
      * **************************CRUD RECLAMO*************************************
      */
     public String insertar(Reclamo reclamo) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         if (verificarIntegridad(reclamo, 3)) {
             ContentValues dr = new ContentValues();
@@ -718,7 +718,7 @@ public class ControlDB {
             contador = db.insert("reclamo", null, dr);
         }
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -775,7 +775,7 @@ public class ControlDB {
      * ************************CRUD EMPRESA****************************************
      */
     public String insertar(Empresa empresa) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues emp = new ContentValues();
         if (verificarIntegridad(empresa, 4)) {
@@ -786,7 +786,7 @@ public class ControlDB {
             contador = db.insert("empresa", null, emp);
         }
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -834,7 +834,7 @@ public class ControlDB {
      * ************************CRUD CATEGORIA EMPRESA******************************
      */
     public String insertar(CategoriaEmpresa categoriaEmpresa) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues cemp = new ContentValues();
         cemp.put("id_categoria_emp", categoriaEmpresa.getIdCategoriaEmp());
@@ -843,7 +843,7 @@ public class ControlDB {
         cemp.put("cantidad_empresas", categoriaEmpresa.getCantidadEmpresas());
         contador = db.insert("categoria_empresa", null, cemp);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }
@@ -892,7 +892,7 @@ public class ControlDB {
      * ************************CRUD SUCURSAL***************************************
      */
     public String insertar(Sucursal sucursal) {
-        String regInsertados = "Registro Insertado No= ";
+        String regInsertados = "";
         long contador = 0;
         ContentValues sc = new ContentValues();
         if (verificarIntegridad(sucursal, 5)) {
@@ -906,7 +906,7 @@ public class ControlDB {
         }
         contador = db.insert("sucursal", null, sc);
         if (contador == -1 || contador == 0) {
-            regInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
         }

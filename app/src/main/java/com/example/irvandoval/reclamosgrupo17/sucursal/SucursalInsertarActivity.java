@@ -66,10 +66,23 @@ public class SucursalInsertarActivity extends ActionBarActivity {
         ControlDB cdb =  new ControlDB(this);
         cdb.abrir();
         respuesta = cdb.insertar(nuevaSucursal);
-        cdb.cerrar();
+        if (respuesta.equals("error_insertar")) {
+            Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + respuesta, Toast.LENGTH_SHORT).show();
+        }
         Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
 
     }
+     public boolean camposVacios(){
+         if(idSucursal.getText().toString().equals("") || idEmpresa.getText().toString().equals("")
+                 || idZona.getText().toString().equals("") || telefonoSucursal.getText().toString().equals("")
+                 || nombreSucursal.getText().toString().equals("") || direccionSucursal.getText().toString().equals("")
+                 ||jefeSucursal.getText().toString().equals("")){
+             return true;
+         }else
+             return false;
+     }
     public void limpiarTexto(View v){
         idSucursal.setText("");
         idEmpresa.setText("");

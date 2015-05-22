@@ -54,6 +54,13 @@
     <string name="consultar">Consultar Registro</string>
     <string name="actualizar">Actualizar Registro</string>
 
+    <!-- Resources para Empresa-->
+    <string name="empresa_idempresa">ID Empresa</string>
+    <string name="empresa_idcategoriaempresa">ID Categoria Empresa</string>
+    <string name="empresa_nombreempresa">Nombre Empresa</string>
+    <string name="empresa_cantidadsucursales">Cantidad Sucursales</string>
+
+
     <!-- Resources para Sucursal-->
     <string name="sucursal_idsucursal">ID Sucursal</string>
     <string name="sucursal_idempresa">ID Empresa</string>
@@ -72,14 +79,14 @@
     <string name="usuario_idusuario">ID Usuario</string>
     <string name="usuario_nombre">Nombre</string>
     <string name="usuario_apellido">Apellido</string>
-    <string name="usuario_dui">DUI</string>
+    <string name="usuario_dui" translatable="false">DUI</string>
     <string name="usuario_email">Correo Electronico</string>
     <string name="usuario_telefono">Teléfono</string>
     <string name="usuario_edad">Edad</string>
     <string name="usuario_sexo">Sexo</string>
-    <string name="usuario_dui_patron">########-#</string>
-    <string name="usuario_telefono_patron">####-####</string>
-    <string name="usuario_sexo_patron">F o M</string>
+    <string name="usuario_dui_patron" translatable="false">########-#</string>
+    <string name="usuario_telefono_patron" translatable="false">####-####</string>
+    <string name="usuario_sexo_patron" translatable="false">F o M</string>
 
     <!-- Resources para Zona -->
     <string name="zona_idzona">ID Zona</string>
@@ -141,4 +148,5 @@
     <string name="title_activity_prod_serv_eliminar">ProdServEliminarActivity</string>
 
     <string name="error_insertar">Error al Insertar el registro, Registro Duplicado. Verificar inserción</string>
+    <string name="cantidad_insertados">Registro Insertado No= </string>
 </resources>

@@ -68,16 +68,15 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
             nuevoUsuario.setTelefono(telefono.getText().toString());
             nuevoUsuario.setEdad(Integer.parseInt(edad.getText().toString()));
             nuevoUsuario.setSexo(sexo.getText().toString());
-            //implementar insercion
             ControlDB hero;
             hero = new ControlDB(this);
             hero.abrir();
             res = hero.insertar(nuevoUsuario);
-            hero.cerrar();
+            System.err.println("AL SALIR IMPRIME: " + res);
             if (res.equals("error_insertar")) {
                 Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + res, Toast.LENGTH_SHORT).show();
             }
         }
 
