@@ -110,6 +110,11 @@
     <string name="estadoReclamo_consultado">Estado Resultado Consultado</string>
     <string name="estadoReclamo_noencontrado">Estado Reclamo no encontrado</string>
 
+
+    <!-- para Consulta Categoria Producto Servicio -->
+
+    <string name="ConsultaCatProdServ">Categoria de prod serv Consultada</string>
+    <string name="noenc_ConsultaCatProdServ">Consulta no encontrada</string>
 <!-- opciones de botones-->
     <string name="insertar_boton">Insertar</string>
     <string name="limpiar_boton">Limpiar</string>
