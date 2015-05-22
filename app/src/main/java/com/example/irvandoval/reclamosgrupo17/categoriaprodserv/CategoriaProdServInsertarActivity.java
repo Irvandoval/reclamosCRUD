@@ -6,16 +6,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.usuario.Usuario;
 
 public class CategoriaProdServInsertarActivity extends ActionBarActivity {
+ EditText IdCatPS;
  EditText nombCatPS;
  EditText descriCatPS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_prod_serv_insertar);
+        IdCatPS = (EditText)findViewById(R.id.id_CategoriaPS);
         nombCatPS = (EditText)findViewById(R.id.nombreCatPS);
         descriCatPS = (EditText)findViewById(R.id.descripcionCatPS);
     }
@@ -42,9 +47,38 @@ public class CategoriaProdServInsertarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void insertarCategoriaprodServInsertar(View v){
+        CategoriaProdServ nuevoCategoriaProdServ = new CategoriaProdServ();
+        String res;
+        if (!camposVacios()) {
+            nuevoCategoriaProdServ.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
+            nuevoCategoriaProdServ.setNombreCategoriaPs(nombCatPS.getText().toString());
+            nuevoCategoriaProdServ.setDescripcionCategoriaPs(descriCatPS.getText().toString());
+            ControlDB hero;
+            hero = new ControlDB(this);
+            hero.abrir();
+            res = hero.insertar(nuevoCategoriaProdServ);
+            System.err.println("AL SALIR IMPRIME: " + res);
+            if (res.equals("error_insertar")) {
+                Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + res, Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
     public void limpiarTexto3(View v){
 
         nombCatPS.setText(" ");
         descriCatPS.setText(" ");
+    }
+
+    public boolean camposVacios(){
+        if(IdCatPS.getText().toString().equals("") || nombCatPS.getText().toString().equals("") || descriCatPS.getText().toString().equals(""))
+            return true;
+        else
+            return false;
     }
 }
