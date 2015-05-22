@@ -69,6 +69,8 @@
     <string name="sucursal_jefesucursal">Jefe Sucursal</string>
     <string name="sucursal_direccionsucursal">Direccion Sucursal</string>
     <string name="sucursal_telefonosucursal">Telefono Sucursal</string>
+    <string name="sucursal_consultada">Sucursal Consultada</string>
+    <string name="sucursal_noencontrada">Sucursal no encontrada</string>
 
     <string name="title_activity_sucursal_actualizar">SucursalActualizarActivity</string>
     <string name="title_activity_sucursal_eliminar">SucursalEliminarActivity</string>
@@ -87,13 +89,16 @@
     <string name="usuario_dui_patron" translatable="false">########-#</string>
     <string name="usuario_telefono_patron" translatable="false">####-####</string>
     <string name="usuario_sexo_patron" translatable="false">F o M</string>
+    <string name="usuario_consultado">Usuario Consultado</string>
+    <string name="usuario_noencontrado">Usuario no encontrado</string>
 
     <!-- Resources para Zona -->
     <string name="zona_idzona">ID Zona</string>
     <string name="zona_nombre">Nombre Zona</string>
     <string name="zona_departamento">Departamento</string>
     <string name="zona_municipio">Municipio</string>
-
+    <string name= "zona_consultada">Zona Consultada</string>
+    <string name="zona_noencontrada">Zona no encontrada</string>
     <!-- Resources para Detalle Reclamo -->
     <string name="detalle_id">ID Detalle Reclamo</string>
     <string name="detalle_Descripcion">Descripcion</string>
@@ -102,7 +107,8 @@
     <string name="estadoReclamo_id">Id del Estado</string>
     <string name="estadoReclamo_nombre">Nombre</string>
     <string name="estadoReclamo_Descripcion">Descripcion</string>
-
+    <string name="estadoReclamo_consultado">Estado Resultado Consultado</string>
+    <string name="estadoReclamo_noencontrado">Estado Reclamo no encontrado</string>
 
 <!-- opciones de botones-->
     <string name="insertar_boton">Insertar</string>

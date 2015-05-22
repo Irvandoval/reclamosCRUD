@@ -52,6 +52,6 @@ public class SucursalEliminarActivity extends ActionBarActivity {
         cdb.abrir();
         respuesta = cdb.eliminar(nuevaSucursal);
         cdb.cerrar();
-        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + respuesta, Toast.LENGTH_SHORT).show();
     }
 }

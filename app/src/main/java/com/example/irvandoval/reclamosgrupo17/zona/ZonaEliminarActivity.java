@@ -50,7 +50,7 @@ public class ZonaEliminarActivity extends ActionBarActivity {
         hero.abrir();
         String msg= hero.eliminar(nuevaZona);
         hero.cerrar();
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + msg, Toast.LENGTH_SHORT).show();
     }
 
 }

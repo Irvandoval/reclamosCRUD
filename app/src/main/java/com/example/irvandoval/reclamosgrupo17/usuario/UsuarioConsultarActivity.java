@@ -59,12 +59,12 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
 
     public void consultarUsuario(View v){
        ControlDB hero=new ControlDB(this);
-        Usuario herouser=new Usuario();
+        Usuario herouser;
         hero.abrir();
         herouser=hero.consultarUsuario(dui.getText().toString());
         hero.cerrar();
         if(herouser==null){
-            Toast.makeText(this, "Usuario no found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.usuario_noencontrado), Toast.LENGTH_SHORT).show();
         }else{
             nombreUsuario.setText(herouser.getNombreUsuario());
             apellidoUsuario.setText(herouser.getApellidoUsuario());
@@ -72,7 +72,7 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
             telefono.setText(herouser.getTelefono());
             edad.setText(String.valueOf(herouser.getEdad()));
             sexo.setText(herouser.getSexo());
-            Toast.makeText(this, "Usuario consultado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.usuario_consultado), Toast.LENGTH_SHORT).show();
         }
 
     }
