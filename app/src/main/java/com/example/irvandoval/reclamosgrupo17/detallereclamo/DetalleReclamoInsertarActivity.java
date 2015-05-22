@@ -55,7 +55,7 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
         String regInsertados;
         DetalleReclamo nuevoDetalle= new DetalleReclamo();
         nuevoDetalle.setIdDetalle(Integer.parseInt(detalle_id.getText().toString()));
-        nuevoDetalle.setIdDetalle(Integer.parseInt(prod_ser.getText().toString()));
+        nuevoDetalle.setIdProdServ(Integer.parseInt(prod_ser.getText().toString()));
         nuevoDetalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
         helper.abrir();
         regInsertados=helper.insertar(nuevoDetalle);

@@ -259,13 +259,13 @@ public class ControlDB {
                         "AFTER INSERT ON prod_serv\n" +
                         "BEGIN\n" +
                         "UPDATE categoria_prod_serv SET cantidad_productos = cantidad_productos + 1\n" +
-                        "WHERE categoria_prod_serv.id_empresa = new.id_empresa;\n" +
+                        "WHERE categoria_prod_serv.id_categoria_prod = new.id_categoria_prod;\n" +
                         "END;");
                 db.execSQL("CREATE TRIGGER update_cantidad_productos_delete\n" +
                         "AFTER DELETE ON prod_serv\n" +
                         "BEGIN\n" +
                         "UPDATE categoria_prod_serv SET cantidad_productos = cantidad_productos - 1\n" +
-                        "WHERE categoria_prod_serv.id_empresa = OLD.id_empresa;\n" +
+                        "WHERE categoria_prod_serv.id_categoria_prod = OLD.id_categoria_prod;\n" +
                         "END;");
                 db.execSQL("CREATE TRIGGER update_cantidad_productos_update\n" +
                         "AFTER UPDATE OF categoria_prod_serv ON prod_serv\n" +
@@ -649,7 +649,9 @@ public class ControlDB {
     public String insertar(DetalleReclamo detalleReclamo) {
         String regInsertados = "";
         long contador = 0;
+        System.err.println("funcion insertar detalle reclamo " + detalleReclamo.getIdProdServ());
         if (verificarIntegridad(detalleReclamo, 2)) {
+            System.err.println("SE LOGRA METER");
             ContentValues dr = new ContentValues();
             dr.put("id_detalle", detalleReclamo.getIdDetalle());
             dr.put("id_prod_serv", detalleReclamo.getIdProdServ());
@@ -657,6 +659,7 @@ public class ControlDB {
             contador = db.insert("detalle_reclamo", null, dr);
         }
         if (contador == -1 || contador == 0) {
+
             regInsertados = "error_insertar";
         } else {
             regInsertados = regInsertados + contador;
@@ -1147,9 +1150,25 @@ public class ControlDB {
         final String[] VUtelefono = {"2222-2222", "2222-2221"};
         final int[] VUedad = {35, 12};
         final String[] VUsexo = {"M", "M"};
+        /****************************************************/
+        final int[] VCpsId  = {1,2};
+        final String[] VCpsnombre = {"Telefonia","Internet"};
+        final String[] VCpsDescripcion = {"servicio de redes y venta de telefonos","servicio de Internet"};
+        final int[] VCpsCantidadProductos = {0,0};
+        /*********************************************************/
+        final int[] VPsIdProdServ = {1,2};
+        final int[] VPsIdCategoriaPs = {1,2};
+        final String[] VPsNombreProd = {"Telefono Samsung Galaxy","Internet Residencial"};
+        final String[] VPsDescripcionProd = {"telefono inteligente","Internet para uso residencial"};
+        /***********************************************************/
+
         abrir();
         db.execSQL("DELETE FROM usuario");
+        db.execSQL("DELETE FROM categoria_prod_serv");
+        //db.execSQL("DELETE FROM prod_serv");
         Usuario usuario = new Usuario();
+        CategoriaProdServ categoriaProdServ =  new CategoriaProdServ();
+        ProdServ prodServ = new ProdServ();
         for (int i = 0; i < 2; i++) {
             usuario.setDui(VUdui[i]);
             usuario.setNombreUsuario(VUnombre[i]);
@@ -1159,6 +1178,21 @@ public class ControlDB {
             usuario.setEdad(VUedad[i]);
             usuario.setSexo(VUsexo[i]);
             insertar(usuario);
+        }
+
+        for (int i = 0; i < 2; i++){
+            categoriaProdServ.setIdCategoriaProdServ(VCpsId[i]);
+            categoriaProdServ.setNombreCategoriaPs(VCpsnombre[i]);
+            categoriaProdServ.setDescripcionCategoriaPs(VCpsDescripcion[i]);
+            categoriaProdServ.setCantidadProductos(VCpsCantidadProductos[i]);
+            insertar(categoriaProdServ);
+        }
+        for (int i = 0; i < 2; i++){
+            prodServ.setIdProdServ(VPsIdProdServ[i]);
+            prodServ.setIdCategoriaProd(VPsIdCategoriaPs[i]);
+            prodServ.setDescripcionProdServ(VPsDescripcionProd[i]);
+            prodServ.setNombreProdServ(VPsNombreProd[i]);
+            insertar(prodServ);
         }
         cerrar();
         return "Guardo Correctamente";
