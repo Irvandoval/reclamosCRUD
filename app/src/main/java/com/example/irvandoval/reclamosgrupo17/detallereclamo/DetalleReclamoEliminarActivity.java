@@ -15,20 +15,20 @@ import com.example.irvandoval.reclamosgrupo17.R;
  * Created by aspire e 14 on 19/05/2015.
  */
 public class DetalleReclamoEliminarActivity extends ActionBarActivity {
-    ControlDB helper;
+
     EditText id_detalle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuario_eliminar);
+        setContentView(R.layout.activity_detalle_reclamo_eliminar);
         id_detalle = (EditText) findViewById(R.id.editDetalle_id);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_usuario_eliminar, menu);
+        getMenuInflater().inflate(R.menu.menu_detalle_reclamo_eliminar, menu);
         return true;
     }
 
@@ -49,17 +49,18 @@ public class DetalleReclamoEliminarActivity extends ActionBarActivity {
 
 
     public void eliminarDetalle(View v) {
-
-        String regEliminadas;
-        DetalleReclamo detalle= new DetalleReclamo();
-        detalle.setIdDetalle(Integer.parseInt(id_detalle.getText().toString()));
-        helper.abrir();
-        regEliminadas=helper.eliminar(detalle);
-        helper.cerrar();
-        Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
-        // implementar eliminacion
+        if (!id_detalle.getText().toString().equals("")) {
+            ControlDB helper = new ControlDB(this);
+            String regEliminadas;
+            DetalleReclamo detalle = new DetalleReclamo();
+            detalle.setIdDetalle(Integer.parseInt(id_detalle.getText().toString()));
+            helper.abrir();
+            regEliminadas = helper.eliminar(detalle);
+            helper.cerrar();
+            Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
+            // implementar eliminacion
+        }
     }
-
     public void limpiarTexto(View v) {
         id_detalle.setText("");
     }

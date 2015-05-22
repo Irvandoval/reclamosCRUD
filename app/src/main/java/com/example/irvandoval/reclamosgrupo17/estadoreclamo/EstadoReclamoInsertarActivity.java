@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
  */
 public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
     ControlDB helper;
+    EditText idEstadoReclamo;
     EditText nombre_estado;
     EditText descripcion_estado;
 
@@ -56,13 +57,22 @@ public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
     public void insertarEstadoReclamo(View v) {
         String regInsertados;
         EstadoReclamo estado=new EstadoReclamo ();
+        estado.setIdEstadoReclamo(Integer.parseInt(idEstadoReclamo.getText().toString()));
         estado.setNombreEstado(nombre_estado.getText().toString());
         estado.setDescripcionEstado(descripcion_estado.getText().toString());
         helper.abrir();
         regInsertados=helper.insertar(estado);
         helper.cerrar();
         Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
+
+
     }
+
+
+
+
+
+
 
 
 

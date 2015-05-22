@@ -14,7 +14,7 @@ import com.example.irvandoval.reclamosgrupo17.R;
  * Created by aspire e 14 on 19/05/2015.
  */
 public class DetalleReclamoActualizarActivity extends ActionBarActivity {
-    ControlDB helper;
+
     EditText editDetalle_id;
     EditText descripcion_detalle;
 
@@ -22,7 +22,6 @@ public class DetalleReclamoActualizarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_reclamo_actualizar);
-        helper = new ControlDB(this);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
     }
 
@@ -49,6 +48,7 @@ public class DetalleReclamoActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarDetalle(View v) {
+        ControlDB helper = new ControlDB(this);
         DetalleReclamo detalle = new DetalleReclamo();
         detalle.setIdDetalle(Integer.parseInt(editDetalle_id.getText().toString()));
         detalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
