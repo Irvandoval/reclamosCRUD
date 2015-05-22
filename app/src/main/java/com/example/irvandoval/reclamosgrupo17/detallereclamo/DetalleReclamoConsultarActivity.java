@@ -6,18 +6,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-
+import android.widget.Toast;
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 /**
  * Created by aspire e 14 on 17/05/2015.
  */
 public class DetalleReclamoConsultarActivity extends ActionBarActivity {
+    ControlDB helper;
+    EditText editDetalle_id;
     EditText descripcion_detalle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_reclamo_consultar);
+        helper = new ControlDB(this);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
     }
 
@@ -43,10 +47,22 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void actualizarEstado(View v) {
+    public void consultarDetalle(View v) {
+        helper.abrir();
+        DetalleReclamo detalle =
+                helper.consultarDetalleReclamo(Integer.parseInt(editDetalle_id.getText().toString()));
+        helper.cerrar();
+        if(detalle == null)
+            Toast.makeText(this, "Detalle con el ID " +
+                    editDetalle_id.getText().toString() +
+                    " no encontrado", Toast.LENGTH_LONG).show();
+        else{
+            editDetalle_id.setText(detalle.getDescripcionDetalle());
 
-
+        }
     }
+
+
 
 
     public void limpiarTexto(View v) {

@@ -10,18 +10,18 @@
     <TextView android:text="@string/detalle_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView28"
-        android:layout_below="@+id/editDetalle_id"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
+        android:layout_marginTop="115dp"
+        android:layout_below="@+id/button15"
+        android:layout_alignLeft="@+id/button15"
+        android:layout_alignStart="@+id/button15" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editDescripcionDetalle"
         android:layout_alignBottom="@+id/textView28"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/editDetalle_id"
+        android:layout_alignEnd="@+id/editDetalle_id"
         android:layout_alignLeft="@+id/editDetalle_id"
         android:layout_alignStart="@+id/editDetalle_id" />
 
@@ -50,20 +50,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/actualizar_boton"
+        android:text="@string/consultar_boton"
         android:id="@+id/button15"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="147dp"
-        android:onClick="actualizarEstado"/>
+        android:onClick="consultarDetalle"
+        android:layout_marginTop="94dp"
+        android:layout_below="@+id/textView"
+        android:layout_toLeftOf="@+id/editDescripcionDetalle"
+        android:layout_toStartOf="@+id/editDescripcionDetalle" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
-        android:layout_alignTop="@+id/button15"
+        android:layout_marginRight="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_above="@+id/textView28"
         android:layout_alignRight="@+id/editDescripcionDetalle"
         android:layout_alignEnd="@+id/editDescripcionDetalle" />
 

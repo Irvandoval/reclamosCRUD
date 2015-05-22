@@ -6,16 +6,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 /**
  * Created by aspire e 14 on 19/05/2015.
  */
 public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
+    ControlDB helper;
+    EditText detalle_id;
+    EditText prod_ser;
     EditText descripcion_detalle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_reclamo_insertar);
+        helper = new ControlDB(this);
+        detalle_id= (EditText) findViewById(R.id.editDetalle_id);
+        prod_ser= (EditText) findViewById(R.id.idProdServ);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
     }
 
@@ -42,13 +52,22 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
     }
 
     public void insertarEstado(View v) {
+        String regInsertados;
         DetalleReclamo nuevoDetalle= new DetalleReclamo();
+        nuevoDetalle.setIdDetalle(Integer.parseInt(detalle_id.getText().toString()));
+        nuevoDetalle.setIdDetalle(Integer.parseInt(prod_ser.getText().toString()));
         nuevoDetalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
+        helper.abrir();
+        regInsertados=helper.insertar(nuevoDetalle);
+        helper.cerrar();
+        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
 
     }
 
 
     public void limpiarTexto(View v) {
+        detalle_id.setText("");
+        prod_ser.setText("");
         descripcion_detalle.setText("");
 
     }

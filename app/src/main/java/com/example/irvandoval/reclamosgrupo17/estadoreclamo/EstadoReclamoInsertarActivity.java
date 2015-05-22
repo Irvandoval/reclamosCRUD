@@ -6,13 +6,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+
+import java.util.ResourceBundle;
 
 /**
  * Created by aspire e 14 on 19/05/2015.
  */
 public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
+    ControlDB helper;
     EditText nombre_estado;
     EditText descripcion_estado;
 
@@ -20,6 +25,7 @@ public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estado_reclamo_insertar);
+        helper = new ControlDB (this);
         nombre_estado = (EditText) findViewById(R.id.editNombreEstado);
         descripcion_estado = (EditText) findViewById(R.id.editDescripcionEstado);
 
@@ -48,9 +54,17 @@ public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
     }
 
     public void insertarEstadoReclamo(View v) {
-
-
+        String regInsertados;
+        EstadoReclamo estado=new EstadoReclamo ();
+        estado.setNombreEstado(nombre_estado.getText().toString());
+        estado.setDescripcionEstado(descripcion_estado.getText().toString());
+        helper.abrir();
+        regInsertados=helper.insertar(estado);
+        helper.cerrar();
+        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
     }
+
+
 
     public void limpiarTexto(View v) {
         nombre_estado.setText("");
