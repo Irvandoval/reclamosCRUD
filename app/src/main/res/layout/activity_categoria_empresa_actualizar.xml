@@ -6,7 +6,80 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.irvandoval.reclamosgrupo17.categoriaempresa.CategoriaEmpresaActulizarActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/idcatempresa"
+        android:id="@+id/textView50"
+        android:layout_above="@+id/button17"
+        android:layout_alignLeft="@+id/button17"
+        android:layout_alignStart="@+id/button17"
+        android:layout_marginBottom="57dp" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/IDCE"
+        android:layout_alignTop="@+id/textView50"
+        android:layout_alignRight="@+id/DescripcionCE"
+        android:layout_alignEnd="@+id/DescripcionCE" />
+    <TextView android:text="@string/nombrecatempresa" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/textView31"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/NombreCE"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/textView31"
+        android:layout_alignLeft="@+id/DescripcionCE"
+        android:layout_alignStart="@+id/DescripcionCE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/descripcioncatempresa"
+        android:id="@+id/textView33"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/NombreCE"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/DescripcionCE"
+        android:layout_below="@+id/textView33"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizar_boton"
+        android:id="@+id/button17"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:onClick="insertarCatEmpresa"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="67dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar_boton"
+        android:id="@+id/button18"
+        android:onClick="limpiarCE"
+        android:layout_alignBottom="@+id/button17"
+        android:layout_alignRight="@+id/NombreCE"
+        android:layout_alignEnd="@+id/NombreCE" />
 
 </RelativeLayout>

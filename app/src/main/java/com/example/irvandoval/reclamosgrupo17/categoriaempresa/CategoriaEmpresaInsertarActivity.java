@@ -4,15 +4,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
-
+    EditText nombCE;
+    EditText descCE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_empresa_insertar);
+        nombCE = (EditText)findViewById(R.id.NombreCE);
+        descCE = (EditText)findViewById(R.id.DescripcionCE);
     }
 
 
@@ -37,4 +44,37 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void insertarCatEmpresa(View v){
+        CategoriaEmpresa CEhero=new CategoriaEmpresa();
+        String res;
+        if (!camposVacios()) {
+            CEhero.setNombreCategoriaEmp(nombCE.getText().toString());
+            CEhero.setDescripcionCategoriaEmp(descCE.getText().toString());
+
+            ControlDB hero;
+            hero = new ControlDB(this);
+            hero.abrir();
+            res = hero.insertar(CEhero);
+            System.err.println("AL SALIR IMPRIME: " + res);
+            if (res.equals("error_insertar")) {
+                Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + res, Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
+    public void limpiarCE(View v){
+        nombCE.setText("");
+        descCE.setText("");
+
+    }
+    public boolean camposVacios(){
+        if(nombCE.getText().toString().equals("") || descCE.getText().toString().equals(""))
+            return true;
+        else
+
+            return false;
+    }
+
 }

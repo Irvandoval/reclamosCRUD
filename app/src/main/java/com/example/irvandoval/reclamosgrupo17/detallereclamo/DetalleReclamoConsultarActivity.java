@@ -17,12 +17,15 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
     ControlDB helper;
     EditText editDetalle_id;
     EditText descripcion_detalle;
+    //crea un EditText para el idProdServ
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_reclamo_consultar);
         helper = new ControlDB(this);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
+        editDetalle_id = (EditText) findViewById(R.id.editDetalle_id);
+
     }
 
     @Override
@@ -57,8 +60,8 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
                     editDetalle_id.getText().toString() +
                     " no encontrado", Toast.LENGTH_LONG).show();
         else{
-            editDetalle_id.setText(detalle.getDescripcionDetalle());
-
+            descripcion_detalle.setText(detalle.getDescripcionDetalle());
+            //aca llena el nuevo campo id text con el getIDProdServ xfa
         }
     }
 

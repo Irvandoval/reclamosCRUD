@@ -98,6 +98,7 @@ public class UsuarioInsertarActivity extends ActionBarActivity {
                 || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))
             return true;
         else
+
             return false;
     }
 

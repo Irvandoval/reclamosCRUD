@@ -75,13 +75,15 @@
         android:layout_marginTop="39dp" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/idCategoriaEmp"
         android:layout_above="@+id/textView27"
-        android:layout_alignLeft="@+id/button14"
-        android:layout_alignStart="@+id/button14" />
+        android:layout_alignRight="@+id/nombreEmpresa"
+        android:layout_alignEnd="@+id/nombreEmpresa"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp" />
 
 </RelativeLayout>
