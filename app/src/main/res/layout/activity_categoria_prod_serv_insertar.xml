@@ -71,6 +71,7 @@
         android:layout_height="wrap_content"
         android:text="@string/insertar_boton"
         android:id="@+id/button21"
+        android:onClick="insertarCategoriaprodServInsertar"
         android:layout_below="@+id/descripcionCatPS"
         android:layout_alignLeft="@+id/textView36"
         android:layout_alignStart="@+id/textView36"

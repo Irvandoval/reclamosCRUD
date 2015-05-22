@@ -51,8 +51,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/descripcionCatPS"
         android:id="@+id/textView42"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/nombreCatPS"
+        android:layout_above="@+id/editText2"
         android:layout_alignLeft="@+id/textView41"
         android:layout_alignStart="@+id/textView41" />
 
@@ -62,7 +61,7 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editText2"
-        android:layout_alignTop="@+id/textView42"
+        android:layout_above="@+id/button26"
         android:layout_alignLeft="@+id/nombreCatPS"
         android:layout_alignStart="@+id/nombreCatPS" />
 
@@ -71,10 +70,11 @@
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
         android:id="@+id/button25"
-        android:layout_below="@+id/editText2"
+        android:onClick="consultarCategoriaProductoServ"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/textView42"
         android:layout_alignStart="@+id/textView42"
-        android:layout_marginTop="33dp" />
+        android:layout_marginBottom="59dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -85,5 +85,25 @@
         android:layout_alignRight="@+id/editText2"
         android:layout_alignEnd="@+id/editText2"
         android:onClick="limpiarTexto3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad"
+        android:id="@+id/textView31"
+        android:layout_above="@+id/textView42"
+        android:layout_alignLeft="@+id/textView42"
+        android:layout_alignStart="@+id/textView42"
+        android:layout_marginBottom="34dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCantidad"
+        android:layout_alignTop="@+id/textView31"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_alignRight="@+id/nombreCatPS"
+        android:layout_alignEnd="@+id/nombreCatPS" />
 
 </RelativeLayout>

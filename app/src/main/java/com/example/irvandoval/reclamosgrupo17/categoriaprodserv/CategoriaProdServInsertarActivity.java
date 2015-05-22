@@ -56,7 +56,6 @@ public class CategoriaProdServInsertarActivity extends ActionBarActivity {
             nuevoCategoriaProdServ.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
             nuevoCategoriaProdServ.setNombreCategoriaPs(nombCatPS.getText().toString());
             nuevoCategoriaProdServ.setDescripcionCategoriaPs(descriCatPS.getText().toString());
-            nuevoCategoriaProdServ.setCantidadProductos(0);
             ControlDB hero;
             hero = new ControlDB(this);
             hero.abrir();
@@ -72,12 +71,13 @@ public class CategoriaProdServInsertarActivity extends ActionBarActivity {
     }
     public void limpiarTexto3(View v){
 
-        nombCatPS.setText("");
+        IdCatPS.setText(" ");
+        nombCatPS.setText(" ");
         descriCatPS.setText(" ");
     }
 
     public boolean camposVacios(){
-        if(IdCatPS.getText().toString().equals("") || nombCatPS.getText().toString().equals("") || descriCatPS.getText().toString().equals(""))
+        if( nombCatPS.getText().toString().equals("") || descriCatPS.getText().toString().equals(""))
             return true;
         else
             return false;
