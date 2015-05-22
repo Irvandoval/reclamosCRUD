@@ -92,6 +92,14 @@
     <string name="usuario_consultado">Usuario Consultado</string>
     <string name="usuario_noencontrado">Usuario no encontrado</string>
 
+
+
+            <!--CategoriaEmpresa-->
+    <string name="idcatempresa">ID_Categoria_Empresa</string>
+    <string name="nombrecatempresa">Nombre Categoria Empresa</string>
+    <string name="descripcion_cempresa">Descripcion Categoria Empresa</string>
+    <string name="categoria_empresa_noencontrada">Categoria Empresa no encontrada</string>
+    <string name="categoria_empresa_consultada">Categoria Empresa Consultada</string>
     <!-- Resources para Zona -->
     <string name="zona_idzona">ID Zona</string>
     <string name="zona_nombre">Nombre Zona</string>
@@ -156,9 +164,7 @@
     <string name="error_insertar">Error al Insertar el registro, Registro Duplicado. Verificar inserción</string>
     <string name="cantidad_insertados">Registro Insertado No= </string>
     <string name="filas_afectadas">Filas Afectadas = </string>
-    <string name="idcatempresa">ID_Categoria_Empresa</string>
-    <string name="nombrecatempresa">Nombre Categoria Empresa</string>
-    <string name="descripcioncatempresa">Descripcion Categoria Empresa</string>
+
     <string name="idempresa">ID Empresa</string>
     <string name="cantcatempresa">Cantidad Empresas</string>
 </resources>

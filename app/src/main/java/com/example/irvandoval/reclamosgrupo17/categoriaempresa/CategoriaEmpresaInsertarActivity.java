@@ -12,6 +12,7 @@ import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
+    EditText idCE;
     EditText nombCE;
     EditText descCE;
     @Override
@@ -20,6 +21,7 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
         setContentView(R.layout.activity_categoria_empresa_insertar);
         nombCE = (EditText)findViewById(R.id.NombreCE);
         descCE = (EditText)findViewById(R.id.DescripcionCE);
+        idCE  = (EditText) findViewById(R.id.idCE);
     }
 
 
@@ -50,12 +52,11 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
         if (!camposVacios()) {
             CEhero.setNombreCategoriaEmp(nombCE.getText().toString());
             CEhero.setDescripcionCategoriaEmp(descCE.getText().toString());
-
+            CEhero.setIdCategoriaEmp(Integer.parseInt(idCE.getText().toString()));
             ControlDB hero;
             hero = new ControlDB(this);
             hero.abrir();
             res = hero.insertar(CEhero);
-            System.err.println("AL SALIR IMPRIME: " + res);
             if (res.equals("error_insertar")) {
                 Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
             } else {

@@ -8,29 +8,27 @@
 
     <TextView android:text="@string/nombrecatempresa" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
         android:id="@+id/textView31"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/NombreCE"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:id="@+id/NombreCE"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/textView31"
-        android:layout_alignLeft="@+id/DescripcionCE"
-        android:layout_alignStart="@+id/DescripcionCE" />
+        android:layout_above="@+id/textView33"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/descripcioncatempresa"
+        android:text="@string/descripcion_cempresa"
         android:id="@+id/textView33"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/NombreCE"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/DescripcionCE"
+        android:layout_alignRight="@+id/textView31"
+        android:layout_alignEnd="@+id/textView31" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,22 +36,20 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/DescripcionCE"
-        android:layout_below="@+id/textView33"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
+        android:layout_above="@+id/button17"
+        android:layout_alignRight="@+id/textView33"
+        android:layout_alignEnd="@+id/textView33" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/insertar_boton"
         android:id="@+id/button17"
-        android:layout_below="@+id/DescripcionCE"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="36dp"
-        android:onClick="insertarCatEmpresa" />
+        android:onClick="insertarCatEmpresa"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/DescripcionCE"
+        android:layout_alignStart="@+id/DescripcionCE"
+        android:layout_marginBottom="45dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -64,5 +60,24 @@
         android:layout_alignRight="@+id/NombreCE"
         android:layout_alignEnd="@+id/NombreCE"
         android:onClick="limpiarCE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empresa_idcategoriaempresa"
+        android:id="@+id/textView52"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textView31"
+        android:layout_alignStart="@+id/textView31" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/idCE"
+        android:layout_below="@+id/textView52"
+        android:layout_alignLeft="@+id/textView33"
+        android:layout_alignStart="@+id/textView33" />
 
 </RelativeLayout>

@@ -43,9 +43,9 @@ public class CategoriaEmpresaEliminarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     public void eliminarCE(View v){
-        if(idce.getText().toString().equals("")) {
+        if(!idce.getText().toString().equals("")) {
             ControlDB hero = new ControlDB(this);
-          CategoriaEmpresa CEhero= new CategoriaEmpresa();
+            CategoriaEmpresa CEhero= new CategoriaEmpresa();
             CEhero.setIdCategoriaEmp(Integer.parseInt(String.valueOf(idce.getText().toString())));
             hero.abrir();
             String msg = hero.eliminar(CEhero);
