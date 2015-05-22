@@ -4,8 +4,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class ZonaInsertarActivity extends ActionBarActivity {
@@ -45,15 +48,20 @@ public class ZonaInsertarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void insertarZona(){
+    public void insertarZona(View v){
         Zona nuevaZona = new Zona();
+        String respuesta;
         nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
         nuevaZona.setNombreZona(nombreZona.getText().toString());
         nuevaZona.setMunicipio(municipio.getText().toString());
         nuevaZona.setDepartamento(departamento.getText().toString());
-        //implementar insercion
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        respuesta = cdb.insertar(nuevaZona);
+        cdb.cerrar();
+        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
     }
-    public void limpiarTexto(){
+    public void limpiarTexto(View v){
         idZona.setText("");
         nombreZona.setText("");
         municipio.setText("");

@@ -33,7 +33,7 @@ public class ReclamoMenuActivity extends ListActivity {
         String nombreValue = activities[position];
         l.getChildAt(position).setBackgroundColor(Color.CYAN);
         try{
-            Class<?> clase=Class.forName("com.example.irvandoval.reclamosgrupo17.reclamo." + nombreValue); //usuario se cambia por el que esten haciendo
+            Class<?> clase = Class.forName("com.example.irvandoval.reclamosgrupo17.reclamo." + nombreValue); //usuario se cambia por el que esten haciendo
             Intent inte = new Intent(this,clase);
             this.startActivity(inte);
         }catch(ClassNotFoundException e){

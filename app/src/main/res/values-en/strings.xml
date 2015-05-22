@@ -28,4 +28,27 @@
     <string name="consultar">Read Registry</string>
     <string name="eliminar">Delete Registry</string>
     <string name="actualizar">Update Registry</string>
+    <string name="error_insertar">Insert Registry Error, Duplicated Registry. Verify insertion.</string>
+    <string name="estadoReclamo_Descripcion">Description</string>
+    <string name="estadoReclamo_id">State ID</string>
+    <string name="estadoReclamo_nombre"></string>
+    <string name="consultar_boton">Read</string>
+    <string name="detalle_Descripcion">Description</string>
+    <string name="detalle_id">Claim Detail ID</string>
+    <string name="eliminar_boton">Delete</string>
+    <string name="empresa_cantidadsucursales"></string>
+    <string name="empresa_idempresa"></string>
+    <string name="Fecha">Date</string>
+    <string name="Titulo">Title</string>
+    <string name="actualizar_boton">Update</string>
+    <string name="descripcionCatPS">Description</string>
+    <string name="insertar_boton">Insert</string>
+    <string name="limpiar_boton">Clear</string>
+    <string name="motivo"></string>
+    <string name="nomEmp">Name</string>
+    <string name="sucursal_idempresa"></string>
+    <string name="sucursal_idsucursal"></string>
+    <string name="sucursal_idzona">Zone ID</string>
+    <string name="cantidad_insertados">Insert Registry No= </string>
+    <string name="filas_afectadas">Rows affected = </string>
 </resources>

@@ -88,7 +88,8 @@
         android:layout_marginBottom="64dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView10"
-        android:layout_toEndOf="@+id/textView10" />
+        android:layout_toEndOf="@+id/textView10"
+        android:onClick="consultarZona" />
 
     <Button
         android:layout_width="wrap_content"

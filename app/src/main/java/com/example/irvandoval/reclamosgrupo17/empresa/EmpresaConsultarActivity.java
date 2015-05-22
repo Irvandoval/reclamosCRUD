@@ -6,16 +6,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class EmpresaConsultarActivity extends ActionBarActivity {
     EditText nombreEmpres;
+    EditText idEmpresa;
+    EditText idCategoriaEmpresa;
+    EditText cantidadSucursales;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empresa_consultar);
         nombreEmpres = (EditText)findViewById(R.id.nombreEmpresa);
+        idEmpresa = (EditText) findViewById(R.id.idEmpresa);
+        idCategoriaEmpresa = (EditText) findViewById(R.id.idCategoriaEmp);
+        cantidadSucursales = (EditText) findViewById(R.id.cantidadSucursales);
     }
 
 
@@ -40,7 +48,27 @@ public class EmpresaConsultarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void limpiarTexto2(View v){
+
+    public void consultarEmpresa(View v){
+        ControlDB cdb = new ControlDB(this);
+        Empresa empresa;
+        cdb.abrir();
+        empresa = cdb.consultarEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+        cdb.cerrar();
+        if(empresa == null){
+            Toast.makeText(this, "Empresa no encontrada", Toast.LENGTH_SHORT).show();
+        }else{
+            idEmpresa.setText(Integer.toString(empresa.getIdEmpresa()));
+            idCategoriaEmpresa.setText(Integer.toString(empresa.getIdCategoriaEmp()));
+            nombreEmpres.setText(empresa.getNombreEmpresa());
+            cantidadSucursales.setText(Integer.toString(empresa.getCantidadSucursales()));
+            Toast.makeText(this, "Empresa consultada", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void limpiarTexto(View v){
+        nombreEmpres.setText("");
+        idEmpresa.setText("");
+        cantidadSucursales.setText("");
         nombreEmpres.setText("");
     }
 }

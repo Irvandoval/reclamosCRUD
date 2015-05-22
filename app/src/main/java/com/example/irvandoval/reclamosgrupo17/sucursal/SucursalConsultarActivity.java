@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalConsultarActivity extends ActionBarActivity {
@@ -53,7 +55,27 @@ public class SucursalConsultarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void consultarSucursal(View v){}
+    public void consultarSucursal(View v){
+        Sucursal nuevaSucursal =  new Sucursal();
+        String respuesta;
+        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        nuevaSucursal = cdb.consultarSucursal(nuevaSucursal.getIdSucursal());
+        if(nuevaSucursal == null){
+
+        }else{
+            idSucursal.setText(nuevaSucursal.getIdSucursal());
+            idEmpresa.setText(nuevaSucursal.getIdEmpresa());
+            idZona.setText(nuevaSucursal.getIdZona());
+            nombreSucursal.setText(nuevaSucursal.getNombreSucursal());
+            jefeSucursal.setText(nuevaSucursal.getJefeSucursal());
+            telefonoSucursal.setText(nuevaSucursal.getTelefonoSucursal());
+            Toast.makeText(this, "Sucursal consultada", Toast.LENGTH_SHORT).show();
+        }
+        cdb.cerrar();
+
+    }
     public void limpiarTexto(View v){
         idSucursal.setText("");
         idEmpresa.setText("");

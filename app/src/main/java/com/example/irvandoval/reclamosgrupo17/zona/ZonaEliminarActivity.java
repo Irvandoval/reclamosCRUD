@@ -6,8 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+
 
 public class ZonaEliminarActivity extends ActionBarActivity {
         private EditText idZona;
@@ -40,6 +43,14 @@ public class ZonaEliminarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void eliminarZona(View v){}
+    public void eliminarZona(View v){
+        ControlDB hero=new ControlDB(this);
+        Zona nuevaZona = new Zona();
+        nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
+        hero.abrir();
+        String msg= hero.eliminar(nuevaZona);
+        hero.cerrar();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
 
 }

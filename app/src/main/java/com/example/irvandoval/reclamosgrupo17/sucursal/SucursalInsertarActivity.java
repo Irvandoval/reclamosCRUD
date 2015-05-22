@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalInsertarActivity extends ActionBarActivity {
@@ -52,7 +54,35 @@ public class SucursalInsertarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void insertarSucursal(View v){}
+    public void insertarSucursal(View v){
+        Sucursal nuevaSucursal =  new Sucursal();
+        String respuesta;
+        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+        nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+        nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
+        nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
+        nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
+        nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        respuesta = cdb.insertar(nuevaSucursal);
+        if (respuesta.equals("error_insertar")) {
+            Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + respuesta, Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+
+    }
+     public boolean camposVacios(){
+         if(idSucursal.getText().toString().equals("") || idEmpresa.getText().toString().equals("")
+                 || idZona.getText().toString().equals("") || telefonoSucursal.getText().toString().equals("")
+                 || nombreSucursal.getText().toString().equals("") || direccionSucursal.getText().toString().equals("")
+                 ||jefeSucursal.getText().toString().equals("")){
+             return true;
+         }else
+             return false;
+     }
     public void limpiarTexto(View v){
         idSucursal.setText("");
         idEmpresa.setText("");

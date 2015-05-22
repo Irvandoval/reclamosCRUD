@@ -151,7 +151,8 @@
         android:id="@+id/button10"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/editTelefonoSucursal"
-        android:layout_toStartOf="@+id/editTelefonoSucursal" />
+        android:layout_toStartOf="@+id/editTelefonoSucursal"
+        android:onClick="insertarSucursal" />
 
     <Button
         android:layout_width="wrap_content"

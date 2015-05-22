@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class SucursalActualizarActivity extends ActionBarActivity {
@@ -53,7 +55,21 @@ public class SucursalActualizarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void actualizarSucursal(View v){}
+    public void actualizarSucursal(View v){
+        Sucursal nuevaSucursal =  new Sucursal();
+        String respuesta;
+        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+        nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+        nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
+        nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
+        nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
+        nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
+        ControlDB cdb =  new ControlDB(this);
+        cdb.abrir();
+        respuesta = cdb.actualizar(nuevaSucursal);
+        cdb.cerrar();
+        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+    }
 
     public void limpiarTexto(View v){
         idSucursal.setText("");
