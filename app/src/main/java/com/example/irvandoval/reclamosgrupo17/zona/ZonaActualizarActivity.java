@@ -49,22 +49,32 @@ public class ZonaActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarZona(View v){
-        Zona nuevaZona = new Zona();
-        String respuesta;
-        nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
-        nuevaZona.setNombreZona(nombreZona.getText().toString());
-        nuevaZona.setMunicipio(municipio.getText().toString());
-        nuevaZona.setDepartamento(departamento.getText().toString());
-        ControlDB cdb =  new ControlDB(this);
-        cdb.abrir();
-        respuesta = cdb.actualizar(nuevaZona);
-        cdb.cerrar();
-        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+        if(!camposVacios()) {
+            Zona nuevaZona = new Zona();
+            String respuesta;
+            nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
+            nuevaZona.setNombreZona(nombreZona.getText().toString());
+            nuevaZona.setMunicipio(municipio.getText().toString());
+            nuevaZona.setDepartamento(departamento.getText().toString());
+            ControlDB cdb = new ControlDB(this);
+            cdb.abrir();
+            respuesta = cdb.actualizar(nuevaZona);
+            cdb.cerrar();
+            Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+        }
     }
     public void limpiarTexto(View v){
         idZona.setText("");
         nombreZona.setText("");
         municipio.setText("");
         departamento.setText("");
+    }
+
+    public boolean camposVacios(){
+        if(idZona.getText().toString().equals("") || nombreZona.getText().toString().equals("")
+                || municipio.getText().toString().equals("") || departamento.getText().toString().equals("")){
+            return true;
+        }else
+            return false;
     }
 }

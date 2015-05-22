@@ -57,22 +57,23 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarUsuario(View v) {
-        ControlDB hero=new ControlDB(this);
-        Usuario herouser=new Usuario();
-        herouser.setNombreUsuario(nombreUsuario.getText().toString());
-        herouser.setDui(dui.getText().toString());
-        herouser.setApellidoUsuario(apellidoUsuario.getText().toString());
-        herouser.setEmail(email.getText().toString());
-        herouser.setTelefono(telefono.getText().toString());
-        String tras=edad.getText().toString();
-        int tras2=Integer.parseInt(tras);
-        herouser.setEdad(tras2);
-        herouser.setSexo(sexo.getText().toString());
-        hero.abrir();
-        String msg=hero.actualizar(herouser);
-        hero.cerrar();
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-
+        if(camposVacios()) {
+            ControlDB hero = new ControlDB(this);
+            Usuario herouser = new Usuario();
+            herouser.setNombreUsuario(nombreUsuario.getText().toString());
+            herouser.setDui(dui.getText().toString());
+            herouser.setApellidoUsuario(apellidoUsuario.getText().toString());
+            herouser.setEmail(email.getText().toString());
+            herouser.setTelefono(telefono.getText().toString());
+            String tras = edad.getText().toString();
+            int tras2 = Integer.parseInt(tras);
+            herouser.setEdad(tras2);
+            herouser.setSexo(sexo.getText().toString());
+            hero.abrir();
+            String msg = hero.actualizar(herouser);
+            hero.cerrar();
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        }
     }
     public void limpiarTexto(View v){
         nombreUsuario.setText("");
@@ -81,6 +82,15 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         email.setText("");
         telefono.setText("");
         edad.setText("");
+    }
+    public boolean camposVacios(){
+        if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("")
+                || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
+                || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))
+            return true;
+        else
+
+            return false;
     }
 
 }

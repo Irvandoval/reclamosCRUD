@@ -45,13 +45,15 @@ public class SucursalEliminarActivity extends ActionBarActivity {
     }
 
     public void eliminarSucursal(View v){
-        Sucursal nuevaSucursal =  new Sucursal();
-        String respuesta;
-        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
-        ControlDB cdb =  new ControlDB(this);
-        cdb.abrir();
-        respuesta = cdb.eliminar(nuevaSucursal);
-        cdb.cerrar();
-        Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + respuesta, Toast.LENGTH_SHORT).show();
+       if(!idSucursal.getText().toString().equals("")) {
+           Sucursal nuevaSucursal = new Sucursal();
+           String respuesta;
+           nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+           ControlDB cdb = new ControlDB(this);
+           cdb.abrir();
+           respuesta = cdb.eliminar(nuevaSucursal);
+           cdb.cerrar();
+           Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + respuesta, Toast.LENGTH_SHORT).show();
+       }
     }
 }

@@ -56,19 +56,31 @@ public class SucursalActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarSucursal(View v){
-        Sucursal nuevaSucursal =  new Sucursal();
-        String respuesta;
-        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
-        nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
-        nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
-        nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
-        nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
-        nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
-        ControlDB cdb =  new ControlDB(this);
-        cdb.abrir();
-        respuesta = cdb.actualizar(nuevaSucursal);
-        cdb.cerrar();
-        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+        if(!camposVacios()) {
+            Sucursal nuevaSucursal = new Sucursal();
+            String respuesta;
+            nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+            nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+            nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
+            nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
+            nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
+            nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
+            ControlDB cdb = new ControlDB(this);
+            cdb.abrir();
+            respuesta = cdb.actualizar(nuevaSucursal);
+            cdb.cerrar();
+            Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public boolean camposVacios(){
+        if(idSucursal.getText().toString().equals("") || idEmpresa.getText().toString().equals("")
+                || idZona.getText().toString().equals("") || telefonoSucursal.getText().toString().equals("")
+                || nombreSucursal.getText().toString().equals("") || direccionSucursal.getText().toString().equals("")
+                ||jefeSucursal.getText().toString().equals("")){
+            return true;
+        }else
+            return false;
     }
 
     public void limpiarTexto(View v){

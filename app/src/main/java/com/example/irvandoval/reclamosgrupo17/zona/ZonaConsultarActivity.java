@@ -51,20 +51,23 @@ public class ZonaConsultarActivity extends ActionBarActivity {
     }
 
     public void consultarZona(View v){
-        ControlDB cdb = new ControlDB(this);
-        Zona nuevaZona;
-        cdb.abrir();
-        nuevaZona = cdb.consultarZona(Integer.parseInt(idZona.getText().toString()));
-        if(nuevaZona == null){
-            Toast.makeText(this, getResources().getString(R.string.zona_noencontrada), Toast.LENGTH_SHORT).show();
-        }else {
-            idZona.setText(Integer.toString(nuevaZona.getIdZona()));
-            nombreZona.setText(nuevaZona.getNombreZona());
-            municipio.setText(nuevaZona.getMunicipio());
-            departamento.setText(nuevaZona.getDepartamento());
-            Toast.makeText(this, getResources().getString(R.string.zona_consultada), Toast.LENGTH_SHORT).show();
-        }
-        cdb.cerrar();
+
+       if (!camposVacios()) {
+           ControlDB cdb = new ControlDB(this);
+           Zona nuevaZona;
+           cdb.abrir();
+           nuevaZona = cdb.consultarZona(Integer.parseInt(idZona.getText().toString()));
+           if (nuevaZona == null) {
+               Toast.makeText(this, getResources().getString(R.string.zona_noencontrada), Toast.LENGTH_SHORT).show();
+           } else {
+               idZona.setText(Integer.toString(nuevaZona.getIdZona()));
+               nombreZona.setText(nuevaZona.getNombreZona());
+               municipio.setText(nuevaZona.getMunicipio());
+               departamento.setText(nuevaZona.getDepartamento());
+               Toast.makeText(this, getResources().getString(R.string.zona_consultada), Toast.LENGTH_SHORT).show();
+           }
+           cdb.cerrar();
+       }
     }
 
     public void limpiarTexto(View v){
@@ -72,5 +75,13 @@ public class ZonaConsultarActivity extends ActionBarActivity {
         nombreZona.setText("");
         municipio.setText("");
         departamento.setText("");
+    }
+
+    public boolean camposVacios(){
+        if(idZona.getText().toString().equals("") || nombreZona.getText().toString().equals("")
+                || municipio.getText().toString().equals("") || departamento.getText().toString().equals("")){
+            return true;
+        }else
+            return false;
     }
 }

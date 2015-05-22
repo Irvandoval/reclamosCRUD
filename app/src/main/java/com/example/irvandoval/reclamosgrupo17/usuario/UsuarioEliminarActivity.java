@@ -46,7 +46,7 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
 
 
     public void eliminarUsuario(View v){
-        if(dui.getText().toString().equals("")) {
+        if(!dui.getText().toString().equals("")) {
             ControlDB hero = new ControlDB(this);
             Usuario herouser = new Usuario();
             herouser.setDui(dui.getText().toString());

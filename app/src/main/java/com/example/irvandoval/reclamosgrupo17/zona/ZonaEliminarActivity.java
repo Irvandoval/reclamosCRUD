@@ -44,13 +44,15 @@ public class ZonaEliminarActivity extends ActionBarActivity {
     }
 
     public void eliminarZona(View v){
-        ControlDB hero=new ControlDB(this);
-        Zona nuevaZona = new Zona();
-        nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
-        hero.abrir();
-        String msg= hero.eliminar(nuevaZona);
-        hero.cerrar();
-        Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + msg, Toast.LENGTH_SHORT).show();
+       if(!idZona.getText().toString().equals("")) {
+           ControlDB hero = new ControlDB(this);
+           Zona nuevaZona = new Zona();
+           nuevaZona.setIdZona(Integer.parseInt(idZona.getText().toString()));
+           hero.abrir();
+           String msg = hero.eliminar(nuevaZona);
+           hero.cerrar();
+           Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + msg, Toast.LENGTH_SHORT).show();
+       }
     }
 
 }

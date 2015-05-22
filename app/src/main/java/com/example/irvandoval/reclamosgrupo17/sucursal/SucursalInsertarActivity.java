@@ -55,24 +55,25 @@ public class SucursalInsertarActivity extends ActionBarActivity {
     }
 
     public void insertarSucursal(View v){
-        Sucursal nuevaSucursal =  new Sucursal();
-        String respuesta;
-        nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
-        nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
-        nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
-        nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
-        nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
-        nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
-        ControlDB cdb =  new ControlDB(this);
-        cdb.abrir();
-        respuesta = cdb.insertar(nuevaSucursal);
-        if (respuesta.equals("error_insertar")) {
-            Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + respuesta, Toast.LENGTH_SHORT).show();
-        }
-        Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
-
+       if(!camposVacios()) {
+           Sucursal nuevaSucursal = new Sucursal();
+           String respuesta;
+           nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+           nuevaSucursal.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+           nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
+           nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
+           nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
+           nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
+           ControlDB cdb = new ControlDB(this);
+           cdb.abrir();
+           respuesta = cdb.insertar(nuevaSucursal);
+           if (respuesta.equals("error_insertar")) {
+               Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+           } else {
+               Toast.makeText(this, getResources().getString(R.string.cantidad_insertados) + respuesta, Toast.LENGTH_SHORT).show();
+           }
+           Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+       }
     }
      public boolean camposVacios(){
          if(idSucursal.getText().toString().equals("") || idEmpresa.getText().toString().equals("")
