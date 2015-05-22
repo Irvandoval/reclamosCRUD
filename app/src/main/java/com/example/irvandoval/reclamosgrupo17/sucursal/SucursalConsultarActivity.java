@@ -63,7 +63,7 @@ public class SucursalConsultarActivity extends ActionBarActivity {
         cdb.abrir();
         nuevaSucursal = cdb.consultarSucursal(nuevaSucursal.getIdSucursal());
         if(nuevaSucursal == null){
-
+            Toast.makeText(this, getResources().getString(R.string.sucursal_noencontrada), Toast.LENGTH_SHORT).show();
         }else{
             idSucursal.setText(nuevaSucursal.getIdSucursal());
             idEmpresa.setText(nuevaSucursal.getIdEmpresa());
@@ -71,7 +71,7 @@ public class SucursalConsultarActivity extends ActionBarActivity {
             nombreSucursal.setText(nuevaSucursal.getNombreSucursal());
             jefeSucursal.setText(nuevaSucursal.getJefeSucursal());
             telefonoSucursal.setText(nuevaSucursal.getTelefonoSucursal());
-            Toast.makeText(this, "Sucursal consultada", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.sucursal_consultada), Toast.LENGTH_SHORT).show();
         }
         cdb.cerrar();
 

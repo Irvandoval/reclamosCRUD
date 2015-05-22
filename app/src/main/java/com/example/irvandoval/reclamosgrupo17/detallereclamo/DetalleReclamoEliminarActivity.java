@@ -6,7 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-
+import android.widget.Toast;
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 
@@ -14,14 +15,14 @@ import com.example.irvandoval.reclamosgrupo17.R;
  * Created by aspire e 14 on 19/05/2015.
  */
 public class DetalleReclamoEliminarActivity extends ActionBarActivity {
-
+    ControlDB helper;
     EditText id_detalle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_eliminar);
-        id_detalle = (EditText) findViewById(R.id.editReclamo);
+        id_detalle = (EditText) findViewById(R.id.editDetalle_id);
     }
 
     @Override
@@ -47,7 +48,15 @@ public class DetalleReclamoEliminarActivity extends ActionBarActivity {
     }
 
 
-    public void eliminarAlumno(View v) {
+    public void eliminarDetalle(View v) {
+
+        String regEliminadas;
+        DetalleReclamo detalle= new DetalleReclamo();
+        detalle.setIdDetalle(Integer.parseInt(id_detalle.getText().toString()));
+        helper.abrir();
+        regEliminadas=helper.eliminar(detalle);
+        helper.cerrar();
+        Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
         // implementar eliminacion
     }
 
