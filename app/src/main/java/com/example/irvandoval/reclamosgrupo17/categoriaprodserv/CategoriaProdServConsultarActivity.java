@@ -61,13 +61,12 @@ public class CategoriaProdServConsultarActivity extends ActionBarActivity {
         }else{
             nombCatPS.setText(herouser.getNombreCategoriaPs());
             descriCatPS.setText(herouser.getDescripcionCategoriaPs());
-            //cantCatPS.setText(herouser.getCantidadProductos());
+            cantCatPS.setText(Integer.toString(herouser.getCantidadProductos()));
             Toast.makeText(this, getResources().getString(R.string.ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
         }
 
     }
     public void limpiarTexto3(View v){
-
         nombCatPS.setText(" ");
         descriCatPS.setText(" ");
         cantCatPS.setText(" ");

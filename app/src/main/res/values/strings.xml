@@ -47,7 +47,7 @@
     <string name="title_activity_usuario_consultar">UsuarioConsultarActivity</string>
     <string name="title_activity_usuario_eliminar">UsuarioEliminarActivity</string>
     <string name="title_activity_usuario_insertar">UsuarioInsertarActivity</string>
-
+    <string name="cantidad_productos">Cantidad Prod</string>
     <!-- Resources para Menu principal Tablas-->
     <string name="insertar">Insertar Registro</string>
     <string name="eliminar">Eliminar Registro</string>
