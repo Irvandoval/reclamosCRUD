@@ -46,14 +46,15 @@ public class UsuarioEliminarActivity extends ActionBarActivity {
 
 
     public void eliminarUsuario(View v){
-    // implementar eliminacion
-        ControlDB hero=new ControlDB(this);
-       Usuario herouser=new Usuario();
-        herouser.setDui(dui.getText().toString());
-        hero.abrir();
-     String msg= hero.eliminar(herouser);
-        hero.cerrar();
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        if(dui.getText().toString().equals("")) {
+            ControlDB hero = new ControlDB(this);
+            Usuario herouser = new Usuario();
+            herouser.setDui(dui.getText().toString());
+            hero.abrir();
+            String msg = hero.eliminar(herouser);
+            hero.cerrar();
+            Toast.makeText(this, getResources().getString(R.string.filas_afectadas) + msg, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void limpiarTexto(View v){

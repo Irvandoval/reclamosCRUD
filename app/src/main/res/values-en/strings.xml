@@ -50,4 +50,5 @@
     <string name="sucursal_idsucursal"></string>
     <string name="sucursal_idzona">Zone ID</string>
     <string name="cantidad_insertados">Insert Registry No= </string>
+    <string name="filas_afectadas">Rows affected = </string>
 </resources>

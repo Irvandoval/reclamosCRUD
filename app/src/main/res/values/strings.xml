@@ -149,4 +149,5 @@
 
     <string name="error_insertar">Error al Insertar el registro, Registro Duplicado. Verificar inserción</string>
     <string name="cantidad_insertados">Registro Insertado No= </string>
+    <string name="filas_afectadas">Filas Afectadas = </string>
 </resources>

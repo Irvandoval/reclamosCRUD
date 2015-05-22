@@ -391,7 +391,7 @@ public class ControlDB {
     }
 
     public String eliminar(Usuario usuario) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("usuario", "dui = '" + usuario.getDui() + "'", null);
         regAfectados += contador;
@@ -451,7 +451,7 @@ public class ControlDB {
     }
 
     public String eliminar(Zona zona) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("zona", "id_zona = '" + zona.getIdZona() + "'", null);
         regAfectados += contador;
@@ -508,7 +508,7 @@ public class ControlDB {
     }
 
     public String eliminar(CategoriaProdServ categoriaProdServ) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("categoria_prod_serv", "id_categoria_prod = '" + categoriaProdServ.getIdCategoriaProdServ() + "'", null);
         regAfectados += contador;
@@ -568,7 +568,7 @@ public class ControlDB {
     }
 
     public String eliminar(ProdServ prodServ) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("prod_serv", "id_prod_serv = '" + prodServ.getIdProdServ() + "'", null);
         regAfectados += contador;
@@ -679,7 +679,7 @@ public class ControlDB {
     }
 
     public String eliminar(DetalleReclamo detalleReclamo) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("detalle_reclamo", "id_detalle = '" + detalleReclamo.getIdDetalle() + "'", null);
         regAfectados += contador;
@@ -745,7 +745,7 @@ public class ControlDB {
     }
 
     public String eliminar(Reclamo reclamo) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("reclamo", "id_reclamo = '" + reclamo.getIdReclamo() + "'", null);
         regAfectados += contador;
@@ -809,7 +809,7 @@ public class ControlDB {
     }
 
     public String eliminar(Empresa empresa) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("empresa", "id_empresa = '" + empresa.getIdEmpresa() + "'", null);
         regAfectados += contador;
@@ -866,7 +866,7 @@ public class ControlDB {
     }
 
     public String eliminar(CategoriaEmpresa categoriaEmpresa) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("categoria_empresa", "id_categoria_emp = '" + categoriaEmpresa.getIdCategoriaEmp() + "'", null);
         regAfectados += contador;
@@ -932,7 +932,7 @@ public class ControlDB {
     }
 
     public String eliminar(Sucursal sucursal) {
-        String regAfectados = "filas afectadas= ";
+        String regAfectados = "";
         int contador = 0;
         contador += db.delete("sucursal", "id_sucursal = '" + sucursal.getIdSucursal() + "'", null);
         regAfectados += contador;
