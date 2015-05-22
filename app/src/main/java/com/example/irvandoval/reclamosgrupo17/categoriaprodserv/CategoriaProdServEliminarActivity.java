@@ -50,7 +50,7 @@ public class CategoriaProdServEliminarActivity extends ActionBarActivity {
 
 
     public void eliminarCategoriaProdServ(View v){
-        if(IdCatPS.getText().toString().equals("")) {
+        if(!IdCatPS.getText().toString().equals("")) {
             ControlDB hero = new ControlDB(this);
             CategoriaProdServ herouser = new CategoriaProdServ();
             herouser.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
