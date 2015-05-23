@@ -64,6 +64,7 @@ public class SucursalActualizarActivity extends ActionBarActivity {
             nuevaSucursal.setIdZona(Integer.parseInt(idZona.getText().toString()));
             nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
             nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
+            nuevaSucursal.setTelefonoSucursal(telefonoSucursal.getText().toString());
             nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
             ControlDB cdb = new ControlDB(this);
             cdb.abrir();
