@@ -1169,8 +1169,6 @@ public class ControlDB {
         final String[] VCENombreCategoriaEmpresa = {"Venta de celulares","Redes y Comunicacion"};
         final String[] VCEDescripcionCategoriaEmpresa = {"Venta de Smartphones y telefonos moviles","Redes empresariales y residenciales"};
         final int[] VCECantidadEmpresas  = {0, 0};
-
-
         /******************************Empresa*****************************/
         final int[] VEIdEmpresa = {1, 2};
         final int[] VEIdCategoriaEmpresa = {1, 2};
@@ -1181,7 +1179,14 @@ public class ControlDB {
         final String[] VZNombreZona = {"Zona 1","Zona 2"};
         final String[] VZMunicipio = {"San Salvador","Soyapango"};
         final String[] VZDepartamento = {"San Salvador","San Salvador"};
-        /**********************************************************************/
+        /*******************************Sucursal***********************************/
+        final int[] VSIdSucursal = {1, 2};
+        final int[] VSIdEmpresa = {1, 2};
+        final int[] VSIdZona = {1, 2};
+        final String[] VSNombreSucursal = {"Escalon", "Plaza Mundo"};
+        final String[] VSJefeSucursal = {"Juan Pereira", "Jessica Lopez"};
+        final String[] VSDireccionSucursal = {"Paseo General Escalon #223","Centro Comercial Plaza Mundo, Local 11G"};
+        final String[] VSTelefonoSucursal = {"2222-1212", "2233-1211"};
 
         abrir();
         db.execSQL("DELETE FROM usuario");
@@ -1190,12 +1195,14 @@ public class ControlDB {
         db.execSQL("DELETE FROM zona");
         db.execSQL("DELETE FROM categoria_empresa");
         db.execSQL("DELETE FROM empresa");
+        db.execSQL("DELETE FROM sucursal");
 
         Usuario usuario = new Usuario();
         CategoriaProdServ categoriaProdServ =  new CategoriaProdServ();
         ProdServ prodServ = new ProdServ();
         CategoriaEmpresa categoriaEmpresa = new CategoriaEmpresa();
         Empresa empresa = new Empresa();
+        Sucursal sucursal =  new Sucursal();
         Zona zona = new Zona();
         for (int i = 0; i < 2; i++) {
             usuario.setDui(VUdui[i]);
@@ -1242,6 +1249,16 @@ public class ControlDB {
             zona.setMunicipio(VZMunicipio[i]);
             zona.setDepartamento(VZDepartamento[i]);
             insertar(zona);
+        }
+        for (int i = 0; i < 2; i++){
+            sucursal.setIdSucursal(VSIdSucursal[i]);
+            sucursal.setIdEmpresa(VSIdEmpresa[i]);
+            sucursal.setIdZona(VSIdZona[i]);
+            sucursal.setNombreSucursal(VSNombreSucursal[i]);
+            sucursal.setDireccionSucursal(VSDireccionSucursal[i]);
+            sucursal.setJefeSucursal(VSJefeSucursal[i]);
+            sucursal.setTelefonoSucursal(VSTelefonoSucursal[i]);
+            insertar(sucursal);
         }
         cerrar();
         return "guardo";
