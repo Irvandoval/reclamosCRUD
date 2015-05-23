@@ -78,8 +78,7 @@ public class ZonaConsultarActivity extends ActionBarActivity {
     }
 
     public boolean camposVacios(){
-        if(idZona.getText().toString().equals("") || nombreZona.getText().toString().equals("")
-                || municipio.getText().toString().equals("") || departamento.getText().toString().equals("")){
+        if(idZona.getText().toString().equals("")){
             return true;
         }else
             return false;

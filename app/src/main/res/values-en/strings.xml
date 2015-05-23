@@ -3,7 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_usuario_actualizar">UsuarioActualizarActivity</string>
+    <string name="title_activity_usuario_actualizar">Update User</string>
     <string name="title_activity_usuario_menu">User Table</string>
     <string name="title_activity_estado_reclamo_menu">Claim State Table</string>
     <string name="title_activity_detalle_reclamo_menu">Claim Detail Table</string>
@@ -31,7 +31,7 @@
     <string name="error_insertar">Insert Registry Error, Duplicated Registry. Verify insertion.</string>
     <string name="estadoReclamo_Descripcion">Description</string>
     <string name="estadoReclamo_id">State ID</string>
-    <string name="estadoReclamo_nombre"></string>
+    <string name="estadoReclamo_nombre">Name</string>
     <string name="consultar_boton">Read</string>
     <string name="detalle_Descripcion">Description</string>
     <string name="detalle_id">Claim Detail ID</string>
@@ -47,8 +47,54 @@
     <string name="motivo"></string>
     <string name="nomEmp">Name</string>
     <string name="sucursal_idempresa"></string>
-    <string name="sucursal_idsucursal"></string>
+    <string name="sucursal_idsucursal">Subsidiary ID</string>
     <string name="sucursal_idzona">Zone ID</string>
     <string name="cantidad_insertados">Insert Registry No= </string>
     <string name="filas_afectadas">Rows affected = </string>
+    <string name="guardo_correctamente">Saved</string>
+    <string name="estadoReclamo_noencontrado">Claim State not found</string>
+    <string name="estadoReclamo_consultado">Result Claim Readed</string>
+    <string name="cantidad_productos"></string>
+    <string name="zona_nombre">Zone Name</string>
+    <string name="zona_noencontrada">Zone not found</string>
+    <string name="zona_municipio"></string>
+    <string name="zona_idzona">Zone ID</string>
+    <string name="zona_departamento"></string>
+    <string name="zona_consultada">Zone Found</string>
+    <string name="usuario_sexo">Gender</string>
+    <string name="usuario_nombre">Name</string>
+    <string name="usuario_noencontrado">User not found</string>
+    <string name="usuario_idusuario">User ID</string>
+    <string name="usuario_email">Email</string>
+    <string name="usuario_edad">Age</string>
+    <string name="usuario_dui" translatable="false"></string>
+    <string name="usuario_consultado">User Readed</string>
+    <string name="formatofec">DD/MM/YYYY</string>
+    <string name="nombreCatPS">Name</string>
+    <string name="nombrecatempresa"></string>
+    <string name="sucursal_consultada"></string>
+    <string name="sucursal_direccionsucursal"></string>
+    <string name="title_activity_sucursal_actualizar">Update Subsidiary</string>
+    <string name="title_activity_sucursal_consultar">Read Subsidiary</string>
+    <string name="title_activity_sucursal_eliminar">Delete Subsidiary</string>
+    <string name="title_activity_zona_actualizar">Update Zone</string>
+    <string name="title_activity_zona_consultar">Read Zone</string>
+    <string name="title_activity_zona_eliminar">Delete Zone</string>
+    <string name="title_activity_zona_insertar">Create Zone</string>
+    <string name="usuario_apellido">Last name</string>
+    <string name="title_activity_usuario_consultar">Read User</string>
+    <string name="title_activity_usuario_eliminar">Delete User</string>
+    <string name="title_activity_usuario_insertar">Insert User</string>
+    <string name="title_activity_sucursal_insertar">Create Subsidiary</string>
+    <string name="title_activity_reclamo_actualizar">Update Claim</string>
+    <string name="title_activity_reclamo_consular">Read Claim</string>
+    <string name="title_activity_reclamo_eliminar">Delete Claim</string>
+    <string name="title_activity_reclamo_insertar">Create Claim</string>
+    <string name="usuario_telefono">Phone number</string>
+    <string name="sucursal_jefesucursal">Subsidiary manager</string>
+    <string name="sucursal_noencontrada">Subsidiary not found</string>
+    <string name="sucursal_nombresucursal">Subsidiary Name</string>
+    <string name="sucursal_telefonosucursal">Subsidiary Phone</string>
+    <string name="title_activity_categoria_empresa_actualizar"></string>
+    <string name="cantcatempresa"></string>
 </resources>

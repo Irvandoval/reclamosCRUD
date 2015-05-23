@@ -783,7 +783,7 @@ public class ControlDB {
         ContentValues emp = new ContentValues();
         if (verificarIntegridad(empresa, 4)) {
             emp.put("id_empresa", empresa.getIdEmpresa());
-            emp.put("id_categoria_empresa", empresa.getIdCategoriaEmp());
+            emp.put("id_categoria_emp", empresa.getIdCategoriaEmp());
             emp.put("nombre_empresa", empresa.getNombreEmpresa());
             emp.put("cantidad_sucursales", empresa.getCantidadSucursales());
             contador = db.insert("empresa", null, emp);
@@ -897,8 +897,10 @@ public class ControlDB {
     public String insertar(Sucursal sucursal) {
         String regInsertados = "";
         long contador = 0;
+
         ContentValues sc = new ContentValues();
         if (verificarIntegridad(sucursal, 5)) {
+            System.err.println(sucursal.getNombreSucursal() +  "se mete aca");
             sc.put("id_sucursal", sucursal.getIdSucursal());
             sc.put("id_empresa", sucursal.getIdEmpresa());
             sc.put("id_zona", sucursal.getIdZona());
@@ -906,8 +908,9 @@ public class ControlDB {
             sc.put("jefe_sucursal", sucursal.getJefeSucursal());
             sc.put("direccion_sucursal", sucursal.getDireccionSucursal());
             sc.put("telefono_sucursal", sucursal.getTelefonoSucursal());
+            contador = db.insert("sucursal", null, sc);
         }
-        contador = db.insert("sucursal", null, sc);
+
         if (contador == -1 || contador == 0) {
             regInsertados = "error_insertar";
         } else {
@@ -1006,6 +1009,7 @@ public class ControlDB {
             case 4: // si existe categoria de empresa para la empresa ingresada
             {
                 Empresa empresa = (Empresa) dato;
+                System.err.println("Se mete aca ACAAAAA CATEGORIA EMPRESA: " + empresa.getIdCategoriaEmp());
                 String[] id1 = {Integer.toString(empresa.getIdCategoriaEmp())};
                 Cursor c1 = db.query("categoria_empresa", null, "id_categoria_emp = ?", id1, null, null, null);
                 if (c1.moveToFirst()) {
@@ -1150,25 +1154,49 @@ public class ControlDB {
         final String[] VUtelefono = {"2222-2222", "2222-2221"};
         final int[] VUedad = {35, 12};
         final String[] VUsexo = {"M", "M"};
-        /****************************************************/
+        /**********************Categoria Producto******************************/
         final int[] VCpsId  = {1,2};
-        final String[] VCpsnombre = {"Telefonia","Internet"};
-        final String[] VCpsDescripcion = {"servicio de redes y venta de telefonos","servicio de Internet"};
+        final String[] VCpsnombre = {"Telefono Movil Smartphone","Internet"};
+        final String[] VCpsDescripcion = {"Servicio de redes y venta de telefonos","Servicio de Internet"};
         final int[] VCpsCantidadProductos = {0,0};
-        /*********************************************************/
-        final int[] VPsIdProdServ = {1,2};
-        final int[] VPsIdCategoriaPs = {1,2};
-        final String[] VPsNombreProd = {"Telefono Samsung Galaxy","Internet Residencial"};
-        final String[] VPsDescripcionProd = {"telefono inteligente","Internet para uso residencial"};
-        /***********************************************************/
+        /*****************************Producto o servicio****************************/
+        final int[] VPsIdProdServ = {1, 2};
+        final int[] VPsIdCategoriaPs = {1, 2};
+        final String[] VPsNombreProd = {"Samsung Galaxy III","JAPI Residencial 3MB"};
+        final String[] VPsDescripcionProd = {"Telefono inteligente","Internet para uso residencial"};
+       /********************************CATEGORIA EMPRESA********************************************/
+        final int[] VCEIdCategoriaEmpresa = {1, 2};
+        final String[] VCENombreCategoriaEmpresa = {"Venta de celulares","Redes y Comunicacion"};
+        final String[] VCEDescripcionCategoriaEmpresa = {"Venta de Smartphones y telefonos moviles","Redes empresariales y residenciales"};
+        final int[] VCECantidadEmpresas  = {0, 0};
+
+
+        /******************************Empresa*****************************/
+        final int[] VEIdEmpresa = {1, 2};
+        final int[] VEIdCategoriaEmpresa = {1, 2};
+        final String[] VENombreEmpresa = {"CEDECEL S.A de C.V", "JAPI"};
+        final int[] VECantidadSucursales = {0, 0};
+        /*******************************Zona*********************************/
+        final int[] VZIdZona = {1,2};
+        final String[] VZNombreZona = {"Zona 1","Zona 2"};
+        final String[] VZMunicipio = {"San Salvador","Soyapango"};
+        final String[] VZDepartamento = {"San Salvador","San Salvador"};
+        /**********************************************************************/
 
         abrir();
         db.execSQL("DELETE FROM usuario");
         db.execSQL("DELETE FROM categoria_prod_serv");
-        //db.execSQL("DELETE FROM prod_serv");
+        db.execSQL("DELETE FROM prod_serv");
+        db.execSQL("DELETE FROM zona");
+        db.execSQL("DELETE FROM categoria_empresa");
+        db.execSQL("DELETE FROM empresa");
+
         Usuario usuario = new Usuario();
         CategoriaProdServ categoriaProdServ =  new CategoriaProdServ();
         ProdServ prodServ = new ProdServ();
+        CategoriaEmpresa categoriaEmpresa = new CategoriaEmpresa();
+        Empresa empresa = new Empresa();
+        Zona zona = new Zona();
         for (int i = 0; i < 2; i++) {
             usuario.setDui(VUdui[i]);
             usuario.setNombreUsuario(VUnombre[i]);
@@ -1194,8 +1222,29 @@ public class ControlDB {
             prodServ.setNombreProdServ(VPsNombreProd[i]);
             insertar(prodServ);
         }
+         for(int i =0; i < 2; i++){
+             categoriaEmpresa.setIdCategoriaEmp(VCEIdCategoriaEmpresa[i]);
+             categoriaEmpresa.setNombreCategoriaEmp(VCENombreCategoriaEmpresa[i]);
+             categoriaEmpresa.setDescripcionCategoriaEmp(VCEDescripcionCategoriaEmpresa[i]);
+             categoriaEmpresa.setCantidadEmpresas(VCECantidadEmpresas[i]);
+             insertar(categoriaEmpresa);
+         }
+        for (int i=0; i < 2; i++){
+            empresa.setIdEmpresa(VEIdEmpresa[i]);
+            empresa.setIdCategoriaEmp(VEIdCategoriaEmpresa[i]);
+            empresa.setNombreEmpresa(VENombreEmpresa[i]);
+            empresa.setCantidadSucursales(VECantidadSucursales[i]);
+            insertar(empresa);
+        }
+        for (int i = 0; i < 2; i++){
+            zona.setIdZona(VZIdZona[i]);
+            zona.setNombreZona(VZNombreZona[i]);
+            zona.setMunicipio(VZMunicipio[i]);
+            zona.setDepartamento(VZDepartamento[i]);
+            insertar(zona);
+        }
         cerrar();
-        return "Guardo Correctamente";
+        return "guardo";
     }
 
 

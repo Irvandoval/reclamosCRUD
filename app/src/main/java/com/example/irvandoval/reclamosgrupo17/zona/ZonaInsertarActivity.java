@@ -60,7 +60,7 @@ public class ZonaInsertarActivity extends ActionBarActivity {
             cdb.abrir();
             respuesta = cdb.insertar(nuevaZona);
             cdb.cerrar();
-            Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.cantidad_insertados) + respuesta, Toast.LENGTH_SHORT).show();
         }
     }
     public void limpiarTexto(View v){
