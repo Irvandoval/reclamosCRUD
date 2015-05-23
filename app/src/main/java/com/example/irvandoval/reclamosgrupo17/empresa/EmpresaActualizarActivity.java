@@ -15,6 +15,7 @@ public class EmpresaActualizarActivity extends ActionBarActivity {
     EditText nombreEmpres;
     EditText idEmpresa;
     EditText idCategoriaEmpresa;
+    EditText cantSucur;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class EmpresaActualizarActivity extends ActionBarActivity {
         nombreEmpres = (EditText)findViewById(R.id.nombreEmpresa);
         idEmpresa  = (EditText) findViewById(R.id.idEmpresa);
         idCategoriaEmpresa = (EditText) findViewById(R.id.idCategoriaEmp);
+        cantSucur=(EditText) findViewById(R.id.cantidadSucursales);
     }
 
 
@@ -60,8 +62,28 @@ public class EmpresaActualizarActivity extends ActionBarActivity {
         String msg = cdb.actualizar(empresa);
         cdb.cerrar();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        limpiarTexto(v);
+    }
+    public void consultarEmpresa(View v){
+        ControlDB cdb = new ControlDB(this);
+        Empresa empresa;
+        cdb.abrir();
+        empresa = cdb.consultarEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
+        cdb.cerrar();
+        if(empresa == null){
+            Toast.makeText(this, "Empresa no encontrada", Toast.LENGTH_SHORT).show();
+        }else{
+            idEmpresa.setText(Integer.toString(empresa.getIdEmpresa()));
+            idCategoriaEmpresa.setText(Integer.toString(empresa.getIdCategoriaEmp()));
+            nombreEmpres.setText(empresa.getNombreEmpresa());
+            cantSucur.setText(Integer.toString(empresa.getCantidadSucursales()));
+            Toast.makeText(this, "Empresa consultada", Toast.LENGTH_SHORT).show();
+        }
     }
     public void limpiarTexto(View v){
         nombreEmpres.setText("");
+        idCategoriaEmpresa.setText("");
+        idEmpresa.setText("");
+        cantSucur.setText("");
     }
 }

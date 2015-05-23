@@ -73,7 +73,7 @@
         android:layout_toStartOf="@+id/nombreEmpresa" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
@@ -81,8 +81,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_above="@+id/nombreEmpresa"
-        android:layout_toRightOf="@+id/textView26"
-        android:layout_toEndOf="@+id/textView26" />
+        android:layout_toEndOf="@+id/textView26"
+        android:layout_alignLeft="@+id/button14"
+        android:layout_alignStart="@+id/button14" />
 
     <TextView
         android:layout_width="wrap_content"

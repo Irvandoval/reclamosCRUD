@@ -45,10 +45,11 @@ public class EmpresaEliminarActivity extends ActionBarActivity {
     public  void eliminarEmpresa(View v){
         ControlDB cdb = new ControlDB(this);
         Empresa empresa = new Empresa();
+        cdb.abrir();
         empresa.setIdEmpresa(Integer.parseInt(idEmpresa.getText().toString()));
         String msg = cdb.eliminar(empresa);
         cdb.cerrar();
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, msg+"Empresa eliminada correctamente", Toast.LENGTH_SHORT).show();
     }
     public void limpiarTexto(View v){
         idEmpresa.setText("");

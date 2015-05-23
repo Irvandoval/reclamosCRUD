@@ -71,16 +71,20 @@ public class CategoriaEmpresaActualizarActivity extends ActionBarActivity {
         hero = new ControlDB(this);
         hero.abrir();
         int idce=Integer.parseInt(idCE.getText().toString());
-        CEhero=hero.consultarCategoriaEmpresa(idce);
-        hero.cerrar();
-        if(CEhero==null){
-            Toast.makeText(this, getResources().getString(R.string.categoria_empresa_noencontrada), Toast.LENGTH_SHORT).show();
+        if(idCE.getText().toString().equals("")){
+            Toast.makeText(this,"Ingrese el ID", Toast.LENGTH_SHORT).show();
         }else{
-            nombCE.setText(CEhero.getNombreCategoriaEmp());
-            descCE.setText(CEhero.getDescripcionCategoriaEmp());
-            canempres.setText(String.valueOf(CEhero.getCantidadEmpresas()));
+            CEhero=hero.consultarCategoriaEmpresa(idce);
+            hero.cerrar();
+            if(CEhero==null){
+                Toast.makeText(this, getResources().getString(R.string.categoria_empresa_noencontrada), Toast.LENGTH_SHORT).show();
+            }else{
+                nombCE.setText(CEhero.getNombreCategoriaEmp());
+                descCE.setText(CEhero.getDescripcionCategoriaEmp());
+                canempres.setText(String.valueOf(CEhero.getCantidadEmpresas()));
 
-            Toast.makeText(this, getResources().getString(R.string.categoria_empresa_consultada), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.categoria_empresa_consultada), Toast.LENGTH_SHORT).show();
+            }
         }
     }
     public void limpiarCE(View v){
