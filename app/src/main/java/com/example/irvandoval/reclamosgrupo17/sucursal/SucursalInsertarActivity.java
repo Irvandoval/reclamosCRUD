@@ -64,6 +64,7 @@ public class SucursalInsertarActivity extends ActionBarActivity {
            nuevaSucursal.setNombreSucursal(nombreSucursal.getText().toString());
            nuevaSucursal.setJefeSucursal(jefeSucursal.getText().toString());
            nuevaSucursal.setDireccionSucursal(direccionSucursal.getText().toString());
+           nuevaSucursal.setTelefonoSucursal(telefonoSucursal.getText().toString());
            ControlDB cdb = new ControlDB(this);
            cdb.abrir();
            respuesta = cdb.insertar(nuevaSucursal);

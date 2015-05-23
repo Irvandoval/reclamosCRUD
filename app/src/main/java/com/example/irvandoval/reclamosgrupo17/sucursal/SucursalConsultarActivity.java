@@ -58,7 +58,6 @@ public class SucursalConsultarActivity extends ActionBarActivity {
     public void consultarSucursal(View v){
         if(!camposVacios()) {
             Sucursal nuevaSucursal = new Sucursal();
-            String respuesta;
             nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
             ControlDB cdb = new ControlDB(this);
             cdb.abrir();
@@ -66,13 +65,14 @@ public class SucursalConsultarActivity extends ActionBarActivity {
             if (nuevaSucursal == null) {
                 Toast.makeText(this, getResources().getString(R.string.sucursal_noencontrada), Toast.LENGTH_SHORT).show();
             } else {
-                idSucursal.setText(nuevaSucursal.getIdSucursal());
-                idEmpresa.setText(nuevaSucursal.getIdEmpresa());
-                idZona.setText(nuevaSucursal.getIdZona());
+                idSucursal.setText(Integer.toString(nuevaSucursal.getIdSucursal()));
+                idEmpresa.setText(Integer.toString(nuevaSucursal.getIdEmpresa()));
+                idZona.setText(Integer.toString(nuevaSucursal.getIdZona()));
                 nombreSucursal.setText(nuevaSucursal.getNombreSucursal());
                 jefeSucursal.setText(nuevaSucursal.getJefeSucursal());
+                direccionSucursal.setText(nuevaSucursal.getDireccionSucursal());
                 telefonoSucursal.setText(nuevaSucursal.getTelefonoSucursal());
-                Toast.makeText(this, getResources().getString(R.string.sucursal_consultada), Toast.LENGTH_SHORT).show();
+               Toast.makeText(this, getResources().getString(R.string.sucursal_consultada), Toast.LENGTH_SHORT).show();
             }
             cdb.cerrar();
         }
@@ -87,14 +87,10 @@ public class SucursalConsultarActivity extends ActionBarActivity {
         telefonoSucursal.setText("");
     }
     public boolean camposVacios(){
-        if(idSucursal.getText().toString().equals("") || idEmpresa.getText().toString().equals("")
-                || idZona.getText().toString().equals("") || telefonoSucursal.getText().toString().equals("")
-                || nombreSucursal.getText().toString().equals("") || direccionSucursal.getText().toString().equals("")
-                ||jefeSucursal.getText().toString().equals("")){
+        if(idSucursal.getText().toString().equals("")){
             return true;
         }else
             return false;
     }
 
 }
-
