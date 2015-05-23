@@ -6,16 +6,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.usuario.Usuario;
 
 public class CategoriaProdServActualizarActivity extends ActionBarActivity {
+    EditText IdCatPS;
     EditText nombCatPS;
     EditText descriCatPS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_prod_serv_actualizar);
+        IdCatPS = (EditText)findViewById(R.id.idCAtPS);
         nombCatPS = (EditText)findViewById(R.id.nombreCatPS);
         descriCatPS = (EditText)findViewById(R.id.descripcionCatPS);
     
@@ -43,9 +48,35 @@ public class CategoriaProdServActualizarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void actualizarUsuario(View v) {
+        if(camposVacios()) {
+            ControlDB hero = new ControlDB(this);
+            CategoriaProdServ herouser = new CategoriaProdServ();
+            herouser.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
+            herouser.setNombreCategoriaPs(nombCatPS.getText().toString());
+            herouser.setDescripcionCategoriaPs(descriCatPS.getText().toString());
+            hero.abrir();
+            String msg = hero.actualizar(herouser);
+            hero.cerrar();
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     public void limpiarTexto3(View v){
 
         nombCatPS.setText(" ");
         descriCatPS.setText(" ");
+        descriCatPS.setText(" ");
+    }
+
+    public boolean camposVacios(){
+        if(IdCatPS.getText().toString().equals("") || nombCatPS.getText().toString().equals("")
+                || descriCatPS.getText().toString().equals(""))
+            return true;
+        else
+
+            return false;
     }
 }
