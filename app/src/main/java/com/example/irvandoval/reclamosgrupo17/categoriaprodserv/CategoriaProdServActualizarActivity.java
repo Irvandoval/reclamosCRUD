@@ -49,6 +49,8 @@ public class CategoriaProdServActualizarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    //FUNCION ACTUALIZAR USUARIO
     public void actualizarUsuario(View v) {
         if(camposVacios()) {
             ControlDB hero = new ControlDB(this);
