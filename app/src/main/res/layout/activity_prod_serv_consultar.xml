@@ -71,8 +71,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/insertar_boton"
+        android:text="@string/consultar_boton"
         android:id="@+id/button29"
+        android:onClick=""
         android:layout_below="@+id/descripcionProdServ"
         android:layout_alignLeft="@+id/textView48"
         android:layout_alignStart="@+id/textView48"
