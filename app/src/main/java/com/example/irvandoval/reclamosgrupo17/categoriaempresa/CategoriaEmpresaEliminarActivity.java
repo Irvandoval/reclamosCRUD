@@ -54,4 +54,9 @@ public class CategoriaEmpresaEliminarActivity extends ActionBarActivity {
         }
 
     }
+    public void limpiarCE(View v){
+
+        idce.setText("");
+
+    }
 }

@@ -8,19 +8,17 @@
 
     <TextView android:text="@string/nombrecatempresa" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
         android:id="@+id/textView31"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/button18"
+        android:layout_alignEnd="@+id/button18" />
 
     <EditText
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:id="@+id/NombreCE"
-        android:layout_marginTop="26dp"
         android:layout_below="@+id/textView31"
-        android:layout_alignLeft="@+id/DescripcionCE"
-        android:layout_alignStart="@+id/DescripcionCE" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,8 +37,8 @@
         android:ems="10"
         android:id="@+id/DescripcionCE"
         android:layout_below="@+id/textView33"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
+        android:layout_alignLeft="@+id/NombreCE"
+        android:layout_alignStart="@+id/NombreCE" />
 
     <Button
         android:layout_width="wrap_content"
@@ -48,9 +46,10 @@
         android:text="@string/consultar_boton"
         android:id="@+id/button17"
         android:onClick="consultarCatEmpresa"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/cantEmpresas"
         android:layout_alignLeft="@+id/DescripcionCE"
-        android:layout_alignStart="@+id/DescripcionCE" />
+        android:layout_alignStart="@+id/DescripcionCE"
+        android:layout_marginTop="57dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -68,17 +67,18 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/idcatempresa"
         android:id="@+id/textView50"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="37dp"
         android:layout_below="@+id/DescripcionCE"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/button17"
+        android:layout_alignEnd="@+id/button17" />
 
     <EditText
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/IDCE"
-        android:layout_below="@+id/textView50"
-        android:layout_toLeftOf="@+id/button18"
-        android:layout_toStartOf="@+id/button18" />
+        android:layout_alignBottom="@+id/textView50"
+        android:layout_toRightOf="@+id/textView33"
+        android:layout_toEndOf="@+id/textView33" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/cantcatempresa"
         android:id="@+id/textView51"
-        android:layout_below="@+id/IDCE"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView50"
         android:layout_alignStart="@+id/textView50" />
 
@@ -94,6 +94,7 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/cantEmpresas"
-        android:layout_below="@+id/textView51"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/DescripcionCE"
+        android:layout_alignEnd="@+id/DescripcionCE" />
 </RelativeLayout>
