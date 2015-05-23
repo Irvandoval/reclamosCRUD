@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
@@ -53,14 +54,34 @@ public class CategoriaEmpresaActualizarActivity extends ActionBarActivity {
         ControlDB hero;
         hero = new ControlDB(this);
         hero.abrir();
-        int idce=Integer.parseInt(idCE.getText().toString());
-       CEhero=hero.consultarCategoriaEmpresa(idce);
-       nombCE.setText(CEhero.getNombreCategoriaEmp());
-        descCE.setText(CEhero.getDescripcionCategoriaEmp());
-      canempres.setText(CEhero.getCantidadEmpresas());
+        CEhero.setNombreCategoriaEmp(nombCE.getText().toString());
+        CEhero.setDescripcionCategoriaEmp(descCE.getText().toString());
+        CEhero.setCantidadEmpresas(Integer.parseInt(canempres.getText().toString()));
+        CEhero.setIdCategoriaEmp(Integer.parseInt(idCE.getText().toString()));
         res=hero.actualizar(CEhero);
         hero.cerrar();
+        Toast.makeText(this, getResources().getString(R.string.categoria_empresa_consultada)+res, Toast.LENGTH_SHORT).show();
+        limpiarCE(v);
 
+    }
+    public void consultarCatEmpresa(View v){
+        CategoriaEmpresa CEhero=new CategoriaEmpresa();
+        String res;
+        ControlDB hero;
+        hero = new ControlDB(this);
+        hero.abrir();
+        int idce=Integer.parseInt(idCE.getText().toString());
+        CEhero=hero.consultarCategoriaEmpresa(idce);
+        hero.cerrar();
+        if(CEhero==null){
+            Toast.makeText(this, getResources().getString(R.string.categoria_empresa_noencontrada), Toast.LENGTH_SHORT).show();
+        }else{
+            nombCE.setText(CEhero.getNombreCategoriaEmp());
+            descCE.setText(CEhero.getDescripcionCategoriaEmp());
+            canempres.setText(String.valueOf(CEhero.getCantidadEmpresas()));
+
+            Toast.makeText(this, getResources().getString(R.string.categoria_empresa_consultada), Toast.LENGTH_SHORT).show();
+        }
     }
     public void limpiarCE(View v){
         nombCE.setText("");

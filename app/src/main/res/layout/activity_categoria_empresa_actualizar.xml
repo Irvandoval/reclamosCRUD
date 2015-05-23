@@ -80,14 +80,22 @@
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button17"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"
-        android:onClick="actulizarCE"
-        android:nestedScrollingEnabled="true"
+        android:onClick="actualizarCE"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignBottom="@+id/butt"
+        android:layout_toLeftOf="@+id/cantEmpresas"
+        android:layout_toStartOf="@+id/cantEmpresas" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_boton"
+        android:id="@+id/butt"
+        android:onClick="consultarCatEmpresa"
+        android:layout_marginTop="39dp"
         android:layout_below="@+id/IDCE"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp" />
+        android:layout_toLeftOf="@+id/button17"
+        android:layout_toStartOf="@+id/button17" />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -95,8 +103,8 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button18"
         android:onClick="limpiarCE"
-        android:layout_alignBottom="@+id/button17"
-        android:layout_alignRight="@+id/NombreCE"
-        android:layout_alignEnd="@+id/NombreCE" />
+        android:layout_alignTop="@+id/button17"
+        android:layout_toRightOf="@+id/textView51"
+        android:layout_toEndOf="@+id/textView51" />
 
 </RelativeLayout>
