@@ -64,7 +64,7 @@ public class CategoriaEmpresaConsultarActivity extends ActionBarActivity {
             descCE.setText(CEhero.getDescripcionCategoriaEmp());
             canempres.setText(String.valueOf(CEhero.getCantidadEmpresas()));
 
-            Toast.makeText(this, getResources().getString(R.string.usuario_consultado), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.categoria_empresa_consultada), Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -32,6 +32,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         telefono = (EditText) findViewById(R.id.editUsuarioTelefono);
         telefono.addTextChangedListener( new MaskTextWatcher("####-####"));
         edad = (EditText) findViewById(R.id.editUsuarioEdad);
+        sexo = (EditText) findViewById(R.id.editUsuarioSexo);
     }
 
     @Override
@@ -57,7 +58,7 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarUsuario(View v) {
-        if(camposVacios()) {
+        if(!camposVacios()) {
             ControlDB hero = new ControlDB(this);
             Usuario herouser = new Usuario();
             herouser.setNombreUsuario(nombreUsuario.getText().toString());
@@ -84,12 +85,10 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         edad.setText("");
     }
     public boolean camposVacios(){
-        if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("")
-                || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
+        if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("") || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
                 || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))
             return true;
         else
-
             return false;
     }
 

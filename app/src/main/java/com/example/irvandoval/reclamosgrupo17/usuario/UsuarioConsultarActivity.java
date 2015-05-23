@@ -87,9 +87,7 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
         edad.setText("");
     }
     public boolean camposVacios(){
-        if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("")
-                || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
-                || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))
+        if(dui.getText().toString().equals("") )
             return true;
         else
 

@@ -11,10 +11,8 @@
      <string name="title_activity_estado_reclamo_insertar">Insertar Estado Reclamo</string>
     <string name="title_activity_estado_reclamo_eliminar">Eliminar Estado Reclamo
     </string>
-    <string name="title_activity_estado_reclamo_consultar">EstadoReclamoConsulatarActivity
-    </string>
-    <string name="title_activity_estado_reclamo_actualizar">EstadoReclamoActualizarActivity
-    </string>
+    <string name="title_activity_estado_reclamo_consultar">Consultar Estado Reclamo</string>
+    <string name="title_activity_estado_reclamo_actualizar">Actualizar Estado Reclamo</string>
 
     <string name="title_activity_detalle_reclamo_menu">Tabla Detalle Reclamo</string>
     <string name="title_activity_detalle_reclamo_insertar">
@@ -22,10 +20,8 @@
     </string>
     <string name="title_activity_detalle_reclamo_eliminar">Eliminar Detalle Reclamo
     </string>
-    <string name="title_activity_detalle_reclamo_consultar">DetalleReclamoConsulatarActivity
-    </string>
-    <string name="title_activity_detalle_reclamo_actualizar">DetalleReclamoActualizarActivity
-    </string>
+    <string name="title_activity_detalle_reclamo_consultar">Consultar Detalle Reclamo</string>
+    <string name="title_activity_detalle_reclamo_actualizar">Actualizar Detalle Reclamo</string>
 
     <string name="title_activity_prod_serv_menu">Tabla Producto Servicio</string>
     <string name="title_activity_categoria_prod_serv_menu">Tabla Categoria Producto Servicio</string>
@@ -37,16 +33,15 @@
     </string>
     <string name="title_activity_categoria_empresa_consultar">CategoriaEmpresaConsulatarActivity
     </string>
-    <string name="title_activity_categoria_empresa_actualizar">CategoriaEmpresaActualizarActivity
-    </string>
+    <string name="title_activity_categoria_empresa_actualizar">Actualizar Categoria Empresa</string>
     <string name="title_activity_empresa_menu">Tabla Empresa</string>
     <string name="title_activity_reclamo_menu">Tabla Reclamo</string>
     <string name="title_activity_sucursal_menu">Tabla Sucursal</string>
     <string name="title_activity_zona_menu">Tabla Zona</string>
     <string name="fill_db">Llenar BD</string>
-    <string name="title_activity_usuario_consultar">UsuarioConsultarActivity</string>
-    <string name="title_activity_usuario_eliminar">UsuarioEliminarActivity</string>
-    <string name="title_activity_usuario_insertar">UsuarioInsertarActivity</string>
+    <string name="title_activity_usuario_consultar">Consultar Usuario</string>
+    <string name="title_activity_usuario_eliminar">Eliminar Usuario</string>
+    <string name="title_activity_usuario_insertar">Insertar Usuario</string>
     <string name="cantidad_productos">Cantidad Prod</string>
     <!-- Resources para Menu principal Tablas-->
     <string name="insertar">Insertar Registro</string>
@@ -72,10 +67,10 @@
     <string name="sucursal_consultada">Sucursal Consultada</string>
     <string name="sucursal_noencontrada">Sucursal no encontrada</string>
 
-    <string name="title_activity_sucursal_actualizar">SucursalActualizarActivity</string>
-    <string name="title_activity_sucursal_eliminar">SucursalEliminarActivity</string>
-    <string name="title_activity_sucursal_consultar">SucursalConsultarActivity</string>
-    <string name="title_activity_sucursal_insertar">SucursalInsertarActivity</string>
+    <string name="title_activity_sucursal_actualizar">Actualizar Sucursal</string>
+    <string name="title_activity_sucursal_eliminar">Eliminar Sucursal</string>
+    <string name="title_activity_sucursal_consultar">Consultar Sucursal</string>
+    <string name="title_activity_sucursal_insertar">Insertar Sucursal</string>
 
     <!-- Resources para Usuario -->
     <string name="usuario_idusuario">ID Usuario</string>
@@ -92,7 +87,7 @@
     <string name="usuario_consultado">Usuario Consultado</string>
     <string name="usuario_noencontrado">Usuario no encontrado</string>
 
-
+<string name="guardo_correctamente">Guardo Correctamente</string>
 
             <!--CategoriaEmpresa-->
     <string name="idcatempresa">ID_Categoria_Empresa</string>
@@ -115,7 +110,7 @@
     <string name="estadoReclamo_id">Id del Estado</string>
     <string name="estadoReclamo_nombre">Nombre</string>
     <string name="estadoReclamo_Descripcion">Descripcion</string>
-    <string name="estadoReclamo_consultado">Estado Resultado Consultado</string>
+    <string name="estadoReclamo_consultado">Estado Reclamo Consultado</string>
     <string name="estadoReclamo_noencontrado">Estado Reclamo no encontrado</string>
 
 
@@ -129,42 +124,37 @@
     <string name="eliminar_boton">Eliminar</string>
     <string name="consultar_boton">Consultar</string>
     <string name="actualizar_boton">Actualizar</string>
-    <string name="title_activity_zona_insertar">ZonaInsertarActivity</string>
-    <string name="title_activity_zona_eliminar">ZonaEliminarActivity</string>
-    <string name="title_activity_zona_consultar">ZonaConsultarActivity</string>
-    <string name="title_activity_zona_actualizar">ZonaActualizarActivity</string>
-    <string name="title_activity_reclamo_insertar">ReclamoInsertarActivity</string>
+    <string name="title_activity_zona_insertar">Insertar Zona</string>
+    <string name="title_activity_zona_eliminar">Eliminar Zona</string>
+    <string name="title_activity_zona_consultar">Consultar Zona</string>
+    <string name="title_activity_zona_actualizar">Actualizar Zona</string>
+    <string name="title_activity_reclamo_insertar">Insertar Reclamo</string>
 
     <string name="Titulo">Titulo</string>
     <string name="formatofec">DD/MM/AAAA</string>
-    <string name="title_activity_reclamo_actualizar">ReclamoActualizarActivity</string>
+    <string name="title_activity_reclamo_actualizar">Actualizar Reclamo</string>
     <string name="motivo">Motivo</string>
     <string name="Fecha">Fecha</string>
-    <string name="title_activity_reclamo_consular">ReclamoConsultarActivity</string>
-    <string name="title_activity_reclamo_eliminar">ReclamoEliminarActivity</string>
-    <string name="title_activity_empresa_insertar">EmpresaInsertarActivity</string>
+    <string name="title_activity_reclamo_consular">Consultar Reclamo</string>
+    <string name="title_activity_reclamo_eliminar">Eliminar Reclamo</string>
+    <string name="title_activity_empresa_insertar">Insertar Empresa</string>
     <string name="idempre">ID_Empresa</string>
     <string name="nomEmp">Nombre</string>
-    <string name="title_activity_empresa_actualizar">EmpresaActualizarActivity</string>
-    <string name="title_activity_empresa_consultar">EmpresaConsultarActivity</string>
-    <string name="title_activity_empresa_eliminar">EmpresaEliminarActivity</string>
-    <string name="title_activity_categoria_prod_serv_insertar">CategoriaProdServInsertarActivity
-    </string>
+    <string name="title_activity_empresa_actualizar">Actualizar Empresa</string>
+    <string name="title_activity_empresa_consultar">Consultar Empresa</string>
+    <string name="title_activity_empresa_eliminar">Eliminar Empresa</string>
+    <string name="title_activity_categoria_prod_serv_insertar">Insertar Categoria Producto/Servicio</string>
     <string name="idCategoriaPS">ID_Categoria_Prod_Serv</string>
     <string name="nombreCatPS">Nombre</string>
     <string name="descripcionCatPS">Descripcion</string>
-    <string name="title_activity_categoria_prod_serv_actualizar">
-        CategoriaProdServActualizarActivity
-    </string>
-    <string name="title_activity_categoria_prod_serv_consultar">CategoriaProdServConsultarActivity
-    </string>
-    <string name="title_activity_categoria_prod_serv_eliminar">CategoriaProdServEliminarActivity
-    </string>
-    <string name="title_activity_prod_serv_insertar">ProdServInsertarActivity</string>
+    <string name="title_activity_categoria_prod_serv_actualizar">Actualizar Categoria Producto/Servicio</string>
+    <string name="title_activity_categoria_prod_serv_consultar">Consultar Categoria Producto/Servicio</string>
+    <string name="title_activity_categoria_prod_serv_eliminar">Eliminar Catetoria Producto/Servicio</string>
+    <string name="title_activity_prod_serv_insertar">Insertar Producto/Servicio</string>
     <string name="idProdServ">ID_Producto_Servicio</string>
-    <string name="title_activity_prod_serv_actualizar">ProdServActualizarActivity</string>
-    <string name="title_activity_prod_serv_consultar">ProdServConsultarActivity</string>
-    <string name="title_activity_prod_serv_eliminar">ProdServEliminarActivity</string>
+    <string name="title_activity_prod_serv_actualizar">Actualizar Producto/Servicio</string>
+    <string name="title_activity_prod_serv_consultar">Consultar Producto/Servicio</string>
+    <string name="title_activity_prod_serv_eliminar">Eliminar Producto/Servicio</string>
 
     <string name="error_insertar">Error al Insertar el registro, Registro Duplicado. Verificar inserción</string>
     <string name="cantidad_insertados">Registro Insertado No= </string>
@@ -172,4 +162,5 @@
 
     <string name="idempresa">ID Empresa</string>
     <string name="cantcatempresa">Cantidad Empresas</string>
+    <string name="title_activity_categoria_empresa_consulatar">Consultar Categoria Empresa</string>
 </resources>

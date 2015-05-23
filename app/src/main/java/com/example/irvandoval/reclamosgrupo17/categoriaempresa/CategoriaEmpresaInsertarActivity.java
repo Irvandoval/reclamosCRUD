@@ -1,7 +1,7 @@
 package com.example.irvandoval.reclamosgrupo17.categoriaempresa;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,16 +12,17 @@ import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 
 public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
-    EditText idCE;
     EditText nombCE;
     EditText descCE;
+    EditText idCE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_empresa_insertar);
         nombCE = (EditText)findViewById(R.id.NombreCE);
         descCE = (EditText)findViewById(R.id.DescripcionCE);
-        idCE  = (EditText) findViewById(R.id.idCE);
+        idCE = (EditText)findViewById(R.id.IDCE);
+
     }
 
 
@@ -52,12 +53,16 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
         if (!camposVacios()) {
             CEhero.setNombreCategoriaEmp(nombCE.getText().toString());
             CEhero.setDescripcionCategoriaEmp(descCE.getText().toString());
-            CEhero.setIdCategoriaEmp(Integer.parseInt(idCE.getText().toString()));
-            ControlDB hero;
+           CEhero.setIdCategoriaEmp(Integer.parseInt(idCE.getText().toString()));
+            CEhero.setCantidadEmpresas(0);
+           // CEhero.setIdCategoriaEmp(1);
+             ControlDB hero;
             hero = new ControlDB(this);
             hero.abrir();
             res = hero.insertar(CEhero);
-            if (res.equals("error_insertar")) {
+            hero.cerrar();
+
+           if (res.equals("error_insertar")) {
                 Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + res, Toast.LENGTH_SHORT).show();
@@ -68,10 +73,11 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
     public void limpiarCE(View v){
         nombCE.setText("");
         descCE.setText("");
+        idCE.setText("");
 
     }
     public boolean camposVacios(){
-        if(nombCE.getText().toString().equals("") || descCE.getText().toString().equals(""))
+        if(nombCE.getText().toString().equals("") || descCE.getText().toString().equals("") || idCE.getText().toString().equals(""))
             return true;
         else
 
