@@ -15,7 +15,7 @@ public class ProdServActualizarActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prod_serv_insertar);
+        setContentView(R.layout.activity_prod_serv_actualizar);
         nombProdServ = (EditText)findViewById(R.id.nombreProdServ);
         descriProdServ = (EditText)findViewById(R.id.descripcionProdServ);
     }
