@@ -9,13 +9,13 @@
 
     <TextView android:text="@string/estadoReclamo_nombre" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:id="@+id/textView28"
+        android:layout_above="@+id/editDescripcionEstado"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="41dp"
-        android:id="@+id/textView28" />
+        android:layout_marginBottom="44dp" />
 
     <EditText
         android:layout_width="100dp"
@@ -23,15 +23,16 @@
         android:id="@+id/editNombreEstado"
         android:layout_alignBottom="@+id/textView28"
         android:layout_toRightOf="@+id/textView28"
-        android:layout_toEndOf="@+id/textView28"
         android:layout_marginLeft="43dp"
-        android:layout_marginStart="43dp" />
+        android:layout_marginStart="43dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView android:text="@string/estadoReclamo_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:id="@+id/textView29"
-        android:layout_below="@+id/textView28"
+        android:layout_marginBottom="97dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/textView28"
         android:layout_alignStart="@+id/textView28" />
 
@@ -41,27 +42,52 @@
         android:id="@+id/editDescripcionEstado"
         android:layout_alignBottom="@+id/textView29"
         android:layout_alignLeft="@+id/editNombreEstado"
-        android:layout_alignStart="@+id/editNombreEstado" />
+        android:layout_alignStart="@+id/editNombreEstado"
+        android:layout_alignRight="@+id/editNombreEstado"
+        android:layout_alignEnd="@+id/editNombreEstado" />
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/actualizar"
+        android:text="@string/consultar"
         android:id="@+id/button15"
-        android:layout_alignTop="@+id/button16"
+        android:onClick="consultarEstadoReclamo"
+        android:layout_below="@+id/textView45"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="consultarEstadoReclamo"/>
+        android:layout_marginTop="61dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/editNombreEstado"
-        android:layout_toEndOf="@+id/editNombreEstado"
-        android:layout_marginBottom="127dp" />
+        android:layout_alignTop="@+id/button15"
+        android:layout_alignRight="@+id/editNombreEstado"
+        android:layout_alignEnd="@+id/editNombreEstado"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:onClick="limpiarTexto"/>
+
+    <TextView
+        android:text="@string/estadoReclamo_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView45"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textView28"
+        android:layout_alignStart="@+id/textView28"
+        android:layout_marginTop="36dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editEstadoId"
+        android:layout_alignBottom="@+id/textView45"
+        android:layout_alignRight="@+id/button16"
+        android:layout_alignEnd="@+id/button16"
+        android:layout_toRightOf="@+id/button15"
+        android:layout_toEndOf="@+id/button15" />
 
 </RelativeLayout>

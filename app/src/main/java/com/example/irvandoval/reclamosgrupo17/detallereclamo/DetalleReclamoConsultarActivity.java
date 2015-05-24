@@ -16,6 +16,7 @@ import com.example.irvandoval.reclamosgrupo17.R;
 public class DetalleReclamoConsultarActivity extends ActionBarActivity {
     ControlDB helper;
     EditText editDetalle_id;
+    EditText idProServ;
     EditText descripcion_detalle;
     //crea un EditText para el idProdServ
     @Override
@@ -25,6 +26,7 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
         helper = new ControlDB(this);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
         editDetalle_id = (EditText) findViewById(R.id.editDetalle_id);
+        idProServ= (EditText) findViewById(R.id.editProServ);
 
     }
 
@@ -51,24 +53,33 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
     }
 
     public void consultarDetalle(View v) {
-        helper.abrir();
-        DetalleReclamo detalle =
-                helper.consultarDetalleReclamo(Integer.parseInt(editDetalle_id.getText().toString()));
-        helper.cerrar();
-        if(detalle == null)
-            Toast.makeText(this, "Detalle con el ID " +
-                    editDetalle_id.getText().toString() +
-                    " no encontrado", Toast.LENGTH_LONG).show();
-        else{
-            descripcion_detalle.setText(detalle.getDescripcionDetalle());
-            //aca llena el nuevo campo id text con el getIDProdServ xfa
+        if (!camposVacios()) {
+            helper.abrir();
+            DetalleReclamo detalle =
+                    helper.consultarDetalleReclamo(Integer.parseInt(editDetalle_id.getText().toString()));
+            helper.cerrar();
+            if (detalle == null)
+                Toast.makeText(this, "Detalle con el ID " +
+                        editDetalle_id.getText().toString() +
+                        " no encontrado", Toast.LENGTH_LONG).show();
+            else {
+                descripcion_detalle.setText(detalle.getDescripcionDetalle());
+                idProServ.setText(detalle.getIdProdServ());
+                //aca llena el nuevo campo id text con el getIDProdServ xfa
+            }
         }
     }
+    public boolean camposVacios(){
+        if(editDetalle_id.getText().toString().equals("") ) {
+            Toast.makeText(this, "Ha dejado campos vacios",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+            else
+               return false;
+    }
 
-
-
-
-    public void limpiarTexto(View v) {
+     public void limpiarTexto(View v) {
         descripcion_detalle.setText("");
 
     }
