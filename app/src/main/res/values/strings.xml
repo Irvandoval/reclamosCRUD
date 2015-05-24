@@ -163,4 +163,5 @@
     <string name="idempresa">ID Empresa</string>
     <string name="cantcatempresa">Cantidad Empresas</string>
     <string name="title_activity_categoria_empresa_consulatar">Consultar Categoria Empresa</string>
+    <string name="idReclamo">ID Reclamo</string>
 </resources>

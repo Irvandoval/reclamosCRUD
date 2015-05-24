@@ -1,21 +1,25 @@
 package com.example.irvandoval.reclamosgrupo17.reclamo;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
-
-import java.util.Date;
 
 public class ReclamoInsertarActivity extends ActionBarActivity {
     EditText titulo;
     EditText motivo;
     EditText fecha;
+    EditText dui;
+    EditText idDet;
+    EditText idSucu;
+    EditText idrecl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,11 @@ public class ReclamoInsertarActivity extends ActionBarActivity {
         motivo=(EditText)findViewById(R.id.MotivoReclamo);
         fecha=(EditText)findViewById(R.id.fechaReclamo);
         fecha.addTextChangedListener(new MaskTextWatcher("##/##/####"));
+        dui=(EditText)findViewById(R.id.recDui);
+        dui.addTextChangedListener(new MaskTextWatcher("########-#"));
+        idDet=(EditText)findViewById(R.id.idDetalle);
+        idrecl=(EditText)findViewById(R.id.idReclamo);
+        idSucu=(EditText)findViewById(R.id.idSucursal);
     }
 
 
@@ -48,10 +57,43 @@ public class ReclamoInsertarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void insertarReclamo(View v){
+        ControlDB hero;
+        hero = new ControlDB(this);
+        hero.abrir();
+        Reclamo Reca=new Reclamo();
+        Reca.setIdReclamo(Integer.parseInt(idrecl.getText().toString()));
+        Reca.setIdDetalle(Integer.parseInt(idDet.getText().toString()));
+        Reca.setIdSucursal(Integer.parseInt(idSucu.getText().toString()));
+        Reca.setIdEstadoReclamo(1);
+        Reca.setDui(dui.getText().toString());
+        Reca.setFechaReclamo(fecha.getText().toString());
+        Reca.setTitulo(titulo.getText().toString());
+        Reca.setMotivoReclamo(motivo.getText().toString());
+        String res=hero.actualizar(Reca);
+        hero.cerrar();
+        Toast.makeText(this, getResources().getString(R.string.cantidad_insertados)+ res, Toast.LENGTH_SHORT).show();
+    }
+
     public void limpiarTexto1(View v){
        titulo.setText("");
        motivo.setText("");
         fecha.setText("");
+        dui.setText("");
+        idSucu.setText("");
+        idDet.setText("");
+        idrecl.setText("");
+        dui.setText("");
 
     }
+    public boolean camposVacios(){
+        if(dui.getText().toString().equals("") || titulo.getText().toString().equals("")
+                || motivo.getText().toString().equals("") ||fecha.getText().toString().equals("")
+                || idSucu.getText().toString().equals("") || idDet.getText().toString().equals("") || idrecl.getText().toString().equals(""))
+            return true;
+        else
+
+            return false;
+    }
+
 }

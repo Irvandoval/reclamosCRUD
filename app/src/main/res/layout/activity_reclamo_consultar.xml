@@ -8,90 +8,157 @@
 
     <TextView android:text="@string/Titulo" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:id="@+id/textView8"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="36dp"
-        android:id="@+id/textView12" />
-
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/reclamoTitulo"
-        android:layout_alignTop="@+id/textView12"
-        android:layout_toRightOf="@+id/textView12"
-        android:layout_toEndOf="@+id/textView12"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/motivo"
-        android:id="@+id/textView13"
-        android:layout_below="@+id/reclamoTitulo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="39dp" />
+        android:id="@+id/motivoReclamo"
+        android:layout_marginTop="52dp"
+        android:layout_below="@+id/TituloReclamo"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8" />
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="75dp"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/reclamoMotivo"
-        android:layout_below="@+id/textView13"
-        android:layout_alignLeft="@+id/reclamoTitulo"
-        android:layout_alignStart="@+id/reclamoTitulo" />
+        android:id="@+id/MotivoReclamo"
+        android:layout_below="@+id/TituloReclamo"
+        android:layout_toRightOf="@+id/limpiar1"
+        android:layout_toEndOf="@+id/limpiar1"
+        android:layout_marginTop="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/Fecha"
-        android:id="@+id/textView14"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/reclamoMotivo"
-        android:layout_alignRight="@+id/textView13"
-        android:layout_alignEnd="@+id/textView13" />
+        android:id="@+id/textfec"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/MotivoReclamo"
+        android:layout_alignRight="@+id/motivoReclamo"
+        android:layout_alignEnd="@+id/motivoReclamo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"
+        android:id="@+id/limpiar1"
+        android:onClick="limpiarTexto1"
+        android:layout_alignLeft="@+id/textView53"
+        android:layout_alignStart="@+id/textView53"
+        android:layout_below="@+id/idDetalle" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:layout_alignTop="@+id/textView14"
-        android:layout_alignLeft="@+id/reclamoMotivo"
-        android:layout_alignStart="@+id/reclamoMotivo"
+        android:id="@+id/fechaReclamo"
         android:hint="@string/formatofec"
-        android:id="@+id/fechaReclamo" />
+        android:layout_alignBottom="@+id/textfec"
+        android:layout_alignLeft="@+id/MotivoReclamo"
+        android:layout_alignStart="@+id/MotivoReclamo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/usuario_dui"
+        android:id="@+id/textView52"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/textfec"
+        android:layout_alignEnd="@+id/textfec" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/recDui"
+        android:layout_alignBottom="@+id/textView52"
+        android:layout_alignLeft="@+id/fechaReclamo"
+        android:layout_alignStart="@+id/fechaReclamo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/idReclamo"
+        android:id="@+id/textView53"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/textView52"
+        android:layout_alignRight="@+id/textView52"
+        android:layout_alignEnd="@+id/textView52" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/idReclamo"
+        android:layout_below="@+id/textView53"
+        android:layout_alignRight="@+id/textView53"
+        android:layout_alignEnd="@+id/textView53" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/sucursal_idsucursal"
+        android:id="@+id/textView54"
+        android:layout_alignTop="@+id/idSucursal"
+        android:layout_toRightOf="@+id/textView55"
+        android:layout_toEndOf="@+id/textView55" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/idSucursal"
+        android:layout_alignTop="@+id/textView53"
+        android:layout_alignLeft="@+id/textView54"
+        android:layout_alignStart="@+id/textView54" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/detalle_id"
+        android:id="@+id/textView55"
+        android:layout_below="@+id/idReclamo"
+        android:layout_toRightOf="@+id/idReclamo"
+        android:layout_toEndOf="@+id/idReclamo" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/idDetalle"
+        android:layout_below="@+id/textView55"
+        android:layout_alignRight="@+id/textView55"
+        android:layout_alignEnd="@+id/textView55" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TituloReclamo"
+        android:layout_below="@+id/textView8"
+        android:layout_alignLeft="@+id/MotivoReclamo"
+        android:layout_alignStart="@+id/MotivoReclamo" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
-        android:id="@+id/button6"
-        android:layout_below="@+id/fechaReclamo"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14"
-        android:layout_marginTop="19dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/limpiar_boton"
         android:id="@+id/button7"
-        android:layout_alignBottom="@+id/button6"
-        android:layout_alignRight="@+id/reclamoTitulo"
-        android:layout_alignEnd="@+id/reclamoTitulo"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:singleLine="false"
-        android:onClick="limpiarTexto1" />
+        android:onClick="consultarReclamo"
+        android:layout_below="@+id/idDetalle"
+        android:layout_alignRight="@+id/fechaReclamo"
+        android:layout_alignEnd="@+id/fechaReclamo" />
+
 
 </RelativeLayout>
