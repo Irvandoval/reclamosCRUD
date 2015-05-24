@@ -53,7 +53,7 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
 
     public void insertarEstado(View v) {
 
-        if(camposVacios()) {
+        if(!camposVacios()) {
             String regInsertados;
             DetalleReclamo nuevoDetalle = new DetalleReclamo();
             nuevoDetalle.setIdDetalle(Integer.parseInt(detalle_id.getText().toString()));

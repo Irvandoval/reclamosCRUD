@@ -64,7 +64,7 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
                         " no encontrado", Toast.LENGTH_LONG).show();
             else {
                 descripcion_detalle.setText(detalle.getDescripcionDetalle());
-                idProServ.setText(detalle.getIdProdServ());
+                idProServ.setText(Integer.toString(detalle.getIdProdServ()));
                 //aca llena el nuevo campo id text con el getIDProdServ xfa
             }
         }

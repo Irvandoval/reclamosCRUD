@@ -536,14 +536,14 @@ public class ControlDB {
     public String insertar(ProdServ prodServ) {
         String regInsertados = "";
         long contador = 0;
-        if (verificarIntegridad(prodServ, 1)) {
-            ContentValues ps = new ContentValues();
-            ps.put("id_prod_serv", prodServ.getIdProdServ());
-            ps.put("id_categoria_prod", prodServ.getIdCategoriaProd());
-            ps.put("nombre_prod_serv", prodServ.getNombreProdServ());
-            ps.put("descripcion_prod_serv", prodServ.getDescripcionProdServ());
-            contador = db.insert("prod_serv", null, ps);
-        }
+        //if (verificarIntegridad(prodServ, 1)) {
+        ContentValues ps = new ContentValues();
+        ps.put("id_prod_serv", prodServ.getIdProdServ());
+        ps.put("id_categoria_prod", prodServ.getIdCategoriaProd());
+        ps.put("nombre_prod_serv", prodServ.getNombreProdServ());
+        ps.put("descripcion_prod_serv", prodServ.getDescripcionProdServ());
+        contador = db.insert("prod_serv", null, ps);
+    //}
         if (contador == -1 || contador == 0) {
             regInsertados = "error_insertar";
         } else {
