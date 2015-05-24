@@ -84,6 +84,27 @@ public class UsuarioActualizarActivity extends ActionBarActivity {
         telefono.setText("");
         edad.setText("");
     }
+
+    public void consultarUsuario(View v){
+        if(!dui .getText().toString().equals("")) {
+            ControlDB hero = new ControlDB(this);
+            Usuario herouser;
+            hero.abrir();
+            herouser = hero.consultarUsuario(dui.getText().toString());
+            hero.cerrar();
+            if (herouser == null) {
+                Toast.makeText(this, getResources().getString(R.string.usuario_noencontrado), Toast.LENGTH_SHORT).show();
+            } else {
+                nombreUsuario.setText(herouser.getNombreUsuario());
+                apellidoUsuario.setText(herouser.getApellidoUsuario());
+                email.setText(herouser.getEmail());
+                telefono.setText(herouser.getTelefono());
+                edad.setText(String.valueOf(herouser.getEdad()));
+                sexo.setText(herouser.getSexo());
+                Toast.makeText(this, getResources().getString(R.string.usuario_consultado), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     public boolean camposVacios(){
         if(dui.getText().toString().equals("") || nombreUsuario.getText().toString().equals("") || apellidoUsuario.getText().toString().equals("") || email.getText().toString().equals("")
                 || telefono.getText().toString().equals("") || edad.getText().toString().equals("") || sexo.getText().toString().equals(""))

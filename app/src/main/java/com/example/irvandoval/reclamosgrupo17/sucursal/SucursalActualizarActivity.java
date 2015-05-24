@@ -84,6 +84,30 @@ public class SucursalActualizarActivity extends ActionBarActivity {
             return false;
     }
 
+
+    public void consultarSucursal(View v){
+        if(!idSucursal.getText().toString().equals("")) {
+            Sucursal nuevaSucursal = new Sucursal();
+            nuevaSucursal.setIdSucursal(Integer.parseInt(idSucursal.getText().toString()));
+            ControlDB cdb = new ControlDB(this);
+            cdb.abrir();
+            nuevaSucursal = cdb.consultarSucursal(nuevaSucursal.getIdSucursal());
+            if (nuevaSucursal == null) {
+                Toast.makeText(this, getResources().getString(R.string.sucursal_noencontrada), Toast.LENGTH_SHORT).show();
+            } else {
+                idSucursal.setText(Integer.toString(nuevaSucursal.getIdSucursal()));
+                idEmpresa.setText(Integer.toString(nuevaSucursal.getIdEmpresa()));
+                idZona.setText(Integer.toString(nuevaSucursal.getIdZona()));
+                nombreSucursal.setText(nuevaSucursal.getNombreSucursal());
+                jefeSucursal.setText(nuevaSucursal.getJefeSucursal());
+                direccionSucursal.setText(nuevaSucursal.getDireccionSucursal());
+                telefonoSucursal.setText(nuevaSucursal.getTelefonoSucursal());
+                Toast.makeText(this, getResources().getString(R.string.sucursal_consultada), Toast.LENGTH_SHORT).show();
+            }
+            cdb.cerrar();
+        }
+    }
+
     public void limpiarTexto(View v){
         idSucursal.setText("");
         idEmpresa.setText("");
