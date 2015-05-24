@@ -72,14 +72,14 @@
         android:onClick="limpiarTexto"/>
 
     <TextView
-        android:text="@string/idProdServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView44"
         android:layout_marginTop="41dp"
         android:layout_below="@+id/editDescripcionDetalle"
         android:layout_alignLeft="@+id/textView28"
-        android:layout_alignStart="@+id/textView28" />
+        android:layout_alignStart="@+id/textView28"
+        android:text="@string/idProdServ"/>
 
     <EditText
         android:layout_width="100dp"
