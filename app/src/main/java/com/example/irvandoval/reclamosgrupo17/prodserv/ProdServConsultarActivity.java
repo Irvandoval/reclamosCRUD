@@ -20,7 +20,7 @@ public class ProdServConsultarActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prod_serv_insertar);
+        setContentView(R.layout.activity_prod_serv_consultar);
         IdProdServ = (EditText)findViewById(R.id.idProdServ);
         IdCatProdServ = (EditText)findViewById(R.id.IdCatProdServ);
         nombProdServ = (EditText)findViewById(R.id.nombreProdServ);
@@ -58,7 +58,9 @@ public class ProdServConsultarActivity extends ActionBarActivity {
         if(herouser==null){
             Toast.makeText(this, getResources().getString(R.string.noenc_ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
         }else{
-            IdCatProdServ.setText(herouser.getIdCategoriaProd());
+
+            IdProdServ.setText(Integer.toString(herouser.getIdProdServ()));
+            IdCatProdServ.setText(Integer.toString(herouser.getIdCategoriaProd()));
             nombProdServ.setText(herouser.getNombreProdServ());
             descriProdServ.setText(herouser.getDescripcionProdServ());
 
