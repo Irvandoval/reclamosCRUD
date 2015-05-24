@@ -30,7 +30,7 @@ public class ControlDB {
     private static final String[] camposCategoriaEmpresa = new String[]{"id_categoria_emp", "nombre_categoria_emp", "descripcion_categoria_emp","cantidad_empresas"};
     private static final String[] camposEmpresa = new String[]{"id_empresa", "id_categoria_emp", "nombre_empresa", "cantidad_sucursales"};
     private static final String[] camposCategoriaProdServ = new String[]{"id_categoria_prod", "nombre_categoria_ps", "descripcion_categoria_ps", "cantidad_productos"};
-    private static final String[] camposReclamo = new String[]{"id_reclamo", "dui", "id_estado_reclamo", "id_sucursal", "id_detalle", "titulo", "motivo", "fecha_reclamo"};
+    private static final String[] camposReclamo = new String[]{"id_reclamo", "dui", "id_estado_reclamo", "id_sucursal", "id_detalle", "titulo", "motivo_reclamo", "fecha_reclamo"};
     private static final String[] camposProdServ = new String[]{"id_prod_serv", "id_categoria_prod", "nombre_prod_serv", "descripcion_prod_serv"};
     private static final String[] camposEstadoReclamo = new String[]{"id_estado_reclamo", "id_estado_reclamo", "nombre_estado", "descripcion_estado"};
     private final Context context;

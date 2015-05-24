@@ -15,8 +15,7 @@
     <string name="title_activity_estado_reclamo_actualizar">Actualizar Estado Reclamo</string>
 
     <string name="title_activity_detalle_reclamo_menu">Tabla Detalle Reclamo</string>
-    <string name="title_activity_detalle_reclamo_insertar">
-        Insertar Detalle Reclamo
+    <string name="title_activity_detalle_reclamo_insertar">Insertar Detalle Reclamo
     </string>
     <string name="title_activity_detalle_reclamo_eliminar">Eliminar Detalle Reclamo
     </string>
@@ -156,7 +155,7 @@
     <string name="title_activity_categoria_prod_serv_consultar">Consultar Categoria Producto/Servicio</string>
     <string name="title_activity_categoria_prod_serv_eliminar">Eliminar Catetoria Producto/Servicio</string>
     <string name="title_activity_prod_serv_insertar">Insertar Producto/Servicio</string>
-    <string name="idProdServ">ID_Producto_Servicio</string>
+    <string name="idProdServ">ID Producto Servicio</string>
     <string name="title_activity_prod_serv_actualizar">Actualizar Producto/Servicio</string>
     <string name="title_activity_prod_serv_consultar">Consultar Producto/Servicio</string>
     <string name="title_activity_prod_serv_eliminar">Eliminar Producto/Servicio</string>

@@ -22,9 +22,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/motivo"
         android:id="@+id/motivoReclamo"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
-        android:layout_marginTop="33dp" />
+        android:layout_alignBottom="@+id/TituloReclamo"
+        android:layout_alignRight="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,11 +52,11 @@
         android:layout_height="wrap_content"
         android:text="Insertar"
 
-        android:layout_marginBottom="28dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView55"
-        android:layout_alignEnd="@+id/textView55"
-        android:onClick="insertarReclamo" />
+        android:onClick="insertarReclamo"
+        android:id="@+id/button35"
+        android:layout_below="@+id/idDetalle"
+        android:layout_alignRight="@+id/idSucursal"
+        android:layout_alignEnd="@+id/idSucursal" />
 
     <Button
         android:layout_width="wrap_content"
@@ -64,9 +64,9 @@
         android:text="Limpiar"
         android:id="@+id/limpiar1"
         android:onClick="limpiarTexto1"
-        android:layout_alignTop="@+id/Insertar"
-        android:layout_marginRight="49dp"
-        android:layout_marginEnd="49dp" />
+        android:layout_alignTop="@+id/button35"
+        android:layout_alignLeft="@+id/idReclamo"
+        android:layout_alignStart="@+id/idReclamo" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -74,10 +74,10 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/fechaReclamo"
+        android:hint="@string/formatofec"
         android:layout_alignBottom="@+id/textfec"
-        android:layout_toRightOf="@+id/Insertar"
-        android:layout_toEndOf="@+id/Insertar"
-        android:hint="@string/formatofec" />
+        android:layout_toRightOf="@+id/textfec"
+        android:layout_toEndOf="@+id/textfec" />
 
     <TextView
         android:layout_width="wrap_content"
