@@ -21,6 +21,9 @@ public class ProdServConsultarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_serv_consultar);
+
+
+
         IdProdServ = (EditText)findViewById(R.id.idProdServ);
         IdCatProdServ = (EditText)findViewById(R.id.IdCatProdServ);
         nombProdServ = (EditText)findViewById(R.id.nombreProdServ);

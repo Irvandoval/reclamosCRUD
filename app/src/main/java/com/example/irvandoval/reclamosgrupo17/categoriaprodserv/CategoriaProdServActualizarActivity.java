@@ -51,8 +51,8 @@ public class CategoriaProdServActualizarActivity extends ActionBarActivity {
 
 
     //FUNCION ACTUALIZAR USUARIO
-    public void actualizarUsuario(View v) {
-        if(camposVacios()) {
+    public void actualizarCategoriaProducServ(View v) {
+        if(!camposVacios()) {
             ControlDB hero = new ControlDB(this);
             CategoriaProdServ herouser = new CategoriaProdServ();
             herouser.setIdCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));

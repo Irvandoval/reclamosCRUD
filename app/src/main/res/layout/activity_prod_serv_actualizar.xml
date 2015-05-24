@@ -11,10 +11,10 @@
         android:layout_marginTop="46dp"
         android:id="@+id/textView46"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/idProdServ"
-        android:layout_toStartOf="@+id/idProdServ"
-        android:layout_marginRight="51dp"
-        android:layout_marginEnd="51dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp" />
 
     <EditText
         android:layout_width="75dp"
@@ -32,20 +32,18 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/nombreCatPS"
         android:id="@+id/textView47"
-        android:layout_below="@+id/idProdServ"
+        android:layout_marginTop="110dp"
+        android:layout_below="@+id/textView46"
         android:layout_alignLeft="@+id/textView46"
-        android:layout_alignStart="@+id/textView46"
-        android:layout_marginTop="28dp" />
+        android:layout_alignStart="@+id/textView46" />
 
     <EditText
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/nombreProdServ"
         android:layout_alignTop="@+id/textView47"
-        android:layout_alignRight="@+id/idProdServ"
-        android:layout_alignEnd="@+id/idProdServ"
-        android:layout_marginRight="25dp"
-        android:layout_marginEnd="25dp" />
+        android:layout_toRightOf="@+id/button29"
+        android:layout_toEndOf="@+id/button29" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,7 +51,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/descripcionCatPS"
         android:id="@+id/textView48"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="49dp"
         android:layout_below="@+id/nombreProdServ"
         android:layout_alignRight="@+id/textView47"
         android:layout_alignEnd="@+id/textView47" />
@@ -64,28 +62,49 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/descripcionProdServ"
-        android:layout_alignTop="@+id/textView48"
+        android:layout_below="@+id/nombreProdServ"
         android:layout_alignLeft="@+id/nombreProdServ"
-        android:layout_alignStart="@+id/nombreProdServ" />
+        android:layout_alignStart="@+id/nombreProdServ"
+        android:layout_marginTop="33dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button29"
-        android:layout_below="@+id/descripcionProdServ"
+        android:onClick="actualizarProdServ"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/textView48"
-        android:layout_alignStart="@+id/textView48"
-        android:layout_marginTop="32dp" />
+        android:layout_alignStart="@+id/textView48" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button30"
-        android:layout_alignTop="@+id/button29"
+        android:onClick="limpiarTexto4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/nombreProdServ"
+        android:layout_alignEnd="@+id/nombreProdServ" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Categoria Producto"
+        android:id="@+id/textView13"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/textView46"
+        android:layout_alignLeft="@+id/textView46"
+        android:layout_alignStart="@+id/textView46" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdCatProdS"
+        android:layout_alignBottom="@+id/textView13"
         android:layout_alignRight="@+id/idProdServ"
         android:layout_alignEnd="@+id/idProdServ"
-        android:onClick="limpiarTexto4" />
+        android:layout_alignLeft="@+id/idProdServ"
+        android:layout_alignStart="@+id/idProdServ" />
 
 </RelativeLayout>
