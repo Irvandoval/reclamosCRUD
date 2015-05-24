@@ -32,10 +32,10 @@
         android:text="@string/eliminar_boton"
         android:id="@+id/button19"
         android:layout_marginTop="66dp"
-        android:onClick="eliminarEmpresa"
         android:layout_below="@+id/textView32"
         android:layout_alignLeft="@+id/textView32"
-        android:layout_alignStart="@+id/textView32" />
+        android:layout_alignStart="@+id/textView32"
+        android:onClick="consultarReclamo" />
 
     <Button
         android:layout_width="wrap_content"

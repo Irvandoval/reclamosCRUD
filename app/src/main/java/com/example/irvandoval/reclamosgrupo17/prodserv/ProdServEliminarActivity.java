@@ -47,7 +47,7 @@ public class ProdServEliminarActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void eliminarCategoriaProdServ(View v) {
+    public void eliminarProdServ(View v) {
         if (!IdProdServ.getText().toString().equals("")) {
             ControlDB hero = new ControlDB(this);
             ProdServ herouser = new ProdServ();

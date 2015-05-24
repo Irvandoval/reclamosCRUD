@@ -1,30 +1,25 @@
 package com.example.irvandoval.reclamosgrupo17.reclamo;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
-import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
 public class ReclamoEliminarActivity extends ActionBarActivity {
-    EditText titulo;
-    EditText motivo;
-    EditText fecha;
+    EditText idrec;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reclamo_eliminar);
-        titulo=(EditText)findViewById(R.id.TituloReclamo);
-        motivo=(EditText)findViewById(R.id.MotivoReclamo);
-        fecha=(EditText)findViewById(R.id.fechaReclamo);
-        fecha.addTextChangedListener(new MaskTextWatcher("##/##/####"));
+        idrec=(EditText)findViewById(R.id.idReclamo);
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -46,10 +41,18 @@ public class ReclamoEliminarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void eliminarreclamo(View v){
+        ControlDB hero;
+        hero = new ControlDB(this);
+        Reclamo reca=new Reclamo();
+        reca.setIdReclamo(Integer.parseInt(idrec.getText().toString()));
+        hero.abrir();
+        String res=hero.eliminar(reca);
+        hero.cerrar();
+        Toast.makeText(this, getResources().getString(R.string.cantidad_insertados) + res, Toast.LENGTH_SHORT).show();
+    }
     public void limpiarTexto1(View v){
-        titulo.setText("");
-        motivo.setText("");
-        fecha.setText("");
+    idrec.setText("");
 
     }
 }
