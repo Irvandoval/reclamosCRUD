@@ -60,7 +60,7 @@ public class EmpresaInsertarActivity extends ActionBarActivity {
             if(res.equals("error_insertar")){
                 Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, res+"empresa registrada", Toast.LENGTH_SHORT).show();
             }
         }
     }

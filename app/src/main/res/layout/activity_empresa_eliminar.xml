@@ -31,10 +31,11 @@
         android:layout_height="wrap_content"
         android:text="@string/eliminar_boton"
         android:id="@+id/button19"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="66dp"
         android:layout_below="@+id/textView32"
-        android:layout_toLeftOf="@+id/button20"
-        android:layout_toStartOf="@+id/button20" />
+        android:layout_alignLeft="@+id/textView32"
+        android:layout_alignStart="@+id/textView32"
+        android:onClick="consultarReclamo" />
 
     <Button
         android:layout_width="wrap_content"
@@ -43,7 +44,9 @@
         android:id="@+id/button20"
         android:onClick="limpiarTexto"
         android:layout_alignTop="@+id/button19"
-        android:layout_alignLeft="@+id/idEmpresa"
-        android:layout_alignStart="@+id/idEmpresa" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="52dp"
+        android:layout_marginEnd="52dp" />
 
 </RelativeLayout>

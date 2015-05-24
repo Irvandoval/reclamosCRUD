@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
 import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
@@ -14,6 +16,10 @@ public class ReclamoConsultarActivity extends ActionBarActivity {
     EditText titulo;
     EditText motivo;
     EditText fecha;
+    EditText dui;
+    EditText idDet;
+    EditText idSucu;
+    EditText idrecl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +28,11 @@ public class ReclamoConsultarActivity extends ActionBarActivity {
         motivo=(EditText)findViewById(R.id.MotivoReclamo);
         fecha=(EditText)findViewById(R.id.fechaReclamo);
         fecha.addTextChangedListener(new MaskTextWatcher("##/##/####"));
+        dui=(EditText)findViewById(R.id.recDui);
+        dui.addTextChangedListener(new MaskTextWatcher("########-#"));
+        idDet=(EditText)findViewById(R.id.idDetalle);
+        idrecl=(EditText)findViewById(R.id.idReclamo);
+        idSucu=(EditText)findViewById(R.id.idSucursal);
     }
 
 
@@ -46,10 +57,38 @@ public class ReclamoConsultarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void consultarReclamo(View v){
+        ControlDB hero;
+        hero = new ControlDB(this);
+        Reclamo Reca= new Reclamo();
+        int idre=Integer.parseInt(idrecl.getText().toString());
+        hero.abrir();
+        Reca=hero.consultarReclamo(idre);
+        hero.cerrar();
+        if(Reca==null){
+            Toast.makeText(this, "No existe reclamo con ese ID", Toast.LENGTH_SHORT).show();
+        }else{
+            titulo.setText(Reca.getTitulo());
+            motivo.setText(Reca.getMotivoReclamo());
+            dui.setText(Reca.getDui());
+            fecha.setText(Reca.getFechaReclamo());
+           idDet.setText(String.valueOf(Reca.getIdDetalle()));
+            idSucu.setText(String.valueOf(Reca.getIdSucursal()));
+            int cada=Integer.parseInt(String.valueOf(Reca.getIdEstadoReclamo()));
+
+            Toast.makeText(this, "Reclamo Consultado", Toast.LENGTH_SHORT).show();
+        }
+
+    }
     public void limpiarTexto1(View v){
         titulo.setText("");
         motivo.setText("");
         fecha.setText("");
+        dui.setText("");
+        idSucu.setText("");
+        idDet.setText("");
+        idrecl.setText("");
+        dui.setText("");
 
     }
 }

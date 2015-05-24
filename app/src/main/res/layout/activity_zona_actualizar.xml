@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.irvandoval.reclamosgrupo17.zona.ZonaInsertarActivity">
+    tools:context="com.example.irvandoval.reclamosgrupo17.zona.ZonaInsertarActivity"
+    android:id="@+id/root">
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,18 +88,27 @@
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button4"
-        android:layout_marginBottom="68dp"
+        android:onClick="actualizarZona"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8"
-        android:onClick="actualizarZona" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button5"
-        android:layout_alignTop="@+id/button4"
+        android:layout_marginBottom="39dp"
+        android:layout_above="@+id/button4"
         android:layout_toRightOf="@+id/button4"
         android:layout_toEndOf="@+id/button4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_boton"
+        android:id="@+id/button32"
+        android:layout_alignTop="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="consultarZona" />
 </RelativeLayout>

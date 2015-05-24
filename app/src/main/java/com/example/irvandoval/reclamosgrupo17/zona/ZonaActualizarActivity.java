@@ -63,6 +63,26 @@ public class ZonaActualizarActivity extends ActionBarActivity {
             Toast.makeText(this, respuesta, Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void consultarZona(View v){
+
+        if (!idZona.getText().toString().equals("")) {
+            ControlDB cdb = new ControlDB(this);
+            Zona nuevaZona;
+            cdb.abrir();
+            nuevaZona = cdb.consultarZona(Integer.parseInt(idZona.getText().toString()));
+            if (nuevaZona == null) {
+                Toast.makeText(this, getResources().getString(R.string.zona_noencontrada), Toast.LENGTH_SHORT).show();
+            } else {
+                idZona.setText(Integer.toString(nuevaZona.getIdZona()));
+                nombreZona.setText(nuevaZona.getNombreZona());
+                municipio.setText(nuevaZona.getMunicipio());
+                departamento.setText(nuevaZona.getDepartamento());
+                Toast.makeText(this, getResources().getString(R.string.zona_consultada), Toast.LENGTH_SHORT).show();
+            }
+            cdb.cerrar();
+        }
+    }
     public void limpiarTexto(View v){
         idZona.setText("");
         nombreZona.setText("");

@@ -52,16 +52,28 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
     }
 
     public void insertarEstado(View v) {
-        String regInsertados;
-        DetalleReclamo nuevoDetalle= new DetalleReclamo();
-        nuevoDetalle.setIdDetalle(Integer.parseInt(detalle_id.getText().toString()));
-        nuevoDetalle.setIdProdServ(Integer.parseInt(prod_ser.getText().toString()));
-        nuevoDetalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
-        helper.abrir();
-        regInsertados=helper.insertar(nuevoDetalle);
-        helper.cerrar();
-        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
 
+        if(!camposVacios()) {
+            String regInsertados;
+            DetalleReclamo nuevoDetalle = new DetalleReclamo();
+            nuevoDetalle.setIdDetalle(Integer.parseInt(detalle_id.getText().toString()));
+            nuevoDetalle.setIdProdServ(Integer.parseInt(prod_ser.getText().toString()));
+            nuevoDetalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
+            helper.abrir();
+            regInsertados = helper.insertar(nuevoDetalle);
+            helper.cerrar();
+            Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
+        }
+    }
+    public boolean camposVacios(){
+        if(detalle_id.getText().toString().equals("") || prod_ser.getText().toString().equals("")
+                || descripcion_detalle.getText().toString().equals(""))
+        {Toast.makeText(this, "Ha dejado campos vacios",
+                Toast.LENGTH_LONG).show();
+            return true;}
+        else
+
+            return false;
     }
 
 

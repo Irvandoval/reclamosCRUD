@@ -11,6 +11,14 @@ android:stretchColumns="1" >
         android:inputType="text"
         android:maxLength="7" />
 </TableRow>
+
+    <TableRow>
+        <TextView android:text="@string/idProdServ" />
+        <EditText
+            android:id="@+id/idProdServ"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
 <TableRow>
 <TextView android:text="@string/detalle_Descripcion" />
 

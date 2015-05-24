@@ -14,6 +14,7 @@ import com.example.irvandoval.reclamosgrupo17.prodserv.ProdServ;
 
 public class ProdServInsertarActivity extends ActionBarActivity {
     EditText IdProdServ;
+    EditText IdCategoriaProdServ;
     EditText nombProdServ;
     EditText descriProdServ;
     @Override
@@ -21,6 +22,7 @@ public class ProdServInsertarActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_serv_insertar);
         IdProdServ = (EditText)findViewById(R.id.idProdServ);
+        IdCategoriaProdServ = (EditText)findViewById(R.id.IdCategoriaPServ);
         nombProdServ = (EditText)findViewById(R.id.nombreProdServ);
         descriProdServ = (EditText)findViewById(R.id.descripcionProdServ);
     }
@@ -54,6 +56,7 @@ public class ProdServInsertarActivity extends ActionBarActivity {
         String res;
         if (!camposVacios()) {
             nuevoProdServ.setIdProdServ(Integer.parseInt(IdProdServ.getText().toString()));
+            nuevoProdServ.setIdCategoriaProd(Integer.parseInt(IdCategoriaProdServ.getText().toString()));
             nuevoProdServ.setNombreProdServ(nombProdServ.getText().toString());
             nuevoProdServ.setDescripcionProdServ(descriProdServ.getText().toString());
             ControlDB hero;

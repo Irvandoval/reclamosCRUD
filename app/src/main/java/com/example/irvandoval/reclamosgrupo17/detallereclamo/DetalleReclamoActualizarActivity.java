@@ -16,6 +16,7 @@ import com.example.irvandoval.reclamosgrupo17.R;
 public class DetalleReclamoActualizarActivity extends ActionBarActivity {
 
     EditText editDetalle_id;
+    EditText editProServ;
     EditText descripcion_detalle;
 
     @Override
@@ -48,23 +49,34 @@ public class DetalleReclamoActualizarActivity extends ActionBarActivity {
     }
 
     public void actualizarDetalle(View v) {
-        ControlDB helper = new ControlDB(this);
-        DetalleReclamo detalle = new DetalleReclamo();
-        detalle.setIdDetalle(Integer.parseInt(editDetalle_id.getText().toString()));
-        detalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
-        helper.abrir();
-        String estado = helper.actualizar(detalle);
-        helper.cerrar();
-        Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
+        if (!camposVacios()) {
+            ControlDB helper = new ControlDB(this);
+            DetalleReclamo detalle = new DetalleReclamo();
+            detalle.setIdDetalle(Integer.parseInt(editDetalle_id.getText().toString()));
+            detalle.setIdProdServ(Integer.parseInt(editProServ.getText().toString()));
+            detalle.setDescripcionDetalle(descripcion_detalle.getText().toString());
+            helper.abrir();
+            String estado = helper.actualizar(detalle);
+            helper.cerrar();
+            Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
+        }
     }
 
-
-
     public void limpiarTexto(View v) {
+
         editDetalle_id.setText("");
+        editProServ.setText("");
         descripcion_detalle.setText("");
 
     }
 
-
+    public boolean camposVacios(){
+        if(editDetalle_id.getText().toString().equals("") || editProServ.getText().toString().equals("")|| descripcion_detalle.getText().toString().equals("")) {
+            Toast.makeText(this, "Ha dejado campos vacios",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+        else
+            return false;
+    }
 }
