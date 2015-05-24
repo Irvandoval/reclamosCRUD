@@ -8,21 +8,19 @@
 
     <TextView android:text="@string/empresa_idempresa" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="37dp"
         android:id="@+id/textView26"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignRight="@+id/textView27"
+        android:layout_alignEnd="@+id/textView27" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/idEmpresa"
-        android:layout_alignBottom="@+id/textView26"
-        android:layout_toRightOf="@+id/textView26"
-        android:layout_toEndOf="@+id/textView26"
-        android:layout_marginLeft="46dp"
-        android:layout_marginStart="46dp" />
+        android:layout_above="@+id/but13"
+        android:layout_alignRight="@+id/cantidadSucursales"
+        android:layout_alignEnd="@+id/cantidadSucursales" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,29 +28,29 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/empresa_nombreempresa"
         android:id="@+id/textView27"
-        android:layout_marginTop="39dp"
-        android:layout_below="@+id/textView49"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/but13"
+        android:layout_toStartOf="@+id/but13" />
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/nombreEmpresa"
-        android:layout_alignBottom="@+id/textView27"
-        android:layout_toEndOf="@+id/textView27"
-        android:layout_toRightOf="@+id/textView27" />
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView27"
+        android:layout_toEndOf="@+id/textView27" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button13"
-        android:layout_marginBottom="42dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView49"
-        android:layout_alignEnd="@+id/textView49"
-        android:onClick="actualizarEmpresa" />
+        android:onClick="actualizarEmpresa"
+        android:layout_below="@+id/textView45"
+        android:layout_alignRight="@+id/textView45"
+        android:layout_alignEnd="@+id/textView45"
+        android:layout_marginTop="32dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -61,27 +59,63 @@
         android:id="@+id/button14"
         android:onClick="limpiarTexto"
         android:layout_alignTop="@+id/button13"
-        android:layout_toRightOf="@+id/button13"
-        android:layout_toEndOf="@+id/button13" />
+        android:layout_alignLeft="@+id/cantidadSucursales"
+        android:layout_alignStart="@+id/cantidadSucursales"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp" />
+
+
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/idCategoriaEmp"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/but13"
+        android:layout_toRightOf="@+id/but13"
+        android:layout_toEndOf="@+id/but13" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_boton"
+        android:id="@+id/but13"
+        android:onClick="consultarEmpresa"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView26"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empresa_idcategoriaempresa"
-        android:id="@+id/textView49"
-        android:layout_below="@+id/textView26"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/idcatempresa"
+        android:id="@+id/textView44"
+        android:layout_alignBaseline="@+id/idCategoriaEmp"
+        android:layout_alignBottom="@+id/idCategoriaEmp"
+        android:layout_alignLeft="@+id/textView27"
+        android:layout_alignStart="@+id/textView27" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/empresa_cantidadsucursales"
+        android:id="@+id/textView45"
+        android:layout_below="@+id/nombreEmpresa"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="39dp" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/idCategoriaEmp"
-        android:layout_alignBottom="@+id/textView49"
-        android:layout_toRightOf="@+id/textView49"
-        android:layout_toEndOf="@+id/textView49" />
-
+        android:id="@+id/cantidadSucursales"
+        android:layout_alignBottom="@+id/textView45"
+        android:layout_toRightOf="@+id/textView44"
+        android:layout_toEndOf="@+id/textView44" />
 </RelativeLayout>

@@ -69,6 +69,6 @@ public class EmpresaConsultarActivity extends ActionBarActivity {
         nombreEmpres.setText("");
         idEmpresa.setText("");
         cantidadSucursales.setText("");
-        nombreEmpres.setText("");
+        idCategoriaEmpresa.setText("");
     }
 }
