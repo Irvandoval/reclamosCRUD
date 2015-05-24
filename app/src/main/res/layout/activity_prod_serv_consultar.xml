@@ -72,23 +72,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/consultar_boton"
-        android:id="@+id/button29"
-        android:onClick="consultarProductoServ"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView48"
-        android:layout_alignStart="@+id/textView48"
-        android:layout_marginBottom="25dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button30"
-        android:layout_alignTop="@+id/button29"
-        android:layout_alignRight="@+id/idProdServ"
-        android:layout_alignEnd="@+id/idProdServ"
-        android:onClick="limpiarTexto4" />
+        android:onClick="limpiarTexto4"
+        android:layout_alignTop="@+id/button36"
+        android:layout_toRightOf="@+id/textView45"
+        android:layout_toEndOf="@+id/textView45" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,5 +98,16 @@
         android:layout_alignStart="@+id/button30"
         android:layout_alignRight="@+id/idProdServ"
         android:layout_alignEnd="@+id/idProdServ" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_boton"
+        android:id="@+id/button36"
+        android:onClick="consultarProductoServ"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/descripcionProdServ"
+        android:layout_toStartOf="@+id/descripcionProdServ"
+        android:layout_marginBottom="28dp" />
 
 </RelativeLayout>

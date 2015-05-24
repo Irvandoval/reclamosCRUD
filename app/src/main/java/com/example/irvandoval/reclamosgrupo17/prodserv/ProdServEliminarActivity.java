@@ -20,7 +20,7 @@ public class ProdServEliminarActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_serv_insertar);
-        IdProdServ = (EditText)findViewById(R.id.nombreProdServ);
+        IdProdServ = (EditText)findViewById(R.id.idProdServ);
         //descriProdServ = (EditText)findViewById(R.id.descripcionProdServ);
     }
 

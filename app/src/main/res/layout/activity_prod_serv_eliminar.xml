@@ -26,25 +26,27 @@
         android:layout_marginRight="31dp"
         android:layout_marginEnd="31dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/eliminar_boton"
-        android:id="@+id/button29"
-        android:onClick="eliminarProdServ"
-        android:layout_below="@+id/textView46"
-        android:layout_alignLeft="@+id/textView46"
-        android:layout_alignStart="@+id/textView46"
-        android:layout_marginTop="49dp" />
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button30"
-        android:layout_alignTop="@+id/button29"
+        android:onClick="limpiarTexto4"
+        android:layout_below="@+id/idProdServ"
         android:layout_alignRight="@+id/idProdServ"
         android:layout_alignEnd="@+id/idProdServ"
-        android:onClick="limpiarTexto4" />
+        android:layout_marginTop="61dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar_boton"
+        android:id="@+id/button35"
+        android:onClick="eliminarProdServ"
+        android:layout_alignBottom="@+id/button30"
+        android:layout_alignRight="@+id/textView46"
+        android:layout_alignEnd="@+id/textView46" />
 
 </RelativeLayout>
