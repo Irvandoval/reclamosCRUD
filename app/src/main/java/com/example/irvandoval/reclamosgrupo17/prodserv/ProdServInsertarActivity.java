@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
-import com.example.irvandoval.reclamosgrupo17.categoriaprodserv.CategoriaProdServ;
+import com.example.irvandoval.reclamosgrupo17.prodserv.ProdServ;
 
 public class ProdServInsertarActivity extends ActionBarActivity {
     EditText IdProdServ;
@@ -52,7 +52,7 @@ public class ProdServInsertarActivity extends ActionBarActivity {
     public void insertarProdServInsertar(View v){
         ProdServ nuevoProdServ = new ProdServ();
         String res;
-        if (camposVacios()) {
+        if (!camposVacios()) {
             nuevoProdServ.setIdProdServ(Integer.parseInt(IdProdServ.getText().toString()));
             nuevoProdServ.setNombreProdServ(nombProdServ.getText().toString());
             nuevoProdServ.setDescripcionProdServ(descriProdServ.getText().toString());

@@ -73,6 +73,7 @@
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button23"
+        android:onClick="actualizarCategoriaProdServ"
         android:layout_below="@+id/descripcionCatPS"
         android:layout_alignLeft="@+id/textView39"
         android:layout_alignStart="@+id/textView39"
