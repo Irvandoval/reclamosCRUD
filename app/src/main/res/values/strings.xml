@@ -118,6 +118,11 @@
 
     <string name="ConsultaCatProdServ">Categoria de prod serv Consultada</string>
     <string name="noenc_ConsultaCatProdServ">Consulta no encontrada</string>
+
+
+    <!-- para Consulta  Producto Servicio -->
+    <string name="ConsultaProdServ">Producto Servicio Consultado</string>
+
 <!-- opciones de botones-->
     <string name="insertar_boton">Insertar</string>
     <string name="limpiar_boton">Limpiar</string>

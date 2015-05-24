@@ -14,6 +14,7 @@ import com.example.irvandoval.reclamosgrupo17.usuario.Usuario;
 
 public class CategoriaProdServInsertarActivity extends ActionBarActivity {
  EditText IdCatPS;
+ EditText IdProdServ;
  EditText nombCatPS;
  EditText descriCatPS;
     @Override

@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/eliminar_boton"
         android:id="@+id/button29"
+        android:onClick="eliminarProdServ"
         android:layout_below="@+id/textView46"
         android:layout_alignLeft="@+id/textView46"
         android:layout_alignStart="@+id/textView46"

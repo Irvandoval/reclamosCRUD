@@ -6,16 +6,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.categoriaprodserv.CategoriaProdServ;
 
 public class ProdServConsultarActivity extends ActionBarActivity {
+    EditText IdProdServ;
+    EditText IdCatProdServ;
     EditText nombProdServ;
     EditText descriProdServ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_serv_insertar);
+        IdProdServ = (EditText)findViewById(R.id.idProdServ);
+        IdCatProdServ = (EditText)findViewById(R.id.IdCatProdServ);
         nombProdServ = (EditText)findViewById(R.id.nombreProdServ);
         descriProdServ = (EditText)findViewById(R.id.descripcionProdServ);
     }
@@ -42,8 +49,29 @@ public class ProdServConsultarActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void limpiarTexto4(View v){
 
+    public void consultarProductoServ(View v){
+        ControlDB hero=new ControlDB(this);
+        ProdServ herouser;
+        hero.abrir();
+        herouser=hero.consultarProdServ(Integer.parseInt(IdProdServ.getText().toString()));
+        if(herouser==null){
+            Toast.makeText(this, getResources().getString(R.string.noenc_ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
+        }else{
+            IdCatProdServ.setText(herouser.getIdCategoriaProd());
+            nombProdServ.setText(herouser.getNombreProdServ());
+            descriProdServ.setText(herouser.getDescripcionProdServ());
+
+            Toast.makeText(this, getResources().getString(R.string.ConsultaProdServ), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
+
+
+    public void limpiarTexto4(View v){
+        IdProdServ.setText(" ");
         nombProdServ.setText(" ");
         descriProdServ.setText(" ");
     }
