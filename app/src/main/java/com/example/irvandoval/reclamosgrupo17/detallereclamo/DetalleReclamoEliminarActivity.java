@@ -60,6 +60,8 @@ public class DetalleReclamoEliminarActivity extends ActionBarActivity {
             Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
             // implementar eliminacion
         }
+        else Toast.makeText(this, "Ha dejado campos vacios",
+                Toast.LENGTH_LONG).show();
     }
     public void limpiarTexto(View v) {
         id_detalle.setText("");

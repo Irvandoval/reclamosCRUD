@@ -26,7 +26,7 @@ public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estado_reclamo_insertar);
-        helper = new ControlDB (this);
+        idEstadoReclamo=(EditText) findViewById(R.id.ediEstadoId);
         nombre_estado = (EditText) findViewById(R.id.editNombreEstado);
         descripcion_estado = (EditText) findViewById(R.id.editDescripcionEstado);
 
@@ -56,29 +56,41 @@ public class EstadoReclamoInsertarActivity  extends ActionBarActivity{
 
     public void insertarEstadoReclamo(View v) {
         String regInsertados;
+        helper = new ControlDB (this);
         EstadoReclamo estado=new EstadoReclamo ();
-        estado.setIdEstadoReclamo(Integer.parseInt(idEstadoReclamo.getText().toString()));
-        estado.setNombreEstado(nombre_estado.getText().toString());
-        estado.setDescripcionEstado(descripcion_estado.getText().toString());
-        helper.abrir();
-        regInsertados=helper.insertar(estado);
-        helper.cerrar();
-        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
+        if (!camposVacios()) {
+            estado.setIdEstadoReclamo(Integer.parseInt(idEstadoReclamo.getText().toString()));
+            estado.setNombreEstado(nombre_estado.getText().toString());
+            estado.setDescripcionEstado(descripcion_estado.getText().toString());
+            helper.abrir();
+            regInsertados = helper.insertar(estado);
+            System.err.println("AL SALIR IMPRIME: " + regInsertados);
+            if (regInsertados.equals("error_insertar")) {
+                Toast.makeText(this, getResources().getString(R.string.error_insertar), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this,getResources().getString(R.string.cantidad_insertados) + regInsertados, Toast.LENGTH_SHORT).show();
+            }
+        }
 
 
     }
 
 
-
-
-
-
-
-
-
     public void limpiarTexto(View v) {
+        idEstadoReclamo.setText("");
         nombre_estado.setText("");
         descripcion_estado.setText("");
+    }
+
+    public boolean camposVacios(){
+        if(idEstadoReclamo.getText().toString().equals("") || nombre_estado.getText().toString().equals("")
+                || descripcion_estado.getText().toString().equals(""))
+        {Toast.makeText(this, "Ha dejado campos vacios",
+                Toast.LENGTH_LONG).show();
+            return true;}
+        else
+
+            return false;
     }
 
 
