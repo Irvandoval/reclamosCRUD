@@ -149,10 +149,10 @@
         android:layout_height="wrap_content"
         android:text="@string/actualizar_boton"
         android:id="@+id/button10"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView20"
-        android:layout_toEndOf="@+id/textView20"
-        android:onClick="actualizarSucursal" />
+        android:onClick="actualizarSucursal"
+        android:layout_below="@+id/button11"
+        android:layout_toRightOf="@+id/textView22"
+        android:layout_toEndOf="@+id/textView22" />
 
     <Button
         android:layout_width="wrap_content"
@@ -160,7 +160,18 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button11"
         android:onClick="limpiarTexto"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button10"
-        android:layout_toEndOf="@+id/button10" />
+        android:layout_below="@+id/textView24"
+        android:layout_alignRight="@+id/editTelefonoSucursal"
+        android:layout_alignEnd="@+id/editTelefonoSucursal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_boton"
+        android:id="@+id/button33"
+        android:layout_below="@+id/editTelefonoSucursal"
+        android:layout_alignBottom="@+id/button11"
+        android:layout_toLeftOf="@+id/editTelefonoSucursal"
+        android:layout_toStartOf="@+id/editTelefonoSucursal"
+        android:onClick="consultarSucursal" />
 </RelativeLayout>
