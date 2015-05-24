@@ -70,7 +70,7 @@ public class ReclamoInsertarActivity extends ActionBarActivity {
         Reca.setFechaReclamo(fecha.getText().toString());
         Reca.setTitulo(titulo.getText().toString());
         Reca.setMotivoReclamo(motivo.getText().toString());
-        String res=hero.actualizar(Reca);
+        String res=hero.insertar(Reca);
         hero.cerrar();
         Toast.makeText(this, getResources().getString(R.string.cantidad_insertados)+ res, Toast.LENGTH_SHORT).show();
     }
