@@ -54,7 +54,7 @@
     <string name="guardo_correctamente">Saved</string>
     <string name="estadoReclamo_noencontrado">Claim State not found</string>
     <string name="estadoReclamo_consultado">Result Claim Readed</string>
-    <string name="cantidad_productos"></string>
+    <string name="cantidad_productos">products_quantity</string>
     <string name="zona_nombre">Zone Name</string>
     <string name="zona_noencontrada">Zone not found</string>
     <string name="zona_municipio"></string>
@@ -96,5 +96,7 @@
     <string name="sucursal_nombresucursal">Subsidiary Name</string>
     <string name="sucursal_telefonosucursal">Subsidiary Phone</string>
     <string name="title_activity_categoria_empresa_actualizar"></string>
-    <string name="cantcatempresa"></string>
+    <string name="cantcatempresa">many_companies</string>
+    <string name="categoria_empresa_consultada">Consulted Companies Category</string>
+    <string name="categoria_empresa_noencontrada">Category Business not found</string>
 </resources>
