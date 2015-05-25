@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.majoramask.MaskTextWatcher;
 
 public class SucursalActualizarActivity extends ActionBarActivity {
     private EditText idSucursal;
@@ -31,6 +32,7 @@ public class SucursalActualizarActivity extends ActionBarActivity {
         jefeSucursal = (EditText) findViewById(R.id.editJefeSucursal);
         direccionSucursal = (EditText) findViewById(R.id.editDireccionSucursal);
         telefonoSucursal = (EditText) findViewById(R.id.editTelefonoSucursal);
+        telefonoSucursal.addTextChangedListener( new MaskTextWatcher("####-####"));
     }
 
     @Override

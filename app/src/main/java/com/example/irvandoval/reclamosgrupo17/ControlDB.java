@@ -1204,13 +1204,14 @@ public class ControlDB {
                                                 ,"Exceso de tiempo requerido para que me atendieran", "Producto de baja calidad"};
         final int[] VDRIdProdServ = {1,2,2,3};
         /***************************Reclamo******************************/
-        final int[] VRIdReclamo = {1,2,3,4,5};
+        final int[] VRIdReclamo = {1,2,3};
         final String[] VRDui = {"00000000-1","00000000-2","00000000-3"};
         final int[] VRIdSucursal = {2,1,3};
         final int[] VRIdDetalle = {1,2,3};
         final String[] VRtitulo = {"No me sirve","Medicina Vencida","Llego tarde la comida"};
         final String[] VRMotivo = {"No me funciono la lampara","Hice el pedido de medicina y me salio vencida","Hice un pedido de comida y llego tarde"};
         final String[] VRFecha = {"21/05/15","22/05/2015","23/05/2015"};
+        final int[] VRIdEstado = {1,1,1};
         abrir();
         db.execSQL("DELETE FROM usuario");
         db.execSQL("DELETE FROM categoria_prod_serv");
@@ -1311,6 +1312,7 @@ public class ControlDB {
             reclamo.setTitulo(VRtitulo[i]);
             reclamo.setMotivoReclamo(VRMotivo[i]);
             reclamo.setFechaReclamo(VRFecha[i]);
+            reclamo.setIdEstadoReclamo(VRIdEstado[i]);
             insertar(reclamo);
         }
 
