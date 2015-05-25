@@ -22,7 +22,6 @@
     <string name="title_activity_empresa_menu">Company Table</string>
     <string name="title_activity_reclamo_menu">Claim Table</string>
     <string name="title_activity_sucursal_menu">Subsidiary  Table</string>
-    <string name="title_activity_zona_menu">Zone Table</string>
     <string name="fill_db">Fill DB</string>
     <string name="insertar">Create Registry</string>
     <string name="consultar">Read Registry</string>
@@ -66,7 +65,6 @@
     <string name="usuario_idusuario">User ID</string>
     <string name="usuario_email">Email</string>
     <string name="usuario_edad">Age</string>
-    <string name="usuario_dui" translatable="false">DUI</string>
     <string name="usuario_consultado">User Readed</string>
     <string name="formatofec">DD/MM/YYYY</string>
     <string name="nombreCatPS">Name</string>
@@ -133,7 +131,4 @@
     <string name="title_activity_prod_serv_consultar">Consult Product/Service</string>
     <string name="title_activity_prod_serv_eliminar">Delete Product/Service</string>
     <string name="title_activity_prod_serv_insertar">Insert Product/Service</string>
-    <string name="usuario_dui_patron" translatable="false">########-#</string>
-    <string name="usuario_sexo_patron" translatable="false">F o M</string>
-    <string name="usuario_telefono_patron" translatable="false">####-####</string>
 </resources>

@@ -36,7 +36,7 @@
     <string name="title_activity_empresa_menu">Tabla Empresa</string>
     <string name="title_activity_reclamo_menu">Tabla Reclamo</string>
     <string name="title_activity_sucursal_menu">Tabla Sucursal</string>
-    <string name="title_activity_zona_menu">Tabla Zona</string>
+    <string name="title_activity_zona_menu" translatable="false">Tabla Zona</string>
     <string name="fill_db">Llenar BD</string>
     <string name="title_activity_usuario_consultar">Consultar Usuario</string>
     <string name="title_activity_usuario_eliminar">Eliminar Usuario</string>
