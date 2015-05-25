@@ -75,8 +75,8 @@
         android:id="@+id/button23"
         android:onClick="actualizarCategoriaProducServ"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button24"
-        android:layout_toStartOf="@+id/button24" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -84,18 +84,18 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button24"
         android:onClick="limpiarTexto3"
-        android:layout_above="@+id/button23"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/button23"
+        android:layout_alignRight="@+id/descripcionCatPS"
+        android:layout_alignEnd="@+id/descripcionCatPS" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
         android:id="@+id/button36"
-        android:layout_above="@+id/button23"
+        android:onClick="consultarCategoriaProductoServ"
+        android:layout_alignTop="@+id/button23"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="consultarCategoriaProductoServ" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
