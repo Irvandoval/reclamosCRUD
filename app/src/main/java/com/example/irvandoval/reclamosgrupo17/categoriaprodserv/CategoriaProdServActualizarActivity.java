@@ -73,6 +73,21 @@ public class CategoriaProdServActualizarActivity extends ActionBarActivity {
         descriCatPS.setText(" ");
     }
 
+    public void consultarCategoriaProductoServ(View v){
+        ControlDB hero=new ControlDB(this);
+        CategoriaProdServ herouser;
+        hero.abrir();
+        herouser=hero.consultarCategoriaProdServ(Integer.parseInt(IdCatPS.getText().toString()));
+        if(herouser==null){
+            Toast.makeText(this, getResources().getString(R.string.noenc_ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
+        }else{
+            nombCatPS.setText(herouser.getNombreCategoriaPs());
+            descriCatPS.setText(herouser.getDescripcionCategoriaPs());
+            Toast.makeText(this, getResources().getString(R.string.ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
     public boolean camposVacios(){
         if(IdCatPS.getText().toString().equals("") || nombCatPS.getText().toString().equals("")
                 || descriCatPS.getText().toString().equals(""))

@@ -65,7 +65,24 @@ public class ProdServActualizarActivity extends ActionBarActivity {
         }
     }
 
+    public void consultarProductoServ(View v){
+        ControlDB hero=new ControlDB(this);
+        ProdServ herouser;
+        hero.abrir();
+        herouser=hero.consultarProdServ(Integer.parseInt(IdProdServ.getText().toString()));
+        if(herouser==null){
+            Toast.makeText(this, getResources().getString(R.string.noenc_ConsultaCatProdServ), Toast.LENGTH_SHORT).show();
+        }else{
 
+            IdProdServ.setText(Integer.toString(herouser.getIdProdServ()));
+            IdCatProdServ.setText(Integer.toString(herouser.getIdCategoriaProd()));
+            nombProdServ.setText(herouser.getNombreProdServ());
+            descriProdServ.setText(herouser.getDescripcionProdServ());
+
+            Toast.makeText(this, getResources().getString(R.string.ConsultaProdServ), Toast.LENGTH_SHORT).show();
+        }
+
+    }
     public boolean camposVacios(){
         if(IdProdServ.getText().toString().equals("") || IdCatProdServ.getText().toString().equals("") || nombProdServ.getText().toString().equals("")
                 || descriProdServ.getText().toString().equals(""))

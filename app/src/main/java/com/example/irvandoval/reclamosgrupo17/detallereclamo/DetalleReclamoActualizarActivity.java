@@ -24,6 +24,8 @@ public class DetalleReclamoActualizarActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_reclamo_actualizar);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
+        editDetalle_id  =(EditText) findViewById(R.id.editDetalle_id);
+        editProServ = (EditText) findViewById(R.id.idProdServ);
     }
 
     @Override
@@ -68,6 +70,25 @@ public class DetalleReclamoActualizarActivity extends ActionBarActivity {
         editProServ.setText("");
         descripcion_detalle.setText("");
 
+    }
+
+    public void consultarDetalle(View v) {
+        if (!editDetalle_id.getText().toString().equals("")) {
+           ControlDB helper = new ControlDB(this);
+            helper.abrir();
+            DetalleReclamo detalle =
+                    helper.consultarDetalleReclamo(Integer.parseInt(editDetalle_id.getText().toString()));
+            helper.cerrar();
+            if (detalle == null)
+                Toast.makeText(this, "Detalle con el ID " +
+                        editDetalle_id.getText().toString() +
+                        " no encontrado", Toast.LENGTH_LONG).show();
+            else {
+                descripcion_detalle.setText(detalle.getDescripcionDetalle());
+                editProServ.setText(Integer.toString(detalle.getIdProdServ()));
+
+            }
+        }
     }
 
     public boolean camposVacios(){

@@ -72,6 +72,26 @@ public class EstadoReclamoActualizarActivity extends ActionBarActivity {
 
     }
 
+    public void consultarEstadoReclamo(View v) {
+        if(!idEstadoReclamo.getText().toString().equals("")) {
+            ControlDB helper = new ControlDB(this);
+            helper.abrir();
+            EstadoReclamo estado =
+                    helper.consultarEstadoReclamo(Integer.parseInt(idEstadoReclamo.getText().toString()));
+            helper.cerrar();
+            if (estado == null)
+                Toast.makeText(this, "Estado con el ID " +
+                        idEstadoReclamo.getText().toString() +
+                        " no encontrado", Toast.LENGTH_LONG).show();
+            else {
+                nombre_estado.setText(estado.getNombreEstado());
+                descripcion_estado.setText(estado.getDescripcionEstado());
+
+            }
+
+        }
+    }
+
     public boolean camposVacios(){
         if(idEstadoReclamo.getText().toString().equals("") || nombre_estado.getText().toString().equals("")|| descripcion_estado.getText().toString().equals("")) {
             Toast.makeText(this, "Ha dejado campos vacios",

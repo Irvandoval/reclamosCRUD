@@ -51,13 +51,39 @@ android:stretchColumns="1"
         android:layout_height="fill_parent">
 
         <Button
-            android:onClick="actualizarDetalle"
-            android:text="@string/actualizar"
-            android:layout_column="0" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/consultar_boton"
+            android:id="@+id/button38"
+            android:layout_column="0"
+            android:onClick="consultarDetalle" />
 
         <Button
             android:onClick="limpiarTexto"
             android:text="@string/limpiar_boton"
             android:layout_column="1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:onClick="actualizarDetalle"
+            android:text="@string/actualizar"
+            android:layout_column="0"
+            android:layout_span="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0">
+
+        </TableRow>
     </TableRow>
 </TableLayout>
