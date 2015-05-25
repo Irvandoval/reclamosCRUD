@@ -10,15 +10,10 @@
     <string name="title_activity_prod_serv_menu">Product Service Table</string>
     <string name="title_activity_categoria_prod_serv_menu">Product Service  Category Table</string>
     <string name="title_activity_categoria_empresa_menu">Company Category Table</string>
-    <string name="title_activity_categoria_empresa_insertar_actvity">
-        CategoriaEmpresaInsertarActvity
-    </string>
-    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity
-    </string>
-    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity
-    </string>
-    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity
-    </string>
+    <string name="title_activity_categoria_empresa_insertar_actvity">CategoriaEmpresaInsertarActvity </string>
+    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity</string>
+    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity </string>
+    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity </string>
     <string name="title_activity_empresa_menu">Company Table</string>
     <string name="title_activity_reclamo_menu">Claim Table</string>
     <string name="title_activity_sucursal_menu">Subsidiary  Table</string>
