@@ -10,19 +10,13 @@
     <string name="title_activity_prod_serv_menu">Product Service Table</string>
     <string name="title_activity_categoria_prod_serv_menu">Product Service  Category Table</string>
     <string name="title_activity_categoria_empresa_menu">Company Category Table</string>
-    <string name="title_activity_categoria_empresa_insertar_actvity">
-        CategoriaEmpresaInsertarActvity
-    </string>
-    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity
-    </string>
-    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity
-    </string>
-    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity
-    </string>
+    <string name="title_activity_categoria_empresa_insertar_actvity">CategoriaEmpresaInsertarActvity </string>
+    <string name="title_activity_categoria_empresa_eliminar">CategoriaEmpresaEliminarActivity</string>
+    <string name="title_activity_categoria_empresa_consulatar">CategoriaEmpresaConsulatarActivity </string>
+    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity </string>
     <string name="title_activity_empresa_menu">Company Table</string>
     <string name="title_activity_reclamo_menu">Claim Table</string>
     <string name="title_activity_sucursal_menu">Subsidiary  Table</string>
-    <string name="title_activity_zona_menu">Zone Table</string>
     <string name="fill_db">Fill DB</string>
     <string name="insertar">Create Registry</string>
     <string name="consultar">Read Registry</string>
@@ -36,17 +30,16 @@
     <string name="detalle_Descripcion">Description</string>
     <string name="detalle_id">Claim Detail ID</string>
     <string name="eliminar_boton">Delete</string>
-    <string name="empresa_cantidadsucursales"></string>
-    <string name="empresa_idempresa"></string>
+    <string name="empresa_idempresa">ID Company</string>
     <string name="Fecha">Date</string>
     <string name="Titulo">Title</string>
     <string name="actualizar_boton">Update</string>
     <string name="descripcionCatPS">Description</string>
     <string name="insertar_boton">Insert</string>
     <string name="limpiar_boton">Clear</string>
-    <string name="motivo"></string>
+    <string name="motivo">Reason</string>
     <string name="nomEmp">Name</string>
-    <string name="sucursal_idempresa"></string>
+    <string name="sucursal_idempresa">ID Company</string>
     <string name="sucursal_idsucursal">Subsidiary ID</string>
     <string name="sucursal_idzona">Zone ID</string>
     <string name="cantidad_insertados">Insert Registry No= </string>
@@ -54,12 +47,12 @@
     <string name="guardo_correctamente">Saved</string>
     <string name="estadoReclamo_noencontrado">Claim State not found</string>
     <string name="estadoReclamo_consultado">Result Claim Readed</string>
-    <string name="cantidad_productos"></string>
+    <string name="cantidad_productos">products_quantity</string>
     <string name="zona_nombre">Zone Name</string>
     <string name="zona_noencontrada">Zone not found</string>
-    <string name="zona_municipio"></string>
+    <string name="zona_municipio">Town</string>
     <string name="zona_idzona">Zone ID</string>
-    <string name="zona_departamento"></string>
+    <string name="zona_departamento">Departament</string>
     <string name="zona_consultada">Zone Found</string>
     <string name="usuario_sexo">Gender</string>
     <string name="usuario_nombre">Name</string>
@@ -67,13 +60,12 @@
     <string name="usuario_idusuario">User ID</string>
     <string name="usuario_email">Email</string>
     <string name="usuario_edad">Age</string>
-    <string name="usuario_dui" translatable="false"></string>
     <string name="usuario_consultado">User Readed</string>
     <string name="formatofec">DD/MM/YYYY</string>
     <string name="nombreCatPS">Name</string>
-    <string name="nombrecatempresa"></string>
-    <string name="sucursal_consultada"></string>
-    <string name="sucursal_direccionsucursal"></string>
+    <string name="nombrecatempresa">Name Company Category</string>
+    <string name="sucursal_consultada">Branch Consulted</string>
+    <string name="sucursal_direccionsucursal">Address Branch</string>
     <string name="title_activity_sucursal_actualizar">Update Subsidiary</string>
     <string name="title_activity_sucursal_consultar">Read Subsidiary</string>
     <string name="title_activity_sucursal_eliminar">Delete Subsidiary</string>
@@ -95,6 +87,43 @@
     <string name="sucursal_noencontrada">Subsidiary not found</string>
     <string name="sucursal_nombresucursal">Subsidiary Name</string>
     <string name="sucursal_telefonosucursal">Subsidiary Phone</string>
-    <string name="title_activity_categoria_empresa_actualizar"></string>
-    <string name="cantcatempresa"></string>
+    <string name="title_activity_categoria_empresa_actualizar">Update Category Business</string>
+    <string name="cantcatempresa">many_companies</string>
+    <string name="categoria_empresa_consultada">Consulted Companies Category</string>
+    <string name="categoria_empresa_noencontrada">Category Business not found</string>
+    <string name="descripcion_cempresa">Company Description Category</string>
+    <string name="ConsultaCatProdServ">Category of prod serv Consulted</string>
+    <string name="ConsultaProdServ">Product Service Consulted</string>
+    <string name="empresa_cantidadsucursales">Quantity Branch</string>
+    <string name="empresa_idcategoriaempresa">ID Category Company</string>
+    <string name="empresa_nombreempresa">Name Company</string>
+    <string name="idCategoriaPS">ID Category Product Service</string>
+    <string name="idProdServ">ID Product Service</string>
+    <string name="idReclamo">ID Claim</string>
+    <string name="idcatempresa">ID Category Company</string>
+    <string name="idempre">ID_Company</string>
+    <string name="idempresa">ID Company</string>
+    <string name="noenc_ConsultaCatProdServ">Consultad not found</string>
+    <string name="title_activity_categoria_empresa_consultar">Category Company  Consult</string>
+    <string name="title_activity_categoria_empresa_insertar_activity">Insert Consult Company</string>
+    <string name="title_activity_categoria_prod_serv_actualizar">Update Category Product/Service</string>
+    <string name="title_activity_categoria_prod_serv_consultar">Consult Category Product/Service</string>
+    <string name="title_activity_categoria_prod_serv_eliminar">Delete Category Product/Service</string>
+    <string name="title_activity_categoria_prod_serv_insertar">Insert Category Product/Service</string>
+    <string name="title_activity_detalle_reclamo_actualizar">Update Detail Claim</string>
+    <string name="title_activity_detalle_reclamo_consultar">Consult Detail Claim</string>
+    <string name="title_activity_detalle_reclamo_eliminar">Delete Detail Claim</string>
+    <string name="title_activity_detalle_reclamo_insertar">Insert Detail Claim</string>
+    <string name="title_activity_empresa_actualizar">Update Company</string>
+    <string name="title_activity_empresa_consultar">Consult Company</string>
+    <string name="title_activity_empresa_eliminar">Delete Company</string>
+    <string name="title_activity_empresa_insertar">Insert Company</string>
+    <string name="title_activity_estado_reclamo_actualizar">Update Claim Status</string>
+    <string name="title_activity_estado_reclamo_consultar">Consult Claim Status</string>
+    <string name="title_activity_estado_reclamo_eliminar">Delete Claim Status</string>
+    <string name="title_activity_estado_reclamo_insertar">Insert Claim Status</string>
+    <string name="title_activity_prod_serv_actualizar">Update Product/Service</string>
+    <string name="title_activity_prod_serv_consultar">Consult Product/Service</string>
+    <string name="title_activity_prod_serv_eliminar">Delete Product/Service</string>
+    <string name="title_activity_prod_serv_insertar">Insert Product/Service</string>
 </resources>

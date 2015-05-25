@@ -25,18 +25,14 @@
     <string name="title_activity_prod_serv_menu">Tabla Producto Servicio</string>
     <string name="title_activity_categoria_prod_serv_menu">Tabla Categoria Producto Servicio</string>
     <string name="title_activity_categoria_empresa_menu">Tabla Categoria Empresa</string>
-    <string name="title_activity_categoria_empresa_insertar_activity">
-        Insertar Categoria Empresa
-    </string>
-    <string name="title_activity_categoria_empresa_eliminar">Eliminar Categoria Empresa
-    </string>
-    <string name="title_activity_categoria_empresa_consultar">CategoriaEmpresaConsulatarActivity
-    </string>
+    <string name="title_activity_categoria_empresa_insertar_activity">Insertar Categoria Empresa</string>
+    <string name="title_activity_categoria_empresa_eliminar">Eliminar Categoria Empresa </string>
+    <string name="title_activity_categoria_empresa_consultar">CategoriaEmpresaConsulatarActivity</string>
     <string name="title_activity_categoria_empresa_actualizar">Actualizar Categoria Empresa</string>
     <string name="title_activity_empresa_menu">Tabla Empresa</string>
     <string name="title_activity_reclamo_menu">Tabla Reclamo</string>
     <string name="title_activity_sucursal_menu">Tabla Sucursal</string>
-    <string name="title_activity_zona_menu">Tabla Zona</string>
+    <string name="title_activity_zona_menu" translatable="false">Tabla Zona</string>
     <string name="fill_db">Llenar BD</string>
     <string name="title_activity_usuario_consultar">Consultar Usuario</string>
     <string name="title_activity_usuario_eliminar">Eliminar Usuario</string>
@@ -168,4 +164,6 @@
     <string name="cantcatempresa">Cantidad Empresas</string>
     <string name="title_activity_categoria_empresa_consulatar">Consultar Categoria Empresa</string>
     <string name="idReclamo">ID Reclamo</string>
+    <string name="title_activity_categoria_empresa_insertar_actvity">CategoriaEmpresaInsertarActvity</string>
+    <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity</string>
 </resources>
