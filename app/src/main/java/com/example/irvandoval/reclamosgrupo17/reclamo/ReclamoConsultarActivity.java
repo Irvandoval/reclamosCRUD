@@ -60,7 +60,7 @@ public class ReclamoConsultarActivity extends ActionBarActivity {
     public void consultarReclamo(View v){
         ControlDB hero;
         hero = new ControlDB(this);
-        Reclamo Reca= new Reclamo();
+        Reclamo Reca;
         int idre=Integer.parseInt(idrecl.getText().toString());
         hero.abrir();
         Reca=hero.consultarReclamo(idre);

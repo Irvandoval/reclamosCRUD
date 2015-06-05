@@ -122,7 +122,8 @@
         android:id="@+id/idSucursal"
         android:layout_alignTop="@+id/textView53"
         android:layout_alignLeft="@+id/textView54"
-        android:layout_alignStart="@+id/textView54" />
+        android:layout_alignStart="@+id/textView54"
+        android:layout_alignBottom="@+id/idReclamo" />
 
     <TextView
         android:layout_width="wrap_content"
