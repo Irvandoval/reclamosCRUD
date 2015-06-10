@@ -126,4 +126,6 @@
     <string name="title_activity_prod_serv_consultar">Consult Product/Service</string>
     <string name="title_activity_prod_serv_eliminar">Delete Product/Service</string>
     <string name="title_activity_prod_serv_insertar">Insert Product/Service</string>
+    <string name="puedes_hablar">You can speak right now...</string>
+    <string name="busqueda_voz">Speech Search</string>
 </resources>

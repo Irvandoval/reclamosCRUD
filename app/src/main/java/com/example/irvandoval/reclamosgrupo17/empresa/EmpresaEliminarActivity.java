@@ -7,9 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.SpeechRecognitionHelper;
 
 public class EmpresaEliminarActivity extends ActionBarActivity {
     EditText idEmpresa;
@@ -54,4 +54,9 @@ public class EmpresaEliminarActivity extends ActionBarActivity {
     public void limpiarTexto(View v){
         idEmpresa.setText("");
     }
+
+
+
+
+
 }
