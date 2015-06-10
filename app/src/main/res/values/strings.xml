@@ -5,8 +5,9 @@
     <string name="action_settings">Configuracion</string>
     <string name="title_activity_usuario_actualizar">Actualizar Usuario</string>
     <string name="title_activity_usuario_menu">Tabla Usuario</string>
-    <string name="puedes_hablar">Puedes hablar ahora....</string>
+        <string name="puedes_hablar">Puedes hablar ahora....</string>
 
+    <string name="mapa">Mapa</string>
     <string name="title_activity_estado_reclamo_menu">Tabla Estado Reclamo</string>
      <string name="title_activity_estado_reclamo_insertar">Insertar Estado Reclamo</string>
     <string name="title_activity_estado_reclamo_eliminar">Eliminar Estado Reclamo
@@ -167,4 +168,6 @@
     <string name="title_activity_categoria_empresa_insertar_actvity">CategoriaEmpresaInsertarActvity</string>
     <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity</string>
     <string name="busqueda_voz">Busqueda por voz</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="consultar_mapa">Ubicacion Mapa</string>
 </resources>
