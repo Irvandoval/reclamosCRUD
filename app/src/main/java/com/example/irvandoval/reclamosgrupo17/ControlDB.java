@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import com.example.irvandoval.reclamosgrupo17.R;
 
 import com.example.irvandoval.reclamosgrupo17.categoriaempresa.CategoriaEmpresa;
@@ -26,8 +27,8 @@ public class ControlDB {
     private static final String[] camposDetalleReclamo = new String[]{"id_detalle", "id_prod_serv", "descripcion_detalle"};
     private static final String[] camposUsuario = new String[]{"dui", "nombre_usuario", "apellido_usuario", "email", "telefono", "edad", "sexo"};
     private static final String[] camposZona = new String[]{"id_zona", "nombre_zona", "municipio", "departamento"};
-    private static final String[] camposSucursal = new String[]{"id_sucursal", "id_empresa", "id_zona", "nombre_sucursal", "jefe_sucursal", "direccion_sucursal", "telefono_sucursal"};
-    private static final String[] camposCategoriaEmpresa = new String[]{"id_categoria_emp", "nombre_categoria_emp", "descripcion_categoria_emp","cantidad_empresas"};
+    private static final String[] camposSucursal = new String[]{"id_sucursal", "id_empresa", "id_zona", "nombre_sucursal", "jefe_sucursal", "direccion_sucursal", "telefono_sucursal", "longitud", "latitud"};
+    private static final String[] camposCategoriaEmpresa = new String[]{"id_categoria_emp", "nombre_categoria_emp", "descripcion_categoria_emp", "cantidad_empresas"};
     private static final String[] camposEmpresa = new String[]{"id_empresa", "id_categoria_emp", "nombre_empresa", "cantidad_sucursales"};
     private static final String[] camposCategoriaProdServ = new String[]{"id_categoria_prod", "nombre_categoria_ps", "descripcion_categoria_ps", "cantidad_productos"};
     private static final String[] camposReclamo = new String[]{"id_reclamo", "dui", "id_estado_reclamo", "id_sucursal", "id_detalle", "titulo", "motivo_reclamo", "fecha_reclamo"};
@@ -49,7 +50,8 @@ public class ControlDB {
         public DataBaseHelper(Context context) {
             super(context, BASE_DATOS, null, VERSION);
         }
-//prueba irvandoval
+
+        //prueba irvandoval
         @Override
         public void onCreate(SQLiteDatabase db) {
             try {/********************************CREACION DE TABLAS************************/
@@ -108,6 +110,8 @@ public class ControlDB {
                         "\"jefe_sucursal\" VARCHAR(50) NOT NULL,\n" +
                         "\"direccion_sucursal\" VARCHAR(80) NOT NULL,\n" +
                         "\"telefono_sucursal\" VARCHAR(9) NOT NULL,\n" +
+                        "\"longitud\" REAL ,\n" +
+                        "\"latitud\" REAL ,\n" +
                         "PRIMARY KEY (\"id_sucursal\") ,\n" +
                         "CONSTRAINT \"fk_sucursal_empresa_1\" FOREIGN KEY (\"id_empresa\") REFERENCES \"empresa\" (\"id_empresa\"),\n" +
                         "CONSTRAINT \"fk_sucursal_zona_1\" FOREIGN KEY (\"id_zona\") REFERENCES \"zona\" (\"id_zona\")\n" +
@@ -543,7 +547,7 @@ public class ControlDB {
         ps.put("nombre_prod_serv", prodServ.getNombreProdServ());
         ps.put("descripcion_prod_serv", prodServ.getDescripcionProdServ());
         contador = db.insert("prod_serv", null, ps);
-    //}
+        //}
         if (contador == -1 || contador == 0) {
             regInsertados = "error_insertar";
         } else {
@@ -900,7 +904,7 @@ public class ControlDB {
 
         ContentValues sc = new ContentValues();
         if (verificarIntegridad(sucursal, 5)) {
-            System.err.println(sucursal.getNombreSucursal() +  "se mete aca");
+            System.err.println(sucursal.getNombreSucursal() + "se mete aca");
             sc.put("id_sucursal", sucursal.getIdSucursal());
             sc.put("id_empresa", sucursal.getIdEmpresa());
             sc.put("id_zona", sucursal.getIdZona());
@@ -908,6 +912,8 @@ public class ControlDB {
             sc.put("jefe_sucursal", sucursal.getJefeSucursal());
             sc.put("direccion_sucursal", sucursal.getDireccionSucursal());
             sc.put("telefono_sucursal", sucursal.getTelefonoSucursal());
+            sc.put("longitud", sucursal.getLongitud());
+            sc.put("latitud", sucursal.getLatitud());
             contador = db.insert("sucursal", null, sc);
         }
 
@@ -957,6 +963,8 @@ public class ControlDB {
             sucursal.setJefeSucursal(cursor.getString(4));
             sucursal.setDireccionSucursal(cursor.getString(5));
             sucursal.setTelefonoSucursal(cursor.getString(6));
+            sucursal.setLongitud(cursor.getDouble(7));
+            sucursal.setLatitud(cursor.getDouble(8));
             return sucursal;
         } else
             return null;
@@ -1148,70 +1156,73 @@ public class ControlDB {
 
     public String llenarDB() {
         /******************************Usuario*******************/
-        final String[] VUdui = {"00000000-1", "00000000-2","00000000-3","00000000-4" ,"00000000-5"};
-        final String[] VUnombre = {"Gabriela", "Jose","Marcos","Alexia","Tulio"};
-        final String[] VUapellido = {"Sosa", "Abidal","Gotze","Morgan","Triviño"};
-        final String[] VUemail = {"gabiSo@gmail.com", "Abidal1@yahoo.com","Mg32@hotmail.com","usamorgan@yahoo.com","trivilio@gmail.com"};
-        final String[] VUtelefono = {"2222-2222", "7777-7777","2121-2121","7878-7878","7575-7575"};
+        final String[] VUdui = {"00000000-1", "00000000-2", "00000000-3", "00000000-4", "00000000-5"};
+        final String[] VUnombre = {"Gabriela", "Jose", "Marcos", "Alexia", "Tulio"};
+        final String[] VUapellido = {"Sosa", "Abidal", "Gotze", "Morgan", "Triviño"};
+        final String[] VUemail = {"gabiSo@gmail.com", "Abidal1@yahoo.com", "Mg32@hotmail.com", "usamorgan@yahoo.com", "trivilio@gmail.com"};
+        final String[] VUtelefono = {"2222-2222", "7777-7777", "2121-2121", "7878-7878", "7575-7575"};
         final int[] VUedad = {23, 35, 32, 27, 24};
-        final String[] VUsexo = {"F", "M","M","F","M"};
+        final String[] VUsexo = {"F", "M", "M", "F", "M"};
         /**********************Categoria Producto******************************/
-        final int[] VCpsId  = {1,2,3,4};
-        final String[] VCpsnombre = {"Alimentos","Herramientas","Publicidad","No perecederos"};
-        final String[] VCpsDescripcion = {"Tipos de alimentos","Herramientas de todo tipo de fabricacion"
-                ,"Servicio de publicidad ","Articulos que no se arruinan con el paso del tiempo"};
-        final int[] VCpsCantidadProductos = {0,0,0,0};
+        final int[] VCpsId = {1, 2, 3, 4};
+        final String[] VCpsnombre = {"Alimentos", "Herramientas", "Publicidad", "No perecederos"};
+        final String[] VCpsDescripcion = {"Tipos de alimentos", "Herramientas de todo tipo de fabricacion"
+                , "Servicio de publicidad ", "Articulos que no se arruinan con el paso del tiempo"};
+        final int[] VCpsCantidadProductos = {0, 0, 0, 0};
         /*****************************Producto o servicio****************************/
         final int[] VPsIdProdServ = {1, 2, 3, 4};
         final int[] VPsIdCategoriaPs = {3, 2, 1, 1};
         final String[] VPsNombreProd = {"Atencion al Cliente", "Lavadora", "Pizza", "Leche"};
-        final String[] VPsDescripcionProd = {"Servicio de atención al cliente en persona","Producto para poder lavar la ropa"
-                ,"Producto alimenticio de varios tipos", "Producto Alimenticio liquido"};
-       /********************************CATEGORIA EMPRESA********************************************/
+        final String[] VPsDescripcionProd = {"Servicio de atención al cliente en persona", "Producto para poder lavar la ropa"
+                , "Producto alimenticio de varios tipos", "Producto Alimenticio liquido"};
+        /********************************CATEGORIA EMPRESA********************************************/
         final int[] VCEIdCategoriaEmpresa = {1, 2, 3, 4, 5};
-        final String[] VCENombreCategoriaEmpresa = {"Comida Rapida","Farmacias","Ventas mayoreo","Ferreterias","Venta de Autos"};
-        final String[] VCEDescripcionCategoriaEmpresa = {"Comida a domicilio y servicio de restaurantes","Servicio de venta y distribucion de medicinas"
-        ,"Ventas de todo tipo al mayoreo","Venta de herramientas y repuestos", "Venta y distribucion de automoviles"};
-        final int[] VCECantidadEmpresas  = {0, 0, 0, 0, 0};
+        final String[] VCENombreCategoriaEmpresa = {"Comida Rapida", "Farmacias", "Ventas mayoreo", "Ferreterias", "Venta de Autos"};
+        final String[] VCEDescripcionCategoriaEmpresa = {"Comida a domicilio y servicio de restaurantes", "Servicio de venta y distribucion de medicinas"
+                , "Ventas de todo tipo al mayoreo", "Venta de herramientas y repuestos", "Venta y distribucion de automoviles"};
+        final int[] VCECantidadEmpresas = {0, 0, 0, 0, 0};
         /******************************Empresa*****************************/
-        final int[] VEIdEmpresa = {1,2,3,4,5};
-        final int[] VEIdCategoriaEmpresa = {1, 2,4,4,3};
-        final String[] VENombreEmpresa = {"Pizza Hut","Farmacias Nicolas","Vidri","EPA","Dollar City"};
-        final int[] VECantidadSucursales = {0,0,0,0,0};
+        final int[] VEIdEmpresa = {1, 2, 3, 4, 5};
+        final int[] VEIdCategoriaEmpresa = {1, 2, 4, 4, 3};
+        final String[] VENombreEmpresa = {"Pizza Hut", "Farmacias Nicolas", "Vidri", "EPA", "Dollar City"};
+        final int[] VECantidadSucursales = {0, 0, 0, 0, 0};
         /*******************************Zona*********************************/
-        final int[] VZIdZona = {1,2,3,4};
-        final String[] VZNombreZona = {"Centro","Oriental", "Norte del Paseo", "Sur de San Miguel"};
-        final String[] VZMunicipio = {"Soyapango", "Santa Elena", "San Salvador","San Miguel"};
-        final String[] VZDepartamento = {"San Salvador","La Libertad","San Salvador","San Miguel"};
+        final int[] VZIdZona = {1, 2, 3, 4};
+        final String[] VZNombreZona = {"Centro", "Oriental", "Norte del Paseo", "Sur de San Miguel"};
+        final String[] VZMunicipio = {"Soyapango", "Santa Elena", "San Salvador", "San Miguel"};
+        final String[] VZDepartamento = {"San Salvador", "La Libertad", "San Salvador", "San Miguel"};
         /*******************************Sucursal***********************************/
         final int[] VSIdSucursal = {1, 2, 3};
-        final int[] VSIdEmpresa = {5,5,4};
-        final int[] VSIdZona = {2,1,4};
-        final String[] VSNombreSucursal = {"Cascada","Central","Miguelito"};
-        final String[] VSJefeSucursal = {"Mario Yepes","Jacinta Ramirez","Alfredo Di Stefano"};
-        final String[] VSDireccionSucursal = {"Santa Elena, ceiba de Guadalupe","Centro de S.S","Colonia Laureles de San Miguel"};
-        final String[] VSTelefonoSucursal = {"2123-3435","2121-2222","2425-2627"};
+        final int[] VSIdEmpresa = {5, 5, 4};
+        final int[] VSIdZona = {1, 1, 4};
+        final String[] VSNombreSucursal = {"Plaza Mundo", "Central", "Miguelito"};
+        final String[] VSJefeSucursal = {"Mario Yepes", "Jacinta Ramirez", "Alfredo Di Stefano"};
+        final String[] VSDireccionSucursal = {"Centro Comercial Plaza Mundo, 2do. Nivel, locales 51 y 52, Soyapango S.S.",
+                                                "Centro de S.S", "Colonia Laureles de San Miguel"};
+        final String[] VSTelefonoSucursal = {"2123-3435", "2121-2222", "2425-2627"};
+        final Double[] VSLongitud = {13.698653,13.698653,13.698653};
+        final Double[] VSLatitud = {-89.1503835,-89.1503835,-89.1503835};
         /************************Estado Reclamo*****************************/
-        final int[] VERIdEstadoReclamo = {1,2,3,4};
-        final String[] VERNombreEstadoReclamo = {"Enviado","En Proceso","Solucionado","Almacenado"};
+        final int[] VERIdEstadoReclamo = {1, 2, 3, 4};
+        final String[] VERNombreEstadoReclamo = {"Enviado", "En Proceso", "Solucionado", "Almacenado"};
         final String[] VERDescripcionEstadoReclamo = {"Estado inicial del reclamo enviado a la empresa esperando que dicha la reciba"
-                                                    ,"Estado en el cual el reclamo estara en cola para ser analizado"
-                                                    ,"Estado en el cual ya se envio la respectiva respuesta al usuario"
-                                                    ,"Estado en el cual fue procesdo y solucionado, queda almacenado para futura toma de decisiones"};
+                , "Estado en el cual el reclamo estara en cola para ser analizado"
+                , "Estado en el cual ya se envio la respectiva respuesta al usuario"
+                , "Estado en el cual fue procesdo y solucionado, queda almacenado para futura toma de decisiones"};
         /***************************Detalle Reclamo**********************************************************/
-        final int[] VDRIdDetalleReclamo = {1,2,3,4};
+        final int[] VDRIdDetalleReclamo = {1, 2, 3, 4};
         final String[] VDRDescripcionDetalle = {"Mal funcionamiento del producto en cuestion", "Mal Servicio de atencion al cliente"
-                                                ,"Exceso de tiempo requerido para que me atendieran", "Producto de baja calidad"};
-        final int[] VDRIdProdServ = {1,2,2,3};
+                , "Exceso de tiempo requerido para que me atendieran", "Producto de baja calidad"};
+        final int[] VDRIdProdServ = {1, 2, 2, 3};
         /***************************Reclamo******************************/
-        final int[] VRIdReclamo = {1,2,3};
-        final String[] VRDui = {"00000000-1","00000000-2","00000000-3"};
-        final int[] VRIdSucursal = {2,1,3};
-        final int[] VRIdDetalle = {1,2,3};
-        final String[] VRtitulo = {"No me sirve","Medicina Vencida","Llego tarde la comida"};
-        final String[] VRMotivo = {"No me funciono la lampara","Hice el pedido de medicina y me salio vencida","Hice un pedido de comida y llego tarde"};
-        final String[] VRFecha = {"21/05/15","22/05/2015","23/05/2015"};
-        final int[] VRIdEstado = {1,1,1};
+        final int[] VRIdReclamo = {1, 2, 3};
+        final String[] VRDui = {"00000000-1", "00000000-2", "00000000-3"};
+        final int[] VRIdSucursal = {2, 1, 3};
+        final int[] VRIdDetalle = {1, 2, 3};
+        final String[] VRtitulo = {"No me sirve", "Medicina Vencida", "Llego tarde la comida"};
+        final String[] VRMotivo = {"No me funciono la lampara", "Hice el pedido de medicina y me salio vencida", "Hice un pedido de comida y llego tarde"};
+        final String[] VRFecha = {"21/05/15", "22/05/2015", "23/05/2015"};
+        final int[] VRIdEstado = {1, 1, 1};
         abrir();
         db.execSQL("DELETE FROM usuario");
         db.execSQL("DELETE FROM categoria_prod_serv");
@@ -1225,14 +1236,14 @@ public class ControlDB {
         db.execSQL("DELETE FROM detalle_reclamo");
 
         Usuario usuario = new Usuario();
-        CategoriaProdServ categoriaProdServ =  new CategoriaProdServ();
+        CategoriaProdServ categoriaProdServ = new CategoriaProdServ();
         ProdServ prodServ = new ProdServ();
         CategoriaEmpresa categoriaEmpresa = new CategoriaEmpresa();
         Empresa empresa = new Empresa();
-        Sucursal sucursal =  new Sucursal();
+        Sucursal sucursal = new Sucursal();
         Zona zona = new Zona();
-        DetalleReclamo detalleReclamo =  new DetalleReclamo();
-        EstadoReclamo estadoReclamo =  new EstadoReclamo();
+        DetalleReclamo detalleReclamo = new DetalleReclamo();
+        EstadoReclamo estadoReclamo = new EstadoReclamo();
         Reclamo reclamo = new Reclamo();
         for (int i = 0; i < 5; i++) {
             usuario.setDui(VUdui[i]);
@@ -1245,42 +1256,42 @@ public class ControlDB {
             insertar(usuario);
         }
 
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             categoriaProdServ.setIdCategoriaProdServ(VCpsId[i]);
             categoriaProdServ.setNombreCategoriaPs(VCpsnombre[i]);
             categoriaProdServ.setDescripcionCategoriaPs(VCpsDescripcion[i]);
             categoriaProdServ.setCantidadProductos(VCpsCantidadProductos[i]);
             insertar(categoriaProdServ);
         }
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             prodServ.setIdProdServ(VPsIdProdServ[i]);
             prodServ.setIdCategoriaProd(VPsIdCategoriaPs[i]);
             prodServ.setDescripcionProdServ(VPsDescripcionProd[i]);
             prodServ.setNombreProdServ(VPsNombreProd[i]);
             insertar(prodServ);
         }
-         for(int i =0; i < 5; i++){
-             categoriaEmpresa.setIdCategoriaEmp(VCEIdCategoriaEmpresa[i]);
-             categoriaEmpresa.setNombreCategoriaEmp(VCENombreCategoriaEmpresa[i]);
-             categoriaEmpresa.setDescripcionCategoriaEmp(VCEDescripcionCategoriaEmpresa[i]);
-             categoriaEmpresa.setCantidadEmpresas(VCECantidadEmpresas[i]);
-             insertar(categoriaEmpresa);
-         }
-        for (int i=0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
+            categoriaEmpresa.setIdCategoriaEmp(VCEIdCategoriaEmpresa[i]);
+            categoriaEmpresa.setNombreCategoriaEmp(VCENombreCategoriaEmpresa[i]);
+            categoriaEmpresa.setDescripcionCategoriaEmp(VCEDescripcionCategoriaEmpresa[i]);
+            categoriaEmpresa.setCantidadEmpresas(VCECantidadEmpresas[i]);
+            insertar(categoriaEmpresa);
+        }
+        for (int i = 0; i < 5; i++) {
             empresa.setIdEmpresa(VEIdEmpresa[i]);
             empresa.setIdCategoriaEmp(VEIdCategoriaEmpresa[i]);
             empresa.setNombreEmpresa(VENombreEmpresa[i]);
             empresa.setCantidadSucursales(VECantidadSucursales[i]);
             insertar(empresa);
         }
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             zona.setIdZona(VZIdZona[i]);
             zona.setNombreZona(VZNombreZona[i]);
             zona.setMunicipio(VZMunicipio[i]);
             zona.setDepartamento(VZDepartamento[i]);
             insertar(zona);
         }
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             sucursal.setIdSucursal(VSIdSucursal[i]);
             sucursal.setIdEmpresa(VSIdEmpresa[i]);
             sucursal.setIdZona(VSIdZona[i]);
@@ -1288,23 +1299,25 @@ public class ControlDB {
             sucursal.setDireccionSucursal(VSDireccionSucursal[i]);
             sucursal.setJefeSucursal(VSJefeSucursal[i]);
             sucursal.setTelefonoSucursal(VSTelefonoSucursal[i]);
+            sucursal.setLongitud(VSLongitud[i]);
+            sucursal.setLatitud(VSLatitud[i]);
             insertar(sucursal);
         }
 
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             estadoReclamo.setIdEstadoReclamo(VERIdEstadoReclamo[i]);
             estadoReclamo.setNombreEstado(VERNombreEstadoReclamo[i]);
             estadoReclamo.setDescripcionEstado(VERDescripcionEstadoReclamo[i]);
             insertar(estadoReclamo);
         }
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             detalleReclamo.setIdDetalle(VDRIdDetalleReclamo[i]);
             detalleReclamo.setIdProdServ(VDRIdProdServ[i]);
             detalleReclamo.setDescripcionDetalle(VDRDescripcionDetalle[i]);
             insertar(detalleReclamo);
         }
 
-        for (int i = 0; i< 3; i++){
+        for (int i = 0; i < 3; i++) {
             reclamo.setIdReclamo(VRIdReclamo[i]);
             reclamo.setIdSucursal(VRIdSucursal[i]);
             reclamo.setDui(VRDui[i]);
@@ -1315,7 +1328,6 @@ public class ControlDB {
             reclamo.setIdEstadoReclamo(VRIdEstado[i]);
             insertar(reclamo);
         }
-
         cerrar();
         return "guardo";
     }

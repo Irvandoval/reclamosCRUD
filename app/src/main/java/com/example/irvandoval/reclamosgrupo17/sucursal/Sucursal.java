@@ -11,19 +11,28 @@ public class Sucursal {
     private String jefeSucursal;
     private String direccionSucursal;
     private String telefonoSucursal;
+    private double longitud;
+    private double latitud;
+
 
 
     public Sucursal(){
     }
 
-    public Sucursal(int idSucursal, int idEmpresa, int idZona, String nombreSucursal, String jefeSucursal, String direccionSucursal, String telefonoSucursal) {
-        this.idSucursal = idSucursal;
-        this.idEmpresa = idEmpresa;
-        this.idZona = idZona;
-        this.nombreSucursal = nombreSucursal;
-        this.jefeSucursal = jefeSucursal;
-        this.direccionSucursal = direccionSucursal;
-        this.telefonoSucursal = telefonoSucursal;
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
     }
 
     public int getIdSucursal() {

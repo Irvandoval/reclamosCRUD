@@ -11,10 +11,9 @@
         android:layout_height="wrap_content"
         android:text="@string/sucursal_idsucursal"
         android:id="@+id/textView18"
-        android:layout_marginTop="34dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/textView19"
+        android:layout_alignStart="@+id/textView19" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,6 +60,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sucursal_direccionsucursal"
         android:id="@+id/textView23"
+        android:lines="4"
         android:layout_below="@+id/textView22"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -71,10 +71,9 @@
         android:layout_height="wrap_content"
         android:text="@string/sucursal_telefonosucursal"
         android:id="@+id/textView24"
-        android:layout_below="@+id/textView23"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp" />
+        android:layout_above="@+id/botonMapa"
+        android:layout_alignLeft="@+id/textView23"
+        android:layout_alignStart="@+id/textView23" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -82,9 +81,9 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editIdSucursal"
-        android:layout_above="@+id/textView19"
-        android:layout_toRightOf="@+id/textView22"
-        android:layout_toEndOf="@+id/textView22" />
+        android:layout_alignTop="@+id/textView18"
+        android:layout_alignRight="@+id/editIdZona"
+        android:layout_alignEnd="@+id/editIdZona" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -149,10 +148,10 @@
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
         android:id="@+id/button10"
-        android:layout_alignTop="@+id/button11"
-        android:layout_toRightOf="@+id/textView20"
-        android:layout_toEndOf="@+id/textView20"
-        android:onClick="consultarSucursal" />
+        android:onClick="consultarSucursal"
+        android:layout_below="@+id/editIdSucursal"
+        android:layout_alignLeft="@+id/editNombreSucursal"
+        android:layout_alignStart="@+id/editNombreSucursal" />
 
     <Button
         android:layout_width="wrap_content"
@@ -160,7 +159,16 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button11"
         android:onClick="limpiarTexto"
-        android:layout_above="@+id/editIdEmpresa"
-        android:layout_toRightOf="@+id/button10"
-        android:layout_toEndOf="@+id/button10" />
+        android:layout_below="@+id/editIdSucursal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_mapa"
+        android:id="@+id/botonMapa"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="consultarMapa" />
 </RelativeLayout>
