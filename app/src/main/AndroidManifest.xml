@@ -35,14 +35,11 @@
         <activity
             android:name=".estadoreclamo.EstadoReclamoEliminarActivity"
             android:label="@string/title_activity_estado_reclamo_eliminar" >
-
         </activity>
         <activity
             android:name=".estadoreclamo.EstadoReclamoInsertarActivity"
             android:label="@string/title_activity_estado_reclamo_insertar" >
         </activity>
-
-
         <activity
             android:name=".detallereclamo.DetalleReclamoMenuActivity"
             android:label="@string/title_activity_detalle_reclamo_menu" >
@@ -63,8 +60,6 @@
             android:name=".detallereclamo.DetalleReclamoInsertarActivity"
             android:label="@string/title_activity_detalle_reclamo_insertar" >
         </activity>
-
-
         <activity
             android:name=".prodserv.ProdServMenuActivity"
             android:label="@string/title_activity_prod_serv_menu" >
@@ -220,6 +215,10 @@
         <activity
             android:name=".prodserv.ProdServEliminarActivity"
             android:label="@string/title_activity_prod_serv_eliminar" >
+        </activity>
+        <activity
+            android:name=".detallereclamo.DetalleReclamoCamaraActivity"
+            android:label="@string/title_activity_detalle_reclamo_camara" >
         </activity>
     </application>
 
