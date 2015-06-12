@@ -43,6 +43,7 @@
     <string name="eliminar">Eliminar Registro</string>
     <string name="consultar">Consultar Registro</string>
     <string name="actualizar">Actualizar Registro</string>
+    <string name="Camara">Camara</string>
 
     <!-- Resources para Empresa-->
     <string name="empresa_idempresa">ID Empresa</string>
@@ -167,4 +168,6 @@
     <string name="title_activity_categoria_empresa_insertar_actvity">CategoriaEmpresaInsertarActvity</string>
     <string name="title_activity_categoria_empresa_actulizar">CategoriaEmpresaActulizarActivity</string>
     <string name="title_activity_detalle_reclamo_camara">DetalleReclamoCamaraActivity</string>
+    <string name="title_activity_categoria_prod_serv_camara">CategoriaProdServCamaraActivity
+    </string>
 </resources>
