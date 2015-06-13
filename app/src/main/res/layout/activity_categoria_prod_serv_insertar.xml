@@ -87,4 +87,14 @@
         android:layout_toEndOf="@+id/textView34"
         android:onClick="limpiarTexto3" />
 
+    <Button
+        android:id="@+id/mainbttomarfoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/adjuntarfoto"
+        android:layout_below="@+id/button21"
+        android:layout_toRightOf="@+id/textView35"
+        android:layout_toEndOf="@+id/textView35" />
+
 </RelativeLayout>

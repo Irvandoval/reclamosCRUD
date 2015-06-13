@@ -51,6 +51,8 @@
     <string name="empresa_nombreempresa">Nombre Empresa</string>
     <string name="empresa_cantidadsucursales">Cantidad Sucursales</string>
 
+    <string name="adjuntarfoto">Adjuntar Foto</string>
+
 
     <!-- Resources para Sucursal-->
     <string name="sucursal_idsucursal">ID Sucursal</string>

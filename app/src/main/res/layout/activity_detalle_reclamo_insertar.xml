@@ -23,8 +23,8 @@
         android:maxLength="7"
         android:layout_marginTop="34dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/idProdServ"
-        android:layout_alignStart="@+id/idProdServ" />
+        android:layout_toRightOf="@+id/textView50"
+        android:layout_toEndOf="@+id/textView50" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,7 +43,10 @@
         android:maxLength="7"
         android:layout_alignBottom="@+id/textView50"
         android:layout_toEndOf="@+id/insertarEstado"
-        android:layout_toRightOf="@+id/insertarEstado" />
+
+        android:layout_toRightOf="@+id/insertarEstado"
+        android:layout_alignLeft="@+id/editDescripcionDetalle"
+        android:layout_alignStart="@+id/editDescripcionDetalle" />
 
     <TextView android:text="@string/detalle_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,9 +84,19 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
         android:onClick="limpiarTexto"
-        android:layout_marginBottom="54dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/editDetalle_id"
-        android:layout_alignEnd="@+id/editDetalle_id" />
+        android:layout_below="@+id/editDescripcionDetalle"
+        android:layout_alignRight="@+id/editDescripcionDetalle"
+        android:layout_alignEnd="@+id/editDescripcionDetalle"
+        android:layout_marginTop="78dp" />
 
+
+    <Button
+        android:id="@+id/mainbttomarfoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/adjuntarfoto"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/button16"
+        android:layout_toLeftOf="@+id/button16" />
 </RelativeLayout>

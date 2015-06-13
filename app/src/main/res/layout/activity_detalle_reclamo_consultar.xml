@@ -11,20 +11,21 @@
     <TextView android:text="@string/detalle_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView28"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="57dp"
         android:layout_below="@+id/button15"
-        android:layout_alignLeft="@+id/button15"
-        android:layout_alignStart="@+id/button15" />
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editDescripcionDetalle"
-        android:layout_alignBottom="@+id/textView28"
+        android:layout_below="@+id/button16"
         android:layout_alignRight="@+id/editDetalle_id"
         android:layout_alignEnd="@+id/editDetalle_id"
-        android:layout_alignLeft="@+id/editDetalle_id"
-        android:layout_alignStart="@+id/editDetalle_id" />
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="38dp" />
 
 
     <TextView
@@ -54,10 +55,10 @@
         android:text="@string/consultar_boton"
         android:id="@+id/button15"
         android:onClick="consultarDetalle"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="54dp"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/editDescripcionDetalle"
-        android:layout_toStartOf="@+id/editDescripcionDetalle" />
+        android:layout_toLeftOf="@+id/editDetalle_id"
+        android:layout_toStartOf="@+id/editDetalle_id" />
 
     <Button
         android:layout_width="wrap_content"
@@ -75,11 +76,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView44"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/idProdServ"
         android:layout_below="@+id/editDescripcionDetalle"
         android:layout_alignLeft="@+id/textView28"
-        android:layout_alignStart="@+id/textView28"
-        android:text="@string/idProdServ"/>
+        android:layout_alignStart="@+id/textView28" />
 
     <EditText
         android:layout_width="100dp"

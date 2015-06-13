@@ -217,10 +217,6 @@
             android:label="@string/title_activity_prod_serv_eliminar" >
         </activity>
         <activity
-            android:name=".detallereclamo.DetalleReclamoCamaraActivity"
-            android:label="@string/title_activity_detalle_reclamo_camara" >
-        </activity>
-        <activity
             android:name=".categoriaprodserv.CategoriaProdServCamaraActivity"
             android:label="@string/title_activity_categoria_prod_serv_camara" >
         </activity>
