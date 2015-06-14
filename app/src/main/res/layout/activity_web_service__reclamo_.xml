@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.irvandoval.reclamosgrupo17.reclamo.WebServiceReclamoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llenar_ws"
+        android:id="@+id/textView16"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llenar"
+        android:id="@+id/button40"
+        android:layout_below="@+id/textView16"
+        android:layout_centerHorizontal="true"
+        android:onClick="llenarReclamosHosting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llenar_local"
+        android:id="@+id/textView17"
+        android:layout_below="@+id/button40"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llenar"
+        android:id="@+id/button41"
+        android:layout_below="@+id/textView17"
+        android:layout_alignLeft="@+id/button40"
+        android:layout_alignStart="@+id/button40" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editFecha"
+        android:layout_marginTop="72dp"
+        android:layout_below="@+id/button41"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/frmfecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/obtener_reclamos_ws_fecha"
+        android:id="@+id/textView56"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hosting_gratuito"
+        android:id="@+id/button42"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/editFecha"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="reclamosPorFechaHosting" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/servidor_local"
+        android:id="@+id/button43"
+        android:layout_alignBottom="@+id/button42"
+        android:layout_toRightOf="@+id/button42"
+        android:layout_toEndOf="@+id/button42" />
+</RelativeLayout>

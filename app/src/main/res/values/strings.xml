@@ -170,4 +170,16 @@
     <string name="busqueda_voz">Busqueda por voz</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="consultar_mapa">Ubicacion Mapa</string>
+    <string name="title_activity_web_service__reclamo_">WebService_Reclamo_Activity</string>
+    <string name="llenar_ws">Llenar Reclamos  en Base de datos local via Hosting Gratuito</string>
+    <string name="llenar">Llenar</string>
+    <string name="llenar_local">Llenar Reclamos en Base de Datos Local via  Servidor Local</string>
+    <string name="obtener_reclamos_ws_fecha">Obtener Reclamos a partir de Fecha</string>
+    <string name="hosting_gratuito">Hosting Gratuito</string>
+    <string name="servidor_local">Servidor Local</string>
+    <string name="formatofecha">aaaa-mm-dd</string>
+    <string name="frmfecha">aaaa-mm-dd</string>
+    <string name="title_activity_mostrar_por_fecha_reclamos">MostrarPorFechaReclamosActivity
+    </string>
+    <string name="enviar_bluetooth">Enviar Registros por Bluetooth</string>
 </resources>
