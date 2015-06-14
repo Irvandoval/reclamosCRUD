@@ -20,8 +20,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sucursal_idempresa"
         android:id="@+id/textView19"
-        android:layout_marginTop="74dp"
-        android:layout_below="@+id/textView18"
+        android:layout_below="@+id/button10"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -30,10 +29,9 @@
         android:layout_height="wrap_content"
         android:text="@string/sucursal_idzona"
         android:id="@+id/textView20"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/textView19"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/editIdEmpresa"
+        android:layout_alignLeft="@+id/button10"
+        android:layout_alignStart="@+id/button10" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,10 +59,9 @@
         android:text="@string/sucursal_direccionsucursal"
         android:id="@+id/textView23"
         android:lines="4"
-        android:layout_below="@+id/textView22"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp" />
+        android:layout_above="@+id/editTelefonoSucursal"
+        android:layout_toLeftOf="@+id/editNombreSucursal"
+        android:layout_toStartOf="@+id/editNombreSucursal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,9 +88,9 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editIdEmpresa"
-        android:layout_above="@+id/textView20"
-        android:layout_alignLeft="@+id/editIdSucursal"
-        android:layout_alignStart="@+id/editIdSucursal" />
+        android:layout_below="@+id/imageButton7"
+        android:layout_toRightOf="@+id/textView21"
+        android:layout_toEndOf="@+id/textView21" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -101,9 +98,9 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editIdZona"
-        android:layout_alignBottom="@+id/textView20"
-        android:layout_toRightOf="@+id/textView22"
-        android:layout_toEndOf="@+id/textView22" />
+        android:layout_above="@+id/editNombreSucursal"
+        android:layout_alignLeft="@+id/editIdEmpresa"
+        android:layout_alignStart="@+id/editIdEmpresa" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -118,8 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editJefeSucursal"
-        android:layout_above="@+id/textView23"
-        android:layout_toRightOf="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_toRightOf="@+id/textView21"
         android:layout_alignRight="@+id/editNombreSucursal"
         android:layout_alignEnd="@+id/editNombreSucursal" />
 
@@ -127,10 +124,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editDireccionSucursal"
-        android:layout_alignBottom="@+id/textView23"
-        android:layout_toRightOf="@+id/textView23"
-        android:layout_alignRight="@+id/editJefeSucursal"
-        android:layout_alignEnd="@+id/editJefeSucursal" />
+        android:layout_alignTop="@+id/textView23"
+        android:layout_toRightOf="@+id/textView24"
+        android:layout_alignRight="@+id/editTelefonoSucursal"
+        android:layout_alignEnd="@+id/editTelefonoSucursal" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -149,9 +146,9 @@
         android:text="@string/consultar_boton"
         android:id="@+id/button10"
         android:onClick="consultarSucursal"
-        android:layout_below="@+id/editIdSucursal"
-        android:layout_alignLeft="@+id/editNombreSucursal"
-        android:layout_alignStart="@+id/editNombreSucursal" />
+        android:layout_above="@+id/editIdEmpresa"
+        android:layout_toLeftOf="@+id/botonMapa"
+        android:layout_toStartOf="@+id/botonMapa" />
 
     <Button
         android:layout_width="wrap_content"
@@ -159,9 +156,11 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button11"
         android:onClick="limpiarTexto"
-        android:layout_below="@+id/editIdSucursal"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/imageButton7"
+        android:layout_alignRight="@+id/editIdEmpresa"
+        android:layout_alignEnd="@+id/editIdEmpresa"
+        android:layout_marginRight="55dp"
+        android:layout_marginEnd="55dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -171,4 +170,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="consultarMapa" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton7"
+        android:src="@mipmap/button_icon"
+        android:onClick="busquedaPorVoz"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/botonMapa"
+        android:layout_toEndOf="@+id/botonMapa" />
 </RelativeLayout>

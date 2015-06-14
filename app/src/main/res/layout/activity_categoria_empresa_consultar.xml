@@ -67,18 +67,19 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/idcatempresa"
         android:id="@+id/textView50"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/DescripcionCE"
-        android:layout_alignRight="@+id/button17"
-        android:layout_alignEnd="@+id/button17" />
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/button18"
+        android:layout_toStartOf="@+id/button18" />
 
     <EditText
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/IDCE"
-        android:layout_alignBottom="@+id/textView50"
-        android:layout_toRightOf="@+id/textView33"
-        android:layout_toEndOf="@+id/textView33" />
+        android:layout_alignTop="@+id/textView50"
+        android:layout_alignRight="@+id/DescripcionCE"
+        android:layout_alignEnd="@+id/DescripcionCE"
+        android:layout_alignLeft="@+id/cantEmpresas"
+        android:layout_alignStart="@+id/cantEmpresas" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,15 +87,26 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/cantcatempresa"
         android:id="@+id/textView51"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView50"
-        android:layout_alignStart="@+id/textView50" />
+        android:layout_below="@+id/imageButton"
+        android:layout_toLeftOf="@+id/textView33"
+        android:layout_toStartOf="@+id/textView33" />
 
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/cantEmpresas"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/DescripcionCE"
-        android:layout_alignEnd="@+id/DescripcionCE" />
+        android:layout_below="@+id/imageButton"
+        android:layout_alignRight="@+id/textView31"
+        android:layout_alignEnd="@+id/textView31" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@mipmap/button_icon"
+        android:onClick="busquedaPorVoz"
+        android:layout_alignTop="@+id/IDCE"
+        android:layout_toEndOf="@+id/textView31"
+        android:layout_toRightOf="@+id/textView31" />
+
 </RelativeLayout>

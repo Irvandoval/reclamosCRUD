@@ -75,19 +75,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView45"
+        android:layout_marginTop="41dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView28"
-        android:layout_alignStart="@+id/textView28"
-        android:layout_marginTop="36dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editEstadoId"
-        android:layout_alignBottom="@+id/textView45"
-        android:layout_alignRight="@+id/button16"
-        android:layout_alignEnd="@+id/button16"
-        android:layout_toRightOf="@+id/button15"
-        android:layout_toEndOf="@+id/button15" />
+        android:layout_above="@+id/button15"
+        android:layout_toRightOf="@+id/textView28"
+        android:layout_toEndOf="@+id/textView28" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton4"
+        android:src="@mipmap/button_icon"
+        android:onClick="busquedaPorVoz"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

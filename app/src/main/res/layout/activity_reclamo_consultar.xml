@@ -21,8 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/motivo"
         android:id="@+id/motivoReclamo"
-        android:layout_marginTop="52dp"
-        android:layout_below="@+id/TituloReclamo"
+        android:layout_alignTop="@+id/MotivoReclamo"
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8" />
 
@@ -54,9 +53,9 @@
         android:text="Limpiar"
         android:id="@+id/limpiar1"
         android:onClick="limpiarTexto1"
-        android:layout_alignLeft="@+id/textView53"
-        android:layout_alignStart="@+id/textView53"
-        android:layout_below="@+id/idDetalle" />
+        android:layout_alignTop="@+id/button7"
+        android:layout_alignLeft="@+id/motivoReclamo"
+        android:layout_alignStart="@+id/motivoReclamo" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -76,8 +75,8 @@
         android:text="@string/usuario_dui"
         android:id="@+id/textView52"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/textfec"
-        android:layout_alignEnd="@+id/textfec" />
+        android:layout_alignRight="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8" />
 
     <EditText
         android:layout_width="150dp"
@@ -93,18 +92,17 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/idReclamo"
         android:id="@+id/textView53"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/textView52"
-        android:layout_alignRight="@+id/textView52"
-        android:layout_alignEnd="@+id/textView52" />
+        android:layout_alignTop="@+id/idReclamo"
+        android:layout_alignRight="@+id/idReclamo"
+        android:layout_alignEnd="@+id/idReclamo" />
 
     <EditText
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/idReclamo"
-        android:layout_below="@+id/textView53"
-        android:layout_alignRight="@+id/textView53"
-        android:layout_alignEnd="@+id/textView53" />
+        android:layout_above="@+id/textView55"
+        android:layout_alignLeft="@+id/limpiar1"
+        android:layout_alignStart="@+id/limpiar1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,9 +118,9 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/idSucursal"
-        android:layout_alignTop="@+id/textView53"
-        android:layout_alignLeft="@+id/textView54"
-        android:layout_alignStart="@+id/textView54" />
+        android:layout_above="@+id/imageButton6"
+        android:layout_alignRight="@+id/imageButton6"
+        android:layout_alignEnd="@+id/imageButton6" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -130,9 +128,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/detalle_id"
         android:id="@+id/textView55"
-        android:layout_below="@+id/idReclamo"
-        android:layout_toRightOf="@+id/idReclamo"
-        android:layout_toEndOf="@+id/idReclamo" />
+        android:layout_alignTop="@+id/imageButton6"
+        android:layout_toRightOf="@+id/textView52"
+        android:layout_toEndOf="@+id/textView52" />
 
     <EditText
         android:layout_width="75dp"
@@ -146,7 +144,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/TituloReclamo"
-        android:layout_below="@+id/textView8"
+        android:layout_alignTop="@+id/textView8"
         android:layout_alignLeft="@+id/MotivoReclamo"
         android:layout_alignStart="@+id/MotivoReclamo" />
 
@@ -156,9 +154,19 @@
         android:text="@string/consultar_boton"
         android:id="@+id/button7"
         android:onClick="consultarReclamo"
-        android:layout_below="@+id/idDetalle"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/fechaReclamo"
         android:layout_alignEnd="@+id/fechaReclamo" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton6"
+        android:src="@mipmap/button_icon"
+        android:onClick="busquedaPorVoz"
+        android:layout_above="@+id/button7"
+        android:layout_alignRight="@+id/TituloReclamo"
+        android:layout_alignEnd="@+id/TituloReclamo" />
 
 
 </RelativeLayout>
