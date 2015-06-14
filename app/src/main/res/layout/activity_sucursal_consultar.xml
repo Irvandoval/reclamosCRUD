@@ -60,8 +60,8 @@
         android:id="@+id/textView23"
         android:lines="4"
         android:layout_above="@+id/editTelefonoSucursal"
-        android:layout_toLeftOf="@+id/editNombreSucursal"
-        android:layout_toStartOf="@+id/editNombreSucursal" />
+        android:layout_toLeftOf="@+id/editJefeSucursal"
+        android:layout_toStartOf="@+id/editJefeSucursal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,8 +79,9 @@
         android:ems="10"
         android:id="@+id/editIdSucursal"
         android:layout_alignTop="@+id/textView18"
-        android:layout_alignRight="@+id/editIdZona"
-        android:layout_alignEnd="@+id/editIdZona" />
+        android:layout_toRightOf="@+id/textView22"
+        android:layout_alignRight="@+id/button11"
+        android:layout_alignEnd="@+id/button11" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -144,7 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
-        android:id="@+id/button10"
+        android:id="@+id/btnConsultar"
         android:onClick="consultarSucursal"
         android:layout_above="@+id/editIdEmpresa"
         android:layout_toLeftOf="@+id/botonMapa"
@@ -156,11 +157,8 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button11"
         android:onClick="limpiarTexto"
-        android:layout_alignBottom="@+id/imageButton7"
-        android:layout_alignRight="@+id/editIdEmpresa"
-        android:layout_alignEnd="@+id/editIdEmpresa"
-        android:layout_marginRight="55dp"
-        android:layout_marginEnd="55dp" />
+        android:layout_above="@+id/editIdEmpresa"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -178,6 +176,6 @@
         android:src="@mipmap/button_icon"
         android:onClick="busquedaPorVoz"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/botonMapa"
-        android:layout_toEndOf="@+id/botonMapa" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

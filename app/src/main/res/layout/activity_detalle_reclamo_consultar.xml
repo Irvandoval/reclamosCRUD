@@ -11,20 +11,18 @@
     <TextView android:text="@string/detalle_Descripcion" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView28"
-        android:layout_marginTop="106dp"
-        android:layout_below="@+id/button15"
-        android:layout_alignLeft="@+id/button15"
-        android:layout_alignStart="@+id/button15" />
+        android:layout_alignBottom="@+id/editDescripcionDetalle"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editDescripcionDetalle"
-        android:layout_alignBottom="@+id/textView28"
-        android:layout_alignRight="@+id/editDetalle_id"
-        android:layout_alignEnd="@+id/editDetalle_id"
-        android:layout_alignLeft="@+id/editDetalle_id"
-        android:layout_alignStart="@+id/editDetalle_id" />
+        android:layout_below="@+id/editProServ"
+        android:layout_alignLeft="@+id/editProServ"
+        android:layout_alignStart="@+id/editProServ"
+        android:layout_marginTop="61dp" />
 
 
     <TextView
@@ -46,20 +44,20 @@
         android:id="@+id/editDetalle_id"
         android:layout_alignBottom="@+id/textView"
         android:layout_toRightOf="@+id/textView28"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageButton2"
+        android:layout_toStartOf="@+id/imageButton2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
-        android:id="@+id/button15"
+        android:id="@+id/btnConsultar"
         android:onClick="consultarDetalle"
-        android:layout_marginTop="41dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="54dp"
-        android:layout_marginStart="54dp"
-        android:layout_alignTop="@+id/textView" />
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/imageButton2"
+        android:layout_toLeftOf="@+id/editDetalle_id"
+        android:layout_toStartOf="@+id/editDetalle_id" />
 
     <Button
         android:layout_width="wrap_content"
@@ -67,29 +65,27 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
         android:onClick="limpiarTexto"
-        android:layout_alignTop="@+id/button15"
-        android:layout_toRightOf="@+id/textView44"
-        android:layout_toEndOf="@+id/textView44" />
+        android:layout_alignTop="@+id/btnConsultar"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView44"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/editDescripcionDetalle"
-        android:layout_alignLeft="@+id/textView28"
-        android:layout_alignStart="@+id/textView28"
-        android:text="@string/idProdServ"/>
+        android:text="@string/idProdServ"
+        android:layout_below="@+id/button16"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="82dp" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editProServ"
-        android:layout_alignBottom="@+id/textView44"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/button16"
-        android:layout_alignStart="@+id/button16" />
+        android:layout_alignTop="@+id/textView44"
+        android:layout_alignRight="@+id/editDetalle_id"
+        android:layout_alignEnd="@+id/editDetalle_id" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -97,7 +93,7 @@
         android:id="@+id/imageButton2"
         android:src="@mipmap/button_icon"
         android:onClick="busquedaPorVoz"
-        android:layout_alignBottom="@+id/button16"
+        android:layout_alignTop="@+id/editDetalle_id"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

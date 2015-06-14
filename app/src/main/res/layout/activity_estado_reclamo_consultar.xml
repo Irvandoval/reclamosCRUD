@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar"
-        android:id="@+id/button15"
+        android:id="@+id/btnConsultar"
         android:onClick="consultarEstadoReclamo"
         android:layout_below="@+id/textView45"
         android:layout_alignParentLeft="true"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button16"
-        android:layout_alignTop="@+id/button15"
+        android:layout_alignTop="@+id/btnConsultar"
         android:layout_alignRight="@+id/editNombreEstado"
         android:layout_alignEnd="@+id/editNombreEstado"
         android:layout_marginRight="37dp"
@@ -84,7 +84,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editEstadoId"
-        android:layout_above="@+id/button15"
+        android:layout_above="@+id/btnConsultar"
         android:layout_toRightOf="@+id/textView28"
         android:layout_toEndOf="@+id/textView28" />
 
