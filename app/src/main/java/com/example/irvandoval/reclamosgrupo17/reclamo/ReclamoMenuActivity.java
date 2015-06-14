@@ -17,7 +17,7 @@ import com.example.irvandoval.reclamosgrupo17.R;
 public class ReclamoMenuActivity extends ListActivity {
     String menu[]; // que opciones contendra el menu?
     String activities[] = {"ReclamoInsertarActivity","ReclamoEliminarActivity"
-            ,"ReclamoConsultarActivity","ReclamoActualizarActivity"};
+            ,"ReclamoConsultarActivity","ReclamoActualizarActivity","WebServiceReclamoActivity"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +43,6 @@ public class ReclamoMenuActivity extends ListActivity {
 
     private void setMenu(Resources res){
         menu = new String[] {res.getString(R.string.insertar),res.getString(R.string.eliminar)
-                ,res.getString(R.string.consultar),res.getString(R.string.actualizar)};
+                ,res.getString(R.string.consultar),res.getString(R.string.actualizar),"Opciones con Web Service"};
     }
 }
