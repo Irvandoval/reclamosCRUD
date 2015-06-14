@@ -1,21 +1,30 @@
 package com.example.irvandoval.reclamosgrupo17.zona;
 
+import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+import com.example.irvandoval.reclamosgrupo17.SpeechRecognitionHelper;
+
+import java.util.ArrayList;
 
 public class ZonaConsultarActivity extends ActionBarActivity {
     EditText idZona;
     EditText nombreZona;
     EditText municipio;
     EditText departamento;
+    SpeechRecognitionHelper SRHelper;
+    static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
+    Button btnConsultar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,7 @@ public class ZonaConsultarActivity extends ActionBarActivity {
         nombreZona = (EditText) findViewById(R.id.editNombreZona);
         municipio = (EditText) findViewById(R.id.editMunicipio);
         departamento =  (EditText) findViewById(R.id.editDepartamento);
+        btnConsultar = (Button) findViewById(R.id.btnConsultar);
 
     }
 
@@ -82,5 +92,32 @@ public class ZonaConsultarActivity extends ActionBarActivity {
             return true;
         }else
             return false;
+    }
+    public void busquedaPorVoz(View v){
+        SRHelper.run(this);
+    }
+
+    // Activity Results handler
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+// if it’s speech recognition results
+// and process finished ok
+        if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
+
+// receiving a result in string array
+// there can be some strings because sometimes speech recognizing inaccurate
+// more relevant results in the beginning of the list
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+// in “matches” array we holding a results... let’s show the most relevant
+            if (matches.size() > 0) {
+                // Toast.makeText(this, matches.get(0), Toast.LENGTH_LONG).show();
+                idZona.setText(matches.get(0));//el resultado lo introducimos en el EditText del id Empresa
+                btnConsultar.performClick();//realizamos el click al boton de consultar
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
