@@ -149,20 +149,30 @@
         android:layout_height="wrap_content"
         android:text="@string/insertar_boton"
         android:id="@+id/button10"
+        android:onClick="insertarSucursal"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/editTelefonoSucursal"
-        android:layout_toStartOf="@+id/editTelefonoSucursal"
-        android:onClick="insertarSucursal" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button11"
+        android:onClick="limpiarTexto"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button10"
-        android:layout_toEndOf="@+id/button10"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:onClick="limpiarTexto" />
+        android:layout_toRightOf="@+id/textView21"
+        android:layout_toEndOf="@+id/textView21" />
+
+
+    <Button
+        android:id="@+id/mainbttomarfotosucursal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/adjuntarfoto"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

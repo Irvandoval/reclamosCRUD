@@ -79,8 +79,9 @@
         android:layout_alignBottom="@+id/textView50"
         android:layout_toRightOf="@+id/textView33"
         android:layout_toEndOf="@+id/textView33" />
+
     <Button
-        android:id="@+id/mainbttomarfoto"
+        android:id="@+id/mainbttomarfotocategoriaempresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

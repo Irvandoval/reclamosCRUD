@@ -88,7 +88,7 @@
         android:onClick="limpiarTexto3" />
 
     <Button
-        android:id="@+id/mainbttomarfoto"
+        android:id="@+id/mainbttomarfotocatprodserv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

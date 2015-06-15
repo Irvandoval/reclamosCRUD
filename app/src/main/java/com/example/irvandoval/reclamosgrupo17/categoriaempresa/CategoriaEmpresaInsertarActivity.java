@@ -38,13 +38,15 @@ public class CategoriaEmpresaInsertarActivity extends ActionBarActivity {
         descCE = (EditText)findViewById(R.id.DescripcionCE);
         idCE = (EditText)findViewById(R.id.IDCE);
 
-        TomarFoto = (Button) findViewById(R.id.mainbttomarfoto);
+
+
+
+        TomarFoto = (Button) findViewById(R.id.mainbttomarfotocategoriaempresa);
         //image = (ImageView) findViewById(R.id.mainimage);
         TomarFoto.setOnClickListener(onClick);
         if (savedInstanceState != null) {
             if (savedInstanceState.getString("Foto") != null) {
-                image.setImageURI(Uri.parse(savedInstanceState
-                        .getString("Foto")));
+                image.setImageURI(Uri.parse(savedInstanceState.getString("Foto")));
                 file = Uri.parse(savedInstanceState.getString("Foto"));
             }
         }
