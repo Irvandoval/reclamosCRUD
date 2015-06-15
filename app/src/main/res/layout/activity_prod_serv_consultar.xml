@@ -51,8 +51,8 @@
         android:id="@+id/textView48"
         android:layout_alignBaseline="@+id/descripcionProdServ"
         android:layout_alignBottom="@+id/descripcionProdServ"
-        android:layout_alignRight="@+id/textView47"
-        android:layout_alignEnd="@+id/textView47" />
+        android:layout_alignRight="@+id/textView46"
+        android:layout_alignEnd="@+id/textView46" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
         android:text="@string/limpiar_boton"
         android:id="@+id/button30"
         android:onClick="limpiarTexto4"
-        android:layout_alignTop="@+id/button36"
+        android:layout_alignTop="@+id/btnConsultar"
         android:layout_toRightOf="@+id/textView45"
         android:layout_toEndOf="@+id/textView45" />
 
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
-        android:id="@+id/button36"
+        android:id="@+id/btnConsultar"
         android:onClick="consultarProductoServ"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/descripcionProdServ"

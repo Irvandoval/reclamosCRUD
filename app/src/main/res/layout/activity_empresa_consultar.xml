@@ -109,8 +109,8 @@
         android:id="@+id/imageButton"
         android:src="@mipmap/button_icon"
         android:onClick="busquedaPorVoz"
-        android:layout_alignTop="@+id/idEmpresa"
-        android:layout_alignRight="@+id/nombreEmpresa"
-        android:layout_alignEnd="@+id/nombreEmpresa" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/idCategoriaEmp"
+        android:layout_alignEnd="@+id/idCategoriaEmp" />
 
 </RelativeLayout>

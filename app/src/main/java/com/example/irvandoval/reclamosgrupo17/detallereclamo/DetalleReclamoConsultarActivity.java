@@ -90,6 +90,8 @@ public class DetalleReclamoConsultarActivity extends ActionBarActivity {
     }
 
      public void limpiarTexto(View v) {
+        editDetalle_id.setText("");
+         idProServ.setText("");
         descripcion_detalle.setText("");
 
     }

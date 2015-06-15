@@ -12,10 +12,10 @@
         android:text="@string/zona_idzona"
         android:id="@+id/textView8"
         android:hint="@string/zona_idzona"
-        android:layout_above="@+id/button4"
+        android:layout_marginBottom="42dp"
+        android:layout_above="@+id/btnConsultar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="77dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,7 +25,8 @@
         android:id="@+id/editIdZona"
         android:layout_alignTop="@+id/textView8"
         android:layout_toRightOf="@+id/textView11"
-        android:layout_toEndOf="@+id/textView11" />
+        android:layout_toLeftOf="@+id/imageButton8"
+        android:layout_toStartOf="@+id/imageButton8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,8 +61,8 @@
         android:id="@+id/editNombreZona"
         android:layout_above="@+id/textView10"
         android:layout_toRightOf="@+id/textView9"
-        android:layout_alignRight="@+id/editIdZona"
-        android:layout_alignEnd="@+id/editIdZona" />
+        android:layout_alignRight="@+id/imageButton8"
+        android:layout_alignEnd="@+id/imageButton8" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -77,7 +78,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editDepartamento"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textView11"
+        android:layout_toRightOf="@+id/btnConsultar"
         android:layout_alignRight="@+id/editMunicipio"
         android:layout_alignEnd="@+id/editMunicipio" />
 
@@ -85,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/consultar_boton"
-        android:id="@+id/button4"
+        android:id="@+id/btnConsultar"
         android:onClick="consultarZona"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -96,9 +97,9 @@
         android:layout_height="wrap_content"
         android:text="@string/limpiar_boton"
         android:id="@+id/button5"
-        android:layout_alignTop="@+id/button4"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_toEndOf="@+id/button4" />
+        android:layout_alignTop="@+id/btnConsultar"
+        android:layout_toRightOf="@+id/btnConsultar"
+        android:layout_toEndOf="@+id/btnConsultar" />
 
     <ImageButton
         android:layout_width="wrap_content"

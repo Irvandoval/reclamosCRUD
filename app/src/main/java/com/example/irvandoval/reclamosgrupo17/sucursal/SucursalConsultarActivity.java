@@ -31,7 +31,7 @@ public class SucursalConsultarActivity extends ActionBarActivity {
     private Sucursal nuevaSucursal = new Sucursal();
     SpeechRecognitionHelper SRHelper;
     static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
-    Button btnConsultar1;
+    Button btnConsultar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class SucursalConsultarActivity extends ActionBarActivity {
         direccionSucursal = (EditText) findViewById(R.id.editDireccionSucursal);
         telefonoSucursal = (EditText) findViewById(R.id.editTelefonoSucursal);
         boton = (Button) findViewById(R.id.botonMapa);
-        btnConsultar1 = (Button) findViewById(R.id.btnConsultar);
+        btnConsultar = (Button) findViewById(R.id.btnConsultar);
         boton.setEnabled(false);
     }
 
@@ -149,7 +149,7 @@ public class SucursalConsultarActivity extends ActionBarActivity {
             if (matches.size() > 0) {
                 // Toast.makeText(this, matches.get(0), Toast.LENGTH_LONG).show();
                 idSucursal.setText(matches.get(0));//el resultado lo introducimos en el EditText del id Empresa
-                btnConsultar1.performClick();//realizamos el click al boton de consultar
+                btnConsultar.performClick();//realizamos el click al boton de consultar
             }
         }
 

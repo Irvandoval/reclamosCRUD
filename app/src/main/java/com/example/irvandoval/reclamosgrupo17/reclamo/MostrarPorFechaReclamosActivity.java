@@ -69,7 +69,6 @@ public class MostrarPorFechaReclamosActivity extends Activity {
         try{
             JSONArray reclamos = new JSONArray(json);
             File root = android.os.Environment.getExternalStorageDirectory();
-            Toast.makeText(this,"directorio: "+ root, Toast.LENGTH_LONG).show();
             File dir = new File(root.getAbsolutePath() + "/download");
             dir.mkdirs();
             file = new File(dir, "reclamos.txt");
