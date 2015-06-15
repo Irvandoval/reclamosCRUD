@@ -19,7 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class WebServiceReclamoActivity extends ActionBarActivity {
-    private static String urlHosting = "http://irvandoval.comxa.com/";
+  //  private static String urlHosting = "http://irvandoval.comxa.com/";
+    private static String urlHosting="http://localhost/WSG17/webresources/g17.entidad.reclamo/all/";
     EditText fecha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +69,18 @@ public class WebServiceReclamoActivity extends ActionBarActivity {
     }
     public void llenarReclamosHosting(View v){
         Controlador parser = new Controlador();
-        String url = urlHosting + "ws_reclamo_all.php";
+        String url = urlHosting ;//"ws_reclamo_all.php"
         String json = parser.obtenerRespuestaDeURL(url,this);
+
         ControlDB controlDB = new ControlDB(this);
         controlDB.abrir();
+
         try{
             JSONArray reclamos = new JSONArray(json);
             Reclamo nuevoReclamo = new Reclamo();
             for(int i = 0; i< reclamos.length(); i++){
                 JSONObject reclamo = reclamos.getJSONObject(i);
+              System.err.println("caqquita"+reclamo);
                 nuevoReclamo.setIdReclamo(reclamo.getInt("ID_RECLAMO"));
                 nuevoReclamo.setDui(reclamo.getString("DUI"));
                 nuevoReclamo.setIdEstadoReclamo(reclamo.getInt("ID_ESTADO_RECLAMO"));

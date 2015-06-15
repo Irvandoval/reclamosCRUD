@@ -27,7 +27,7 @@ import java.util.List;
 
 
 public class MostrarPorFechaReclamosActivity extends Activity {
-    private static String urlHosting = "http://irvandoval.comxa.com/";
+    private static String urlHosting = "http://192.168.2.255:33055/WSG17/webresources/g17.entidad.reclamo/";
     // more efficient than HashMap for mapping integers to objects
     SparseArray<Group> groups = new SparseArray<>();
     String year;
@@ -63,7 +63,7 @@ public class MostrarPorFechaReclamosActivity extends Activity {
         year = intent.getStringExtra("year");
         month = intent.getStringExtra("month");
         day = intent.getStringExtra("day");
-        String url = urlHosting + "ws_reclamo_query_fecha.php?year=" + year + "&month=" + month + "&day=" + day;
+        String url = urlHosting + "by?fechaReclamo=" + year + "&month=" + month + "&day=" + day;
         Calendar c = Calendar.getInstance();
         String json = parser.obtenerRespuestaDeURL(url,this);
         try{
