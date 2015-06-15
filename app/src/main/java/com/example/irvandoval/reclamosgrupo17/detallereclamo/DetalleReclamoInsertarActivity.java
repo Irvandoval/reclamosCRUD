@@ -1,15 +1,28 @@
 package com.example.irvandoval.reclamosgrupo17.detallereclamo;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.irvandoval.reclamosgrupo17.ControlDB;
 import com.example.irvandoval.reclamosgrupo17.R;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by aspire e 14 on 19/05/2015.
  */
@@ -18,6 +31,11 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
     EditText detalle_id;
     EditText prod_ser;
     EditText descripcion_detalle;
+    Button TomarFoto;
+    private final String ruta_fotos = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/misfotos/";
+    private File file = new File(ruta_fotos);
+    private Button boton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +45,37 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
         detalle_id= (EditText) findViewById(R.id.editDetalle_id);
         prod_ser= (EditText) findViewById(R.id.idProdServ);
         descripcion_detalle = (EditText) findViewById(R.id.editDescripcionDetalle);
+
+
+        //======== codigo nuevo ========
+        boton = (Button) findViewById(R.id.mainbttomarfotodetarecl);
+        //Si no existe crea la carpeta donde se guardaran las fotos
+        file.mkdirs();
+        //accion para el boton
+        boton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String file = ruta_fotos + getCode() + ".jpg";
+                File mi_foto = new File( file );
+                try {
+                    mi_foto.createNewFile();
+                } catch (IOException ex) {
+                    Log.e("ERROR ", "Error:" + ex);
+                }
+                //
+                Uri uri = Uri.fromFile( mi_foto );
+                //Abre la camara para tomar la foto
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //Guarda imagen
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+                //Retorna a la actividad
+                startActivityForResult(cameraIntent, 0);
+            }
+
+        });
+        //====== codigo nuevo:end ======
+
     }
 
     @Override
@@ -75,6 +124,19 @@ public class DetalleReclamoInsertarActivity  extends ActionBarActivity {
 
             return false;
     }
+    /**
+     60  * Metodo privado que genera un codigo unico segun la hora y fecha del sistema
+     61  * @return photoCode
+     62  * */
+    @SuppressLint("SimpleDateFormat")
+    private String getCode()
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
+        String date = dateFormat.format(new Date() );
+        String photoCode = "pic_" + date;
+        return photoCode;
+    }
+
 
 
     public void limpiarTexto(View v) {

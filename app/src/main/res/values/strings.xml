@@ -160,7 +160,7 @@
     <string name="error_insertar">Error al Insertar el registro, Registro Duplicado. Verificar inserción</string>
     <string name="cantidad_insertados">Registro Insertado No= </string>
     <string name="filas_afectadas">Filas Afectadas = </string>
-
+    <string name="adjuntarfoto">adjuntar foto</string>
     <string name="idempresa">ID Empresa</string>
     <string name="cantcatempresa">Cantidad Empresas</string>
     <string name="title_activity_categoria_empresa_consulatar">Consultar Categoria Empresa</string>
