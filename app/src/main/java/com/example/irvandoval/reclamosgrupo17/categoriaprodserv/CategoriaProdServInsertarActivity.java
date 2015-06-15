@@ -1,11 +1,13 @@
 package com.example.irvandoval.reclamosgrupo17.categoriaprodserv;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,18 +21,19 @@ import com.example.irvandoval.reclamosgrupo17.R;
 import com.example.irvandoval.reclamosgrupo17.usuario.Usuario;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class CategoriaProdServInsertarActivity extends ActionBarActivity {
  EditText IdCatPS;
  EditText IdProdServ;
  EditText nombCatPS;
  EditText descriCatPS;
-    Button TomarFoto;
-    ImageView image;
-    final int FOTOGRAFIA = 654;
-    Uri file;
-
+    private final String ruta_fotos = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/misfotos/";
+    private File file = new File(ruta_fotos);
+    private Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,56 +46,47 @@ public class CategoriaProdServInsertarActivity extends ActionBarActivity {
 
 
 
-        TomarFoto = (Button) findViewById(R.id.mainbttomarfotocatprodserv);
-        //image = (ImageView) findViewById(R.id.mainimage);
-        TomarFoto.setOnClickListener(onClick);
-        if (savedInstanceState != null) {
-            if (savedInstanceState.getString("Foto") != null) {
-                image.setImageURI(Uri.parse(savedInstanceState.getString("Foto")));
-                file = Uri.parse(savedInstanceState.getString("Foto"));
+        //======== codigo nuevo ========
+        boton = (Button) findViewById(R.id.mainbttomarfotocatprodserv);
+        //Si no existe crea la carpeta donde se guardaran las fotos
+        file.mkdirs();
+        //accion para el boton
+        boton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String file = ruta_fotos + getCode() + ".jpg";
+                File mi_foto = new File( file );
+                try {
+                    mi_foto.createNewFile();
+                } catch (IOException ex) {
+                    Log.e("ERROR ", "Error:" + ex);
+                }
+                //
+                Uri uri = Uri.fromFile( mi_foto );
+                //Abre la camara para tomar la foto
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //Guarda imagen
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+                //Retorna a la actividad
+                startActivityForResult(cameraIntent, 0);
             }
-        }
+
+        });
+        //====== codigo nuevo:end ======
     }
 
-
-
-    public void onSaveInstanceState(Bundle bundle){
-        if (file!=null){
-            bundle.putString("Foto", file.toString());
-        }
-        super.onSaveInstanceState(bundle);
-
-    }
-
-    View.OnClickListener onClick=new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-// TODO Auto-generated method stub
-            Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            File photo =new File(Environment.getExternalStorageDirectory(),String.valueOf(Calendar.getInstance().getTimeInMillis())+".jpg");
-            file=Uri.fromFile(photo);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
-            startActivityForResult(intent,FOTOGRAFIA);
-        }
-    };
-    @Override
-    public void onActivityResult(int RequestCode, int ResultCode, Intent intent) {
-        if (RequestCode==FOTOGRAFIA){
-            if(ResultCode == RESULT_OK){
-                image.setImageURI(file);
-            }
-            else{
-                Toast.makeText(getApplicationContext(),"fotografia No tomada", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_categoria_prod_serv_insertar, menu);
-        return true;
+    /**
+     60  * Metodo privado que genera un codigo unico segun la hora y fecha del sistema
+     61  * @return photoCode
+     62  * */
+    @SuppressLint("SimpleDateFormat")
+    private String getCode()
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
+        String date = dateFormat.format(new Date() );
+        String photoCode = "pic_" + date;
+        return photoCode;
     }
 
     @Override
