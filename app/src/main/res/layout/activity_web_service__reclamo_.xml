@@ -40,7 +40,8 @@
         android:id="@+id/button41"
         android:layout_below="@+id/textView17"
         android:layout_alignLeft="@+id/button40"
-        android:layout_alignStart="@+id/button40" />
+        android:layout_alignStart="@+id/button40"
+        android:onClick="llenarReclamosLocal" />
 
     <EditText
         android:layout_width="wrap_content"

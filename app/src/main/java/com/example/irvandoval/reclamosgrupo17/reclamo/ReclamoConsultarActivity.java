@@ -122,7 +122,7 @@ public class ReclamoConsultarActivity extends ActionBarActivity {
 
 // in “matches” array we holding a results... let’s show the most relevant
             if (matches.size() > 0) {
-                // Toast.makeText(this, matches.get(0), Toast.LENGTH_LONG).show();
+                 Toast.makeText(this, matches.get(0), Toast.LENGTH_LONG).show();
                 idrecl.setText(matches.get(0));//el resultado lo introducimos en el EditText del id Empresa
                 btnConsultar.performClick();//realizamos el click al boton de consultar
             }

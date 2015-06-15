@@ -38,13 +38,13 @@ public class Controlador {
             HttpEntity httpEntity = httpResponse.getEntity();
             respuesta = EntityUtils.toString(httpEntity);
         } catch (UnsupportedEncodingException e) {
-            Toast.makeText(ctx, "Error de conexion", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "Error de conexion 1", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         } catch (ClientProtocolException e) {
-            Toast.makeText(ctx, "Error de conexion", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "Error de conexion 2", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         } catch (IOException e) {
-            Toast.makeText(ctx, "Error de conexion", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "Error de conexion 3", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
         return respuesta;

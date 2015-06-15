@@ -19,8 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class WebServiceReclamoActivity extends ActionBarActivity {
-  //  private static String urlHosting = "http://irvandoval.comxa.com/";
-    private static String urlHosting="http://localhost/WSG17/webresources/g17.entidad.reclamo/all/";
+   private static String urlHostingGratuito = "http://irvandoval.comxa.com/";
+    private static String urlHostingLocal="http://192.168.0.100:8080/WSG17/webresources/g17.entidad.reclamo/all/";
     EditText fecha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class WebServiceReclamoActivity extends ActionBarActivity {
     }
     public void llenarReclamosHosting(View v){
         Controlador parser = new Controlador();
-        String url = urlHosting ;//"ws_reclamo_all.php"
+        String url = urlHostingGratuito + "ws_reclamo_all.php";
         String json = parser.obtenerRespuestaDeURL(url,this);
 
         ControlDB controlDB = new ControlDB(this);
@@ -80,7 +80,6 @@ public class WebServiceReclamoActivity extends ActionBarActivity {
             Reclamo nuevoReclamo = new Reclamo();
             for(int i = 0; i< reclamos.length(); i++){
                 JSONObject reclamo = reclamos.getJSONObject(i);
-              System.err.println("caqquita"+reclamo);
                 nuevoReclamo.setIdReclamo(reclamo.getInt("ID_RECLAMO"));
                 nuevoReclamo.setDui(reclamo.getString("DUI"));
                 nuevoReclamo.setIdEstadoReclamo(reclamo.getInt("ID_ESTADO_RECLAMO"));
@@ -92,9 +91,42 @@ public class WebServiceReclamoActivity extends ActionBarActivity {
                 controlDB.insertar(nuevoReclamo);
             }
         }catch(Exception e){
-            Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error de conexion 4", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
          controlDB.cerrar();
         Toast.makeText(this, "Registros via Host Gratuito Insertados Correctamente al DB Local", Toast.LENGTH_LONG).show();
+    }
+
+    public void llenarReclamosLocal(View v){
+        Controlador parser = new Controlador();
+        String url = urlHostingLocal ;//"ws_reclamo_all.php"
+        String json = parser.obtenerRespuestaDeURL(url,this);
+
+        ControlDB controlDB = new ControlDB(this);
+        controlDB.abrir();
+
+        try{
+            JSONArray reclamos = new JSONArray(json);
+            Reclamo nuevoReclamo = new Reclamo();
+            for(int i = 0; i< reclamos.length(); i++){
+                JSONObject reclamo = reclamos.getJSONObject(i);
+                nuevoReclamo.setIdReclamo(reclamo.getInt("idReclamo"));
+                nuevoReclamo.setDui(reclamo.getJSONObject("dui").getString("dui"));
+                nuevoReclamo.setIdEstadoReclamo(reclamo.getJSONObject("idEstadoReclamo").getInt("idEstadoReclamo"));
+                nuevoReclamo.setIdSucursal(reclamo.getJSONObject("idSucursal").getInt("idSucursal"));
+                nuevoReclamo.setIdDetalle(reclamo.getJSONObject("idDetalle").getInt("idDetalle"));
+                nuevoReclamo.setTitulo(reclamo.getString("titulo"));
+                nuevoReclamo.setMotivoReclamo(reclamo.getString("motivoReclamo"));
+                nuevoReclamo.setFechaReclamo(reclamo.getString("fechaReclamo"));
+
+                controlDB.insertar(nuevoReclamo);
+            }
+        }catch(Exception e){
+            Toast.makeText(this, "Error de conexion 4", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+        controlDB.cerrar();
+        Toast.makeText(this, "Registros via Host Local Insertados Correctamente al DB Local", Toast.LENGTH_LONG).show();
     }
 }
