@@ -112,7 +112,7 @@ public class UsuarioConsultarActivity extends ActionBarActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-// if it’s speech recognition results
+// si resulta el la busqueda por voz
 // and process finished ok
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
 
